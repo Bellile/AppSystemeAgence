@@ -74,6 +74,19 @@ public class Responsable extends Personne{
 	public void setMdp(String mdp) {
 		this.mdp = mdp;
 	}
+		
+	public Agence getAgence() {
+		return agence;
+	}
+	public void setAgence(Agence agence) {
+		this.agence = agence;
+	}
+	public List<Visite> getListeVisite() {
+		return listeVisite;
+	}
+	public void setListeVisite(List<Visite> listeVisite) {
+		this.listeVisite = listeVisite;
+	}
 	@Override
 	public String toString() {
 		return "Responsable [id=" + id + ", identifiant=" + identifiant + ", mdp=" + mdp + "]";

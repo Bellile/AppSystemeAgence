@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
@@ -33,7 +34,7 @@ public class Client extends Personne {
 	private List<Contrat> contrat;
 	
 	@ManyToMany
-	@JoinTable
+	@JoinTable(name="cl_cs", joinColumns=@JoinColumn(name="cl_id"), inverseJoinColumns=@JoinColumn(name="cs_id"))
 	private List<ClasseStandard> listeClasseStandard;
 	
 	//Constructeurs
@@ -54,6 +55,46 @@ public class Client extends Personne {
 		this.adresse = adresse;
 	}
 	
+	
+	//Getter/Setter
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public boolean isAcquereur() {
+		return acquereur;
+	}
+	public void setAcquereur(boolean acquereur) {
+		this.acquereur = acquereur;
+	}
+	public String getNumCompostage() {
+		return numCompostage;
+	}
+	public void setNumCompostage(String numCompostage) {
+		this.numCompostage = numCompostage;
+	}
+	public Adresse getAdresse() {
+		return adresse;
+	}
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
+	public List<Contrat> getContrat() {
+		return contrat;
+	}
+	public void setContrat(List<Contrat> contrat) {
+		this.contrat = contrat;
+	}
+	public List<ClasseStandard> getListeClasseStandard() {
+		return listeClasseStandard;
+	}
+	public void setListeClasseStandard(List<ClasseStandard> listeClasseStandard) {
+		this.listeClasseStandard = listeClasseStandard;
+	}
+	
+	//ToString
 	@Override
 	public String toString() {
 		return "Client [id=" + id + ", acquereur=" + acquereur + ", numCompostage=" + numCompostage + "]";

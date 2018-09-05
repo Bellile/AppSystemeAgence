@@ -61,6 +61,19 @@ public class Proprietaire extends Personne {
 	public void setTelPro(String telPro) {
 		this.telPro = telPro;
 	}
+	
+	public Adresse getAdresse() {
+		return adresse;
+	}
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
+	public List<BienImmobilier> getListeBienImmobilier() {
+		return listeBienImmobilier;
+	}
+	public void setListeBienImmobilier(List<BienImmobilier> listeBienImmobilier) {
+		this.listeBienImmobilier = listeBienImmobilier;
+	}
 	@Override
 	public String toString() {
 		return "Proprietaire [id=" + id + ", telPro=" + telPro + "]";
