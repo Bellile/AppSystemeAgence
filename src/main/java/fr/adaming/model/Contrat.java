@@ -74,8 +74,16 @@ public class Contrat {
 		this.dateAcquisition = dateAcquisition;
 	}
 
-	// to string
+	public Client getClient() {
+		return client;
+	}
 
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
+	// to string
+	
 	@Override
 	public String toString() {
 		return "Contrat [id=" + id + ", type=" + type + ", dateAcquisition=" + dateAcquisition + "]";

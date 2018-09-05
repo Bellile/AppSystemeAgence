@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "vistes")
+@Table(name = "visites")
 public class Visite {
 
 	// attribus
@@ -72,6 +72,33 @@ public class Visite {
 		this.dateHeure = dateHeure;
 	}
 
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
+	public BienImmobilier getBienImmobilier() {
+		return bienImmobilier;
+	}
+
+	public void setBienImmobilier(BienImmobilier bienImmobilier) {
+		this.bienImmobilier = bienImmobilier;
+	}
+
+	public Responsable getResponsable() {
+		return responsable;
+	}
+
+	public void setResponsable(Responsable responsable) {
+		this.responsable = responsable;
+	}
+	
+	
+	
+	
 	// to string
 
 	@Override

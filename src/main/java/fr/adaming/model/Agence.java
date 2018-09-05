@@ -1,5 +1,7 @@
 package fr.adaming.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -23,7 +25,7 @@ public class Agence {
 	// association uml en java
 	
 	@OneToMany(mappedBy="agence")
-	private Responsable responsable;
+	private List<Responsable> listeResponsable;
 	
 	@Embedded
 	private Adresse adresse;
@@ -45,10 +47,26 @@ public class Agence {
 		this.nom = nom;
 	}
 
-	// getter et setter
+	// getter et setter	
 
 	public int getId() {
 		return id;
+	}
+
+	public List<Responsable> getListeResponsable() {
+		return listeResponsable;
+	}
+
+	public void setListeResponsable(List<Responsable> listeResponsable) {
+		this.listeResponsable = listeResponsable;
+	}
+
+	public Adresse getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
 	}
 
 	public void setId(int id) {
