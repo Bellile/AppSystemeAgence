@@ -1,12 +1,33 @@
 package fr.adaming.model;
 
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="classesstandard")
 public class ClasseStandard {
 	// attributs
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY )
+	@Column(name="id_cs")
 	private int id;
 	private String typeBien;
 	private String modeOffre;
 	private double prixMax;
 	private double superficieMin;
+	
+	// transfo de l'association
+	@OneToMany(mappedBy="bienImmobilier")
+	private List<BienImmobilier> listeBienImmobilier;
+	
+	
 	// constructeurs
 	public ClasseStandard() {
 		super();
