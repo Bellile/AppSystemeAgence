@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
 
 @MappedSuperclass
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
-public class BienImmobilier {
+abstract class BienImmobilier {
 	
 	//declaration des attributs
 	@Id
