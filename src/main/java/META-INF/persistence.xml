@@ -18,7 +18,7 @@
 		<class>fr.adaming.model.BienImmobilier</class>
 		<class>fr.adaming.model.BienImmobilierALouer</class>
 		<class>fr.adaming.model.BienImmobilierAVendre</class>
-		<class>fr.adaming.model.ClasseStandart</class>
+		<class>fr.adaming.model.ClasseStandard</class>
 		<class>fr.adaming.model.Client</class>
 		<class>fr.adaming.model.Contrat</class>
 		<class>fr.adaming.model.Personne</class>
