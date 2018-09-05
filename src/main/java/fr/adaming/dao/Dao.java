@@ -5,11 +5,11 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 
@@ -24,9 +24,11 @@ public class Dao<T, PK extends Serializable> implements IDao<T, Serializable> {
 	public List<Class<T>> getAll() {
 		
 		EntityManager em = emf.createEntityManager();
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaQuery<T> cr= cb.createQuery(type);
+		TypedQuery<T> tq = em.createQuery(cr);
 		
-		
-		return null;
+		return (List<Class<T>>) tq.getResultList();
 	}
 
 	@Override
@@ -49,12 +51,18 @@ public class Dao<T, PK extends Serializable> implements IDao<T, Serializable> {
 		EntityManager em = emf.createEntityManager();
 		em.find(type, t);
 		em.merge(t);
-		return null;
+		return (Class<T>) t;
 	}
 
 	@Override
-	public void delete(T t) {
-		// TODO Auto-generated method stub
+	public int delete(T t) {
+		EntityManager em = emf.createEntityManager();
+		em.remove(t);
+		if(em.find(type, t)==null){
+			return 1;
+		}else{
+			return 0;
+		}
 		
 	}
 
