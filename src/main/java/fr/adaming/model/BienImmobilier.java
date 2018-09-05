@@ -23,6 +23,7 @@ abstract class BienImmobilier {
 	protected String typeBien;
 	protected String statut;
 	protected double revenuCadastre;
+	protected String description;
 	@Temporal(TemporalType.DATE)
 	protected Date dateSoumission;
 	@Temporal(TemporalType.DATE)
@@ -36,24 +37,26 @@ abstract class BienImmobilier {
 		super();
 	}
 
-	public BienImmobilier(String typeBien, String statut, double revenuCadastre, Date dateSoumission,
-			Date dateDisposition, byte[] listeImage) {
+	public BienImmobilier(String typeBien, String statut, double revenuCadastre, String description,
+			Date dateSoumission, Date dateDisposition, byte[] listeImage) {
 		super();
 		this.typeBien = typeBien;
 		this.statut = statut;
 		this.revenuCadastre = revenuCadastre;
+		this.description = description;
 		this.dateSoumission = dateSoumission;
 		this.dateDisposition = dateDisposition;
 		this.listeImage = listeImage;
 	}
 
-	public BienImmobilier(int id, String typeBien, String statut, double revenuCadastre, Date dateSoumission,
-			Date dateDisposition, byte[] listeImage) {
+	public BienImmobilier(int id, String typeBien, String statut, double revenuCadastre, String description,
+			Date dateSoumission, Date dateDisposition, byte[] listeImage) {
 		super();
 		this.id = id;
 		this.typeBien = typeBien;
 		this.statut = statut;
 		this.revenuCadastre = revenuCadastre;
+		this.description = description;
 		this.dateSoumission = dateSoumission;
 		this.dateDisposition = dateDisposition;
 		this.listeImage = listeImage;
@@ -127,6 +130,14 @@ abstract class BienImmobilier {
 
 	public void setListeImage(byte[] listeImage) {
 		this.listeImage = listeImage;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	@Override

@@ -40,10 +40,10 @@ public class BienImmobilierALouer extends BienImmobilier{
 		super();
 	}
 
-	public BienImmobilierALouer(String typeBien, String statut, double revenuCadastre, Date dateSoumission,
-			Date dateDisposition, byte[] listeImage, double caution, double loyer, double charges, String typeBail,
-			String garniture, Adresse adresse, Proprietaire proprietaire) {
-		super(typeBien, statut, revenuCadastre, dateSoumission, dateDisposition, listeImage);
+	public BienImmobilierALouer(String typeBien, String statut, double revenuCadastre, String description,
+			Date dateSoumission, Date dateDisposition, byte[] listeImage, double caution, double loyer, double charges,
+			String typeBail, String garniture, Adresse adresse, Proprietaire proprietaire) {
+		super(typeBien, statut, revenuCadastre, description, dateSoumission, dateDisposition, listeImage);
 		this.caution = caution;
 		this.loyer = loyer;
 		this.charges = charges;
@@ -53,10 +53,10 @@ public class BienImmobilierALouer extends BienImmobilier{
 		this.proprietaire = proprietaire;
 	}
 
-	public BienImmobilierALouer(int id, String typeBien, String statut, double revenuCadastre, Date dateSoumission,
-			Date dateDisposition, byte[] listeImage, double caution, double loyer, double charges, String typeBail,
-			String garniture, Adresse adresse, Proprietaire proprietaire) {
-		super(id, typeBien, statut, revenuCadastre, dateSoumission, dateDisposition, listeImage);
+	public BienImmobilierALouer(int id, String typeBien, String statut, double revenuCadastre, String description,
+			Date dateSoumission, Date dateDisposition, byte[] listeImage, double caution, double loyer, double charges,
+			String typeBail, String garniture, Adresse adresse, Proprietaire proprietaire) {
+		super(id, typeBien, statut, revenuCadastre, description, dateSoumission, dateDisposition, listeImage);
 		this.caution = caution;
 		this.loyer = loyer;
 		this.charges = charges;
