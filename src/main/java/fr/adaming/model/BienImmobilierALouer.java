@@ -3,6 +3,11 @@ package fr.adaming.model;
 import java.util.Arrays;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="biensimmobilieralouer")
 public class BienImmobilierALouer extends BienImmobilier{
 	
 	//declaration des attributs
@@ -18,29 +23,28 @@ public class BienImmobilierALouer extends BienImmobilier{
 		super();
 	}
 
-
 	public BienImmobilierALouer(String typeBien, String statut, double revenuCadastre, Date dateSoumission,
-			Date dateDisposition, byte[] listeImage, double caution, double loyer, double charges, String typeBail,
-			String garniture) {
-		super(typeBien, statut, revenuCadastre, dateSoumission, dateDisposition, listeImage);
+			Date dateDisposition, byte[] listeImage, Adresse adresse, Proprietaire proprietaire, double caution,
+			double loyer, double charges, String typeBail, String garniture) {
+		super(typeBien, statut, revenuCadastre, dateSoumission, dateDisposition, listeImage, adresse, proprietaire);
 		this.caution = caution;
 		this.loyer = loyer;
 		this.charges = charges;
 		this.typeBail = typeBail;
 		this.garniture = garniture;
 	}
-
 
 	public BienImmobilierALouer(int id, String typeBien, String statut, double revenuCadastre, Date dateSoumission,
-			Date dateDisposition, byte[] listeImage, double caution, double loyer, double charges, String typeBail,
-			String garniture) {
-		super(id, typeBien, statut, revenuCadastre, dateSoumission, dateDisposition, listeImage);
+			Date dateDisposition, byte[] listeImage, Adresse adresse, Proprietaire proprietaire, double caution,
+			double loyer, double charges, String typeBail, String garniture) {
+		super(id, typeBien, statut, revenuCadastre, dateSoumission, dateDisposition, listeImage, adresse, proprietaire);
 		this.caution = caution;
 		this.loyer = loyer;
 		this.charges = charges;
 		this.typeBail = typeBail;
 		this.garniture = garniture;
 	}
+	
 
 	//declaration des getter et setter
 	public double getCaution() {

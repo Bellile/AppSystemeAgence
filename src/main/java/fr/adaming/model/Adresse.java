@@ -1,5 +1,8 @@
 package fr.adaming.model;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Adresse {
 	// attributs
 	private int numRue;
