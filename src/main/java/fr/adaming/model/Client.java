@@ -15,90 +15,113 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="clients")
+@Table(name = "clients")
 public class Client extends Personne {
-	
-	//Attributs
+
+	// Attributs
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id_cl")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_cl")
 	private int id;
 	private boolean acquereur;
 	private String numCompostage;
-	
-	//Associations UML en JAVA
+
+	// Associations UML en JAVA
 	@Embedded
 	private Adresse adresse;
-	
-	@OneToMany(mappedBy="client")
+
+	@OneToMany(mappedBy = "client")
+	private List<Visite> listeVisite;
+
+	@OneToMany(mappedBy = "client")
 	private List<Contrat> contrat;
-	
+
 	@ManyToMany
-	@JoinTable(name="cl_cs", joinColumns=@JoinColumn(name="cl_id"), inverseJoinColumns=@JoinColumn(name="cs_id"))
+	@JoinTable(name = "cl_cs", joinColumns = @JoinColumn(name = "cl_id"), inverseJoinColumns = @JoinColumn(name = "cs_id"))
 	private List<ClasseStandard> listeClasseStandard;
-	
-	//Constructeurs
+
+	// Constructeurs
 	public Client() {
 		super();
 	}
+
 	public Client(String nom, String telPerso, String mail, boolean acquereur, String numCompostage, Adresse adresse) {
 		super(nom, telPerso, mail);
 		this.acquereur = acquereur;
 		this.numCompostage = numCompostage;
 		this.adresse = adresse;
 	}
-	public Client(String nom, String telPerso, String mail, int id, boolean acquereur, String numCompostage, Adresse adresse) {
+
+	public Client(String nom, String telPerso, String mail, int id, boolean acquereur, String numCompostage,
+			Adresse adresse) {
 		super(nom, telPerso, mail);
 		this.id = id;
 		this.acquereur = acquereur;
 		this.numCompostage = numCompostage;
 		this.adresse = adresse;
 	}
-	
-	
-	//Getter/Setter
+
+	// Getter/Setter
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public boolean isAcquereur() {
 		return acquereur;
 	}
+
 	public void setAcquereur(boolean acquereur) {
 		this.acquereur = acquereur;
 	}
+
 	public String getNumCompostage() {
 		return numCompostage;
 	}
+
 	public void setNumCompostage(String numCompostage) {
 		this.numCompostage = numCompostage;
 	}
+
 	public Adresse getAdresse() {
 		return adresse;
 	}
+
 	public void setAdresse(Adresse adresse) {
 		this.adresse = adresse;
 	}
+
 	public List<Contrat> getContrat() {
 		return contrat;
 	}
+
 	public void setContrat(List<Contrat> contrat) {
 		this.contrat = contrat;
 	}
+
 	public List<ClasseStandard> getListeClasseStandard() {
 		return listeClasseStandard;
 	}
+
 	public void setListeClasseStandard(List<ClasseStandard> listeClasseStandard) {
 		this.listeClasseStandard = listeClasseStandard;
 	}
-	
-	//ToString
+
+	public List<Visite> getListeVisite() {
+		return listeVisite;
+	}
+
+	public void setListeVisite(List<Visite> listeVisite) {
+		this.listeVisite = listeVisite;
+	}
+
+	// ToString
 	@Override
 	public String toString() {
 		return "Client [id=" + id + ", acquereur=" + acquereur + ", numCompostage=" + numCompostage + "]";
 	}
-	
-	
+
 }
