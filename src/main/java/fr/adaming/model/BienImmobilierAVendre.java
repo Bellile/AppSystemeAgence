@@ -3,6 +3,11 @@ package fr.adaming.model;
 import java.util.Arrays;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="biensimmobilieravendre")
 public class BienImmobilierAVendre extends BienImmobilier{
 	
 	//declaration des attributs
@@ -13,19 +18,23 @@ public class BienImmobilierAVendre extends BienImmobilier{
 	public BienImmobilierAVendre() {
 		super();
 	}
-	public BienImmobilierAVendre(String typeBien, String statut, double revenuCadastre, Date dateSoumission,
-			Date dateDisposition, byte[] listeImage, double prix, String etat) {
-		super(typeBien, statut, revenuCadastre, dateSoumission, dateDisposition, listeImage);
-		this.prix = prix;
-		this.etat = etat;
-	}
-	public BienImmobilierAVendre(int id, String typeBien, String statut, double revenuCadastre, Date dateSoumission,
-			Date dateDisposition, byte[] listeImage, double prix, String etat) {
-		super(id, typeBien, statut, revenuCadastre, dateSoumission, dateDisposition, listeImage);
-		this.prix = prix;
-		this.etat = etat;
-	}
 	
+	public BienImmobilierAVendre(String typeBien, String statut, double revenuCadastre, Date dateSoumission,
+			Date dateDisposition, byte[] listeImage, Adresse adresse, Proprietaire proprietaire, double prix,
+			String etat) {
+		super(typeBien, statut, revenuCadastre, dateSoumission, dateDisposition, listeImage, adresse, proprietaire);
+		this.prix = prix;
+		this.etat = etat;
+	}
+
+	public BienImmobilierAVendre(int id, String typeBien, String statut, double revenuCadastre, Date dateSoumission,
+			Date dateDisposition, byte[] listeImage, Adresse adresse, Proprietaire proprietaire, double prix,
+			String etat) {
+		super(id, typeBien, statut, revenuCadastre, dateSoumission, dateDisposition, listeImage, adresse, proprietaire);
+		this.prix = prix;
+		this.etat = etat;
+	}
+
 	//declaration des getter et setter
 	public double getPrix() {
 		return prix;
