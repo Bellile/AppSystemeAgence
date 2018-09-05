@@ -16,24 +16,23 @@
 		<class>fr.adaming.model.Adresse</class>
 		<class>fr.adaming.model.Agence</class>
 		<class>fr.adaming.model.BienImmobilier</class>
-		<class>fr.adaming.model.Adresse</class>
-		<class>fr.adaming.model.Adresse</class>
-		<class>fr.adaming.model.Adresse</class>
-		<class>fr.adaming.model.Adresse</class>
-		<class>fr.adaming.model.Adresse</class>
-		<class>fr.adaming.model.Adresse</class>
-		<class>fr.adaming.model.Adresse</class>
-		<class>fr.adaming.model.Adresse</class>
-		<class>fr.adaming.model.Adresse</class>
-		<class>fr.adaming.model.Adresse</class>
-		
+		<class>fr.adaming.model.BienImmobilierALouer</class>
+		<class>fr.adaming.model.BienImmobilierAVendre</class>
+		<class>fr.adaming.model.ClasseStandart</class>
+		<class>fr.adaming.model.Client</class>
+		<class>fr.adaming.model.Contrat</class>
+		<class>fr.adaming.model.Personne</class>
+		<class>fr.adaming.model.Proprietaire</class>
+		<class>fr.adaming.model.Responsable</class>
+		<class>fr.adaming.model.Visite</class>
 
 
 		<!-- spécifier les infos de la connection à la bd -->
 
 		<properties>
 
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/db_appSystemeAgence?createDatabaseIfNotExist=true" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/db_appSystemeAgence?createDatabaseIfNotExist=true" />
 			<property name="javax.persistence.jdbc.user" value="root" />
 			<property name="javax.persistence.jdbc.password" value="root" />
 
