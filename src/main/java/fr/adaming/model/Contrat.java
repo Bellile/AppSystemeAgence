@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,6 +25,10 @@ public class Contrat {
 
 	// associations uml en java
 
+	@ManyToOne
+	@JoinColumn(name="cl_id", referencedColumnName="id_cl")
+	private Client client;
+	
 	// constructeurs
 
 	public Contrat() {

@@ -1,10 +1,12 @@
 package fr.adaming.model;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,8 +22,11 @@ public class Agence {
 
 	// association uml en java
 	
+	@OneToMany(mappedBy="agence")
+	private Responsable responsable;
 	
-	
+	@Embedded
+	private Adresse adresse;
 
 	// constructeurs
 
