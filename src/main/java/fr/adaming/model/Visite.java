@@ -33,8 +33,12 @@ public class Visite {
 	private Client client;
 	
 	@ManyToOne
-	@JoinColumn(name="b_id", referencedColumnName="id_b")
-	private BienImmobilier bienImmobilier;
+	@JoinColumn(name="bl_id", referencedColumnName="id_b")
+	private BienImmobilierALouer bienImmobilierALouer;
+	
+	@ManyToOne
+	@JoinColumn(name="bv_id", referencedColumnName="id_b")
+	private BienImmobilierAVendre bienImmobilierAVendre;
 	
 	@ManyToOne
 	@JoinColumn(name="r_id", referencedColumnName="id_r")
@@ -83,14 +87,6 @@ public class Visite {
 		this.client = client;
 	}
 
-	public BienImmobilier getBienImmobilier() {
-		return bienImmobilier;
-	}
-
-	public void setBienImmobilier(BienImmobilier bienImmobilier) {
-		this.bienImmobilier = bienImmobilier;
-	}
-
 	public Responsable getResponsable() {
 		return responsable;
 	}
@@ -99,7 +95,21 @@ public class Visite {
 		this.responsable = responsable;
 	}
 	
-	
+	public BienImmobilierALouer getBienImmobilierALouer() {
+		return bienImmobilierALouer;
+	}
+
+	public void setBienImmobilierALouer(BienImmobilierALouer bienImmobilierALouer) {
+		this.bienImmobilierALouer = bienImmobilierALouer;
+	}
+
+	public BienImmobilierAVendre getBienImmobilierAVendre() {
+		return bienImmobilierAVendre;
+	}
+
+	public void setBienImmobilierAVendre(BienImmobilierAVendre bienImmobilierAVendre) {
+		this.bienImmobilierAVendre = bienImmobilierAVendre;
+	}
 	
 	
 	// to string

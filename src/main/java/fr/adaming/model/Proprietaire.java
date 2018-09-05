@@ -27,7 +27,10 @@ public class Proprietaire extends Personne {
 	private Adresse adresse;
 	
 	@OneToMany(mappedBy="proprietaire")
-	private List<BienImmobilier> listeBienImmobilier;
+	private List<BienImmobilierAVendre> listeBienImmobilierAVendre;
+	
+	@OneToMany(mappedBy="proprietaire")
+	private List<BienImmobilierALouer> listeBienImmobilierALouer;
 	
 	//Constructeurs
 	public Proprietaire() {
@@ -68,11 +71,18 @@ public class Proprietaire extends Personne {
 	public void setAdresse(Adresse adresse) {
 		this.adresse = adresse;
 	}
-	public List<BienImmobilier> getListeBienImmobilier() {
-		return listeBienImmobilier;
+
+	public List<BienImmobilierAVendre> getListeBienImmobilierAVendre() {
+		return listeBienImmobilierAVendre;
 	}
-	public void setListeBienImmobilier(List<BienImmobilier> listeBienImmobilier) {
-		this.listeBienImmobilier = listeBienImmobilier;
+	public void setListeBienImmobilierAVendre(List<BienImmobilierAVendre> listeBienImmobilierAVendre) {
+		this.listeBienImmobilierAVendre = listeBienImmobilierAVendre;
+	}
+	public List<BienImmobilierALouer> getListeBienImmobilierALouer() {
+		return listeBienImmobilierALouer;
+	}
+	public void setListeBienImmobilierALouer(List<BienImmobilierALouer> listeBienImmobilierALouer) {
+		this.listeBienImmobilierALouer = listeBienImmobilierALouer;
 	}
 	@Override
 	public String toString() {

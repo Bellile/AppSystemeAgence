@@ -26,8 +26,11 @@ public class ClasseStandard {
 	private double superficieMin;
 	
 	// transfo de l'association
-	@OneToMany(mappedBy="bienImmobilier")
-	private List<BienImmobilier> listeBienImmobilier;
+	@OneToMany(mappedBy="classeStandard")
+	private List<BienImmobilierAVendre> listeBienImmobilierVendre;
+	
+	@OneToMany(mappedBy="classeStandard")
+	private List<BienImmobilierALouer> listeBienImmobilierLouer;
 	
 	@ManyToMany(mappedBy="listeClasseStandard")
 	private List<Client> listeClient;
@@ -84,17 +87,24 @@ public class ClasseStandard {
 	public void setSuperficieMin(double superficieMin) {
 		this.superficieMin = superficieMin;
 	}
-	public List<BienImmobilier> getListeBienImmobilier() {
-		return listeBienImmobilier;
-	}
-	public void setListeBienImmobilier(List<BienImmobilier> listeBienImmobilier) {
-		this.listeBienImmobilier = listeBienImmobilier;
-	}
 	public List<Client> getListeClient() {
 		return listeClient;
 	}
 	public void setListeClient(List<Client> listeClient) {
 		this.listeClient = listeClient;
+	}
+	
+	public List<BienImmobilierAVendre> getListeBienImmobilierVendre() {
+		return listeBienImmobilierVendre;
+	}
+	public void setListeBienImmobilierVendre(List<BienImmobilierAVendre> listeBienImmobilierVendre) {
+		this.listeBienImmobilierVendre = listeBienImmobilierVendre;
+	}
+	public List<BienImmobilierALouer> getListeBienImmobilierLouer() {
+		return listeBienImmobilierLouer;
+	}
+	public void setListeBienImmobilierLouer(List<BienImmobilierALouer> listeBienImmobilierLouer) {
+		this.listeBienImmobilierLouer = listeBienImmobilierLouer;
 	}
 	// toString
 	@Override
