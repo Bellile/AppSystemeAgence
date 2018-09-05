@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "visites")
@@ -20,6 +22,7 @@ public class Visite {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_v")
 	private int id;
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateHeure;
 	
 

@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "contrats")
@@ -21,6 +23,7 @@ public class Contrat {
 	@Column(name = "id_co")
 	private int id;
 	private String type;
+	@Temporal(TemporalType.DATE)
 	private Date dateAcquisition;
 
 	// associations uml en java
