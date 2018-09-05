@@ -1,13 +1,27 @@
 package fr.adaming.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "agences")
 public class Agence {
 
 	// attribus
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_a")
 	private int id;
 	private String nom;
 
 	// association uml en java
+	
+	
+	
 
 	// constructeurs
 
@@ -44,8 +58,8 @@ public class Agence {
 		this.nom = nom;
 	}
 
-	//to string
-	
+	// to string
+
 	@Override
 	public String toString() {
 		return "Agence [id=" + id + ", nom=" + nom + "]";

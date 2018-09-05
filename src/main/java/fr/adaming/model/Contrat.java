@@ -2,10 +2,21 @@ package fr.adaming.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "contrats")
 public class Contrat {
 
 	// attribus
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_co")
 	private int id;
 	private String type;
 	private Date dateAcquisition;
@@ -57,8 +68,8 @@ public class Contrat {
 		this.dateAcquisition = dateAcquisition;
 	}
 
-	//to string
-	
+	// to string
+
 	@Override
 	public String toString() {
 		return "Contrat [id=" + id + ", type=" + type + ", dateAcquisition=" + dateAcquisition + "]";
