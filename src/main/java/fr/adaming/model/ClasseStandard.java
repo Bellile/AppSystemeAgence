@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -26,6 +28,9 @@ public class ClasseStandard {
 	// transfo de l'association
 	@OneToMany(mappedBy="bienImmobilier")
 	private List<BienImmobilier> listeBienImmobilier;
+	
+	@ManyToMany(mappedBy="listeClasseStandard")
+	private List<Client> listeClient;
 	
 	
 	// constructeurs
@@ -79,7 +84,18 @@ public class ClasseStandard {
 	public void setSuperficieMin(double superficieMin) {
 		this.superficieMin = superficieMin;
 	}
-	
+	public List<BienImmobilier> getListeBienImmobilier() {
+		return listeBienImmobilier;
+	}
+	public void setListeBienImmobilier(List<BienImmobilier> listeBienImmobilier) {
+		this.listeBienImmobilier = listeBienImmobilier;
+	}
+	public List<Client> getListeClient() {
+		return listeClient;
+	}
+	public void setListeClient(List<Client> listeClient) {
+		this.listeClient = listeClient;
+	}
 	// toString
 	@Override
 	public String toString() {
