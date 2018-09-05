@@ -15,12 +15,12 @@
 
 
 	<!-- déclaration du bean DataSource -->
-	<bean id="dataSourceBean1"
+	<bean id="dataSourceBean"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="${jdbc.driver}" />
-		<property name="url" value="${jdbc.url}" />
-		<property name="username" value="${jdbc.user}" />
-		<property name="password" value="${jdbc.mdp}" />
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/db_appSystemeAgence" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
 	</bean>
 
 	<!-- *******1:configuration de la partie autorisation -->
@@ -49,7 +49,7 @@
 	<security:authentication-manager>
 		<security:authentication-provider>
 			<security:jdbc-user-service
-				data-source-ref="dataSourceBean1"
+				data-source-ref="dataSourceBean"
 				users-by-username-query="SELECT mail, mdp, active, role_id FROM admins WHERE mail=?"
 				authorities-by-username-query="SELECT a.mail, r.roleName FROM admins a, roles r WHERE a.role_id=r.id_role AND a.mail=?" />
 
