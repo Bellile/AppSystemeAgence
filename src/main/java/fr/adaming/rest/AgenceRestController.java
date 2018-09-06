@@ -14,7 +14,7 @@ import fr.adaming.model.Agence;
 import fr.adaming.service.IAgenceService;
 
 @RestController
-@RequestMapping("/agence")
+@RequestMapping("/wsA")
 public class AgenceRestController {
 
 	//transformation de l'association
@@ -41,7 +41,7 @@ public class AgenceRestController {
 		return agenceService.updateAgence(a);
 	}
 	
-	@RequestMapping(value="/supprAgence", method=RequestMethod.DELETE)
+	@RequestMapping(value="/supprAgence/{pId}", method=RequestMethod.DELETE)
 	public void deleteAg(@PathVariable("pId") int id) {
 		agenceService.deleteAgence(id);
 	}
