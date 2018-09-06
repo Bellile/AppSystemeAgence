@@ -1,5 +1,6 @@
 package fr.adaming.model;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -13,7 +14,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @MappedSuperclass
-abstract class BienImmobilier {
+abstract class BienImmobilier implements Serializable{
 	
 	//declaration des attributs
 	@Id
