@@ -10,7 +10,7 @@ import fr.adaming.dao.IDaoGeneric;
 import fr.adaming.dao.IResponsableDao;
 import fr.adaming.model.Responsable;
 
-@Service("responsableService")
+@Service
 @Transactional
 public class ResponsableServiceImpl implements IResponsableService{
 	
