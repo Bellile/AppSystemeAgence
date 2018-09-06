@@ -38,7 +38,7 @@ public class ProprietaireRestController {
 
 	@RequestMapping(name="/updateP", method=RequestMethod.PUT, produces = "application/json", consumes = "application/json")
 	public Proprietaire updateProprietaire(@RequestBody Proprietaire p){
-		return pService.update(p)
+		return pService.update(p);
 	}
 
 	@RequestMapping(name = "/deleteP", method = RequestMethod.DELETE)

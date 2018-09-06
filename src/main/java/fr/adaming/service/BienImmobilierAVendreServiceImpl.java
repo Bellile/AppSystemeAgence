@@ -14,42 +14,46 @@ import fr.adaming.model.BienImmobilierAVendre;
 public class BienImmobilierAVendreServiceImpl implements IBienImmobilierAVendreService {
 
 	@Autowired
-	private IDaoGeneric<BienImmobilierAVendre, Integer> bvService;
+	private IDaoGeneric<BienImmobilierAVendre> bvDao;
 
-	// setter
-
-	public void setBvService(IDaoGeneric<BienImmobilierAVendre, Integer> bvService) {
-		this.bvService = bvService;
+	//setter pour l'injection dépendance
+	public void setBvDao(IDaoGeneric<BienImmobilierAVendre> bvDao) {
+		this.bvDao = bvDao;
 	}
 
 	@Override
-	public List<Class<BienImmobilierAVendre>> getAll() {
-
-		return bvService.getAll();
-	}
-
-	@Override
-	public Class<BienImmobilierAVendre> getById(Integer id) {
-	
-		return bvService.getById(id);
-	}
-
-	@Override
-	public Class<BienImmobilierAVendre> add(BienImmobilierAVendre bv) {
+	public List<BienImmobilierAVendre> getAll() {
 		
-		return bvService.add(bv);
+		return bvDao.getAll();
 	}
 
 	@Override
-	public Class<BienImmobilierAVendre> update(BienImmobilierAVendre bv) {
+	public BienImmobilierAVendre getById(int id) {
 	
-		return bvService.update(bv);
+		return bvDao.getById(id);
 	}
 
 	@Override
-	public int delete(BienImmobilierAVendre bv) {
+	public BienImmobilierAVendre add(BienImmobilierAVendre bv) {
 		
-		return bvService.delete(bv);
+		return bvDao.add(bv);
 	}
+
+	@Override
+	public BienImmobilierAVendre update(BienImmobilierAVendre bv) {
+		
+		return bvDao.update(bv);
+	}
+
+	@Override
+	public void delete(int id) {
+		bvDao.delete(id);
+		
+	}
+	
+	
+	
+
+	
 
 }

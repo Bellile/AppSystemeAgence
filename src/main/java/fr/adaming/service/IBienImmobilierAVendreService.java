@@ -6,11 +6,11 @@ import fr.adaming.model.BienImmobilierAVendre;
 
 public interface IBienImmobilierAVendreService {
 
-	public List<Class<BienImmobilierAVendre>> getAll();
-	public Class<BienImmobilierAVendre> getById(Integer id);
-	public Class<BienImmobilierAVendre> add(BienImmobilierAVendre bv);
-	public Class<BienImmobilierAVendre> update(BienImmobilierAVendre bv);
-	public int delete(BienImmobilierAVendre bv);
+	public List<BienImmobilierAVendre> getAll();
+	public BienImmobilierAVendre getById(int id);
+	public BienImmobilierAVendre add(BienImmobilierAVendre bv);
+	public BienImmobilierAVendre update(BienImmobilierAVendre bv);
+	public void delete(int id);
 	
 	
 }

@@ -14,42 +14,45 @@ import fr.adaming.model.BienImmobilierALouer;
 public class BienImmobilierALouerServiceImpl implements IBienImmobilierALouerService {
 
 	@Autowired
-	private IDaoGeneric<BienImmobilierALouer, Integer> blService;
+	private IDaoGeneric<BienImmobilierALouer> blDao;
 
-	// setter
-
-	public void setBlService(IDaoGeneric<BienImmobilierALouer, Integer> blService) {
-		this.blService = blService;
+	//setter pour l'injection dépendance 
+	public void setBlDao(IDaoGeneric<BienImmobilierALouer> blDao) {
+		this.blDao = blDao;
 	}
 
 	@Override
-	public List<Class<BienImmobilierALouer>> getAll() {
-
-		return blService.getAll();
+	public List<BienImmobilierALouer> getAll() {
+		
+		return blDao.getAll();
 	}
 
 	@Override
-	public Class<BienImmobilierALouer> getById(Integer id) {
-
-		return blService.getById(id);
+	public BienImmobilierALouer getById(int id) {
+		
+		return blDao.getById(id);
 	}
 
 	@Override
-	public Class<BienImmobilierALouer> add(BienImmobilierALouer bl) {
-
-		return blService.add(bl);
+	public BienImmobilierALouer add(BienImmobilierALouer bl) {
+		
+		return blDao.add(bl);
 	}
 
 	@Override
-	public Class<BienImmobilierALouer> update(BienImmobilierALouer bl) {
-
-		return blService.update(bl);
+	public BienImmobilierALouer update(BienImmobilierALouer bl) {
+		
+		return blDao.update(bl);
 	}
 
 	@Override
-	public int delete(BienImmobilierALouer bl) {
-
-		return blService.delete(bl);
+	public void delete(int id) {
+		blDao.delete(id);
+		
 	}
+	
+	
+
+	
 
 }

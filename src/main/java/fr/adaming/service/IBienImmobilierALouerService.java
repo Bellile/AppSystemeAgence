@@ -7,10 +7,10 @@ import fr.adaming.model.BienImmobilierALouer;
 public interface IBienImmobilierALouerService {
 	
 	
-	public List<Class<BienImmobilierALouer>> getAll();
-	public Class<BienImmobilierALouer> getById(Integer id);
-	public Class<BienImmobilierALouer> add(BienImmobilierALouer bl);
-	public Class<BienImmobilierALouer> update(BienImmobilierALouer bl);
-	public int delete(BienImmobilierALouer bl);
+	public List<BienImmobilierALouer> getAll();
+	public BienImmobilierALouer getById(int id);
+	public BienImmobilierALouer add(BienImmobilierALouer bl);
+	public BienImmobilierALouer update(BienImmobilierALouer bl);
+	public void delete(int id);
 
 }
