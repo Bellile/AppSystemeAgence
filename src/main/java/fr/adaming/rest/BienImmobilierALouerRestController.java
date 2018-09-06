@@ -14,7 +14,7 @@ import fr.adaming.dao.IBienImmobilierALouerDao;
 import fr.adaming.model.BienImmobilierALouer;
 
 @RestController
-@RequestMapping("/wsbl")
+@RequestMapping("/wsBl")
 public class BienImmobilierALouerRestController {
 	
 	@Autowired
@@ -25,30 +25,26 @@ public class BienImmobilierALouerRestController {
 		return blService.getAll();
 	}
 	
-	@RequestMapping(value="/getBL",  method = RequestMethod.GET, produces = "application/json" )
+	@RequestMapping(value="/rechercheBL",  method = RequestMethod.GET, produces = "application/json" )
 	public BienImmobilierALouer getBL(@RequestParam("pId") int id){
-		
 		return blService.getById(id);
 	}
 	
 	
-	@RequestMapping(value="/addBL", method = RequestMethod.POST, produces = "application/json", consumes = "application/json" )
+	@RequestMapping(value="/ajoutBL", method = RequestMethod.POST, produces = "application/json", consumes = "application/json" )
 	public BienImmobilierALouer addBL(@RequestBody BienImmobilierALouer bl){
 		return blService.add(bl);
 	}
 	
-	@RequestMapping(value="/updateBL",  method=RequestMethod.PUT, produces = "application/json", consumes = "application/json")
+	@RequestMapping(value="/modifBL",  method=RequestMethod.PUT, produces = "application/json", consumes = "application/json")
 	public BienImmobilierALouer updateBL(@RequestBody BienImmobilierALouer bl){
 		return blService.update(bl);
 	}
 	
-	@RequestMapping(value="/deleteBL/{pId}", method = RequestMethod.DELETE)
-	public void deleteBL(@PathVariable int id){
+	@RequestMapping(value="/supprBL/{pId}", method = RequestMethod.DELETE)
+	public void deleteBL(@PathVariable("pId") int id){
 		blService.delete(id);
 	}
-	
-	
-	
-	
+
 
 }

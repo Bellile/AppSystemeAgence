@@ -14,7 +14,7 @@ import fr.adaming.model.BienImmobilierAVendre;
 import fr.adaming.service.IBienImmobilierAVendreService;
 
 @RestController
-@RequestMapping("/wsbv")
+@RequestMapping("/wsBv")
 public class BienImmobilierAVendreRestController {
 	
 	@Autowired
@@ -25,23 +25,23 @@ public class BienImmobilierAVendreRestController {
 		return bvService.getAll();
 	}
 	
-	@RequestMapping(value="/getBV", method=RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value="/rechercheBV", method=RequestMethod.GET, produces = "application/json")
 	public BienImmobilierAVendre getBV(@RequestParam ("pId") int id){
 		return bvService.getById(id);
 	}
 	
-	@RequestMapping(value="/addBV",  method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
+	@RequestMapping(value="/ajoutBV",  method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
 	public BienImmobilierAVendre addBV(@RequestBody BienImmobilierAVendre bv){
 		return bvService.add(bv);
 	}
 	
-	@RequestMapping(value="/updateBV", method = RequestMethod.PUT, produces = "application/json", consumes = "application/json")
+	@RequestMapping(value="/modifBV", method = RequestMethod.PUT, produces = "application/json", consumes = "application/json")
 	public BienImmobilierAVendre updateBV(@RequestBody BienImmobilierAVendre bv){
 		return bvService.update(bv);
 	}
 	
-	@RequestMapping(value="deleteBV/{pId}", method=RequestMethod.DELETE)
-	public void delteBV(@PathVariable int id){
+	@RequestMapping(value="supprBV/{pId}", method=RequestMethod.DELETE)
+	public void delteBV(@PathVariable("pId") int id){
 		bvService.delete(id);
 	}
 	
