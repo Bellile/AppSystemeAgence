@@ -37,8 +37,8 @@ public class Responsable extends Personne{
 	@JoinColumn(name="a_id", referencedColumnName="id_a")
 	private Agence agence;
 	
-	@JsonIgnore
-	@OneToMany(mappedBy="responsable")
+	@Fetch(FetchMode.SELECT)
+	@OneToMany(mappedBy="responsable", fetch = FetchType.EAGER)
 	private List<Visite> listeVisite;
 	
 	//Constructeurs
@@ -88,7 +88,7 @@ public class Responsable extends Personne{
 	public void setAgence(Agence agence) {
 		this.agence = agence;
 	}
-
+	@JsonIgnoreProperties({"client","bienImmobilierALouer","bienImmobilierAVendre","responsable"})
 	public List<Visite> getListeVisite() {
 		return listeVisite;
 	}

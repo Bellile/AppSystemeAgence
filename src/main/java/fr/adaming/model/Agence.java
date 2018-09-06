@@ -31,8 +31,9 @@ public class Agence implements Serializable{
 	private String nom;
 
 	// association uml en java
-	@JsonIgnore
-	@OneToMany(mappedBy="agence")
+
+	@Fetch(FetchMode.SELECT)
+	@OneToMany(mappedBy="agence", fetch = FetchType.EAGER)
 	private List<Responsable> listeResponsable;
 	
 	@Embedded
@@ -61,6 +62,8 @@ public class Agence implements Serializable{
 	public int getId() {
 		return id;
 	}
+	
+	@JsonIgnoreProperties("agence")
 	public List<Responsable> getListeResponsable() {
 		return listeResponsable;
 	}

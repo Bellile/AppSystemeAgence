@@ -37,17 +37,15 @@ public class Client extends Personne {
 	@Embedded
 	private Adresse adresse;
 
-	@JsonIgnore
-	@OneToMany(mappedBy = "client")	
+	@Fetch(FetchMode.SELECT)
+	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER)	
 	private List<Visite> listeVisite;
 
-	@JsonIgnore
-	@OneToMany(mappedBy = "client")
+	@Fetch(FetchMode.SELECT)
+	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
 	private List<Contrat> contrat;
 
-	@ManyToMany
-	@JoinTable(name = "cl_cs", joinColumns = @JoinColumn(name = "cl_id"), inverseJoinColumns = @JoinColumn(name = "cs_id"))
-	private List<ClasseStandard> listeClasseStandard;
+
 
 	// Constructeurs
 	public Client() {
@@ -103,6 +101,8 @@ public class Client extends Personne {
 		this.adresse = adresse;
 	}
 	
+	
+	@JsonIgnoreProperties("client")
 	public List<Contrat> getContrat() {
 		return contrat;
 	}
@@ -111,16 +111,9 @@ public class Client extends Personne {
 		this.contrat = contrat;
 	}
 	
-	
-	public List<ClasseStandard> getListeClasseStandard() {
-		return listeClasseStandard;
-	}
-
-	public void setListeClasseStandard(List<ClasseStandard> listeClasseStandard) {
-		this.listeClasseStandard = listeClasseStandard;
-	}
 
 	
+	@JsonIgnoreProperties({"client","bienImmobilierALouer","bienImmobilierAVendre","responsable"})
 	public List<Visite> getListeVisite() {
 		return listeVisite;
 	}

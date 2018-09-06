@@ -35,18 +35,15 @@ public class ClasseStandard implements Serializable {
 
 	// transfo de l'association
 
-	// @Fetch(FetchMode.SELECT)
-	@JsonIgnore
-	@OneToMany(mappedBy = "classeStandard")
+	 @Fetch(FetchMode.SELECT)
+	@OneToMany(mappedBy = "classeStandard", fetch = FetchType.EAGER)
 	private List<BienImmobilierAVendre> listeBienImmobilierVendre;
 
-	@JsonIgnore
-	@OneToMany(mappedBy = "classeStandard")
+	 @Fetch(FetchMode.SELECT)
+	@OneToMany(mappedBy = "classeStandard", fetch = FetchType.EAGER)
 	private List<BienImmobilierALouer> listeBienImmobilierLouer;
 
-	@JsonIgnore
-	@ManyToMany(mappedBy = "listeClasseStandard")
-	private List<Client> listeClient;
+
 
 	// constructeurs
 	public ClasseStandard() {
@@ -111,22 +108,17 @@ public class ClasseStandard implements Serializable {
 		this.superficieMin = superficieMin;
 	}
 
-	public List<Client> getListeClient() {
-		return listeClient;
-	}
-
-	public void setListeClient(List<Client> listeClient) {
-		this.listeClient = listeClient;
-	}
-
+	@JsonIgnoreProperties({"proprietaire","classeStandard"})
 	public List<BienImmobilierAVendre> getListeBienImmobilierVendre() {
 		return listeBienImmobilierVendre;
 	}
+
 
 	public void setListeBienImmobilierVendre(List<BienImmobilierAVendre> listeBienImmobilierVendre) {
 		this.listeBienImmobilierVendre = listeBienImmobilierVendre;
 	}
 
+	@JsonIgnoreProperties({"proprietaire","classeStandard"})
 	public List<BienImmobilierALouer> getListeBienImmobilierLouer() {
 		return listeBienImmobilierLouer;
 	}
