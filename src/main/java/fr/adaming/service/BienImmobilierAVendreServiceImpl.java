@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import fr.adaming.dao.IBienImmobilierAVendreDao;
 import fr.adaming.dao.IDaoGeneric;
 import fr.adaming.model.BienImmobilierAVendre;
 
@@ -14,10 +15,10 @@ import fr.adaming.model.BienImmobilierAVendre;
 public class BienImmobilierAVendreServiceImpl implements IBienImmobilierAVendreService {
 
 	@Autowired
-	private IDaoGeneric<BienImmobilierAVendre> bvDao;
+	private IBienImmobilierAVendreDao bvDao;
 
 	//setter pour l'injection dépendance
-	public void setBvDao(IDaoGeneric<BienImmobilierAVendre> bvDao) {
+	public void setBvDao(IBienImmobilierAVendreDao bvDao) {
 		this.bvDao = bvDao;
 	}
 

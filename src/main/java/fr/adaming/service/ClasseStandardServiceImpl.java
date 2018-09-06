@@ -17,6 +17,11 @@ public class ClasseStandardServiceImpl implements IClasseStandardService{
 	//Transformation de l'association UML en java
 	@Autowired
 	private IClasseStandardDao csDao;
+	
+	//setter
+	public void setCsDao(IClasseStandardDao csDao) {
+		this.csDao = csDao;
+	}
 
 	@Override
 	public List<ClasseStandard> getAll() {

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import fr.adaming.dao.IBienImmobilierALouerDao;
 import fr.adaming.dao.IDaoGeneric;
 import fr.adaming.model.BienImmobilierALouer;
 
@@ -14,10 +15,11 @@ import fr.adaming.model.BienImmobilierALouer;
 public class BienImmobilierALouerServiceImpl implements IBienImmobilierALouerService {
 
 	@Autowired
-	private IDaoGeneric<BienImmobilierALouer> blDao;
+	private IBienImmobilierALouerDao blDao;
 
-	//setter pour l'injection dépendance 
-	public void setBlDao(IDaoGeneric<BienImmobilierALouer> blDao) {
+	
+	//setter
+	public void setBlDao(IBienImmobilierALouerDao blDao) {
 		this.blDao = blDao;
 	}
 
