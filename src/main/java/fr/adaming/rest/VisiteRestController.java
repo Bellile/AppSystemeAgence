@@ -25,23 +25,23 @@ public class VisiteRestController {
 		return vService.getAll();
 	}
 
-	@RequestMapping(value = "/getVisite", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/rechercher", method = RequestMethod.GET, produces = "application/json")
 	public Visite getVisiteById(@RequestParam("pId") int id) {
 		return vService.getById(id);
 	}
 
-	@RequestMapping(value = "/addVisite", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
+	@RequestMapping(value = "/ajout", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
 	public Visite addVisite(@RequestBody Visite v) {
 		return vService.add(v);
 
 	}
 
-	@RequestMapping(value="/updateVisite", method=RequestMethod.PUT, produces = "application/json", consumes = "application/json")
+	@RequestMapping(value="/modif", method=RequestMethod.PUT, produces = "application/json", consumes = "application/json")
 	public Visite updateVisite(@RequestBody Visite v){
 		return vService.update(v) ;
 	}
 
-	@RequestMapping(value = "/deleteVisite/{pId}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/suppr/{pId}", method = RequestMethod.DELETE)
 	public void deleteVisite(@PathVariable("pId") int id) {
 		vService.delete(id);
 	}

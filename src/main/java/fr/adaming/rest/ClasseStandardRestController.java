@@ -15,34 +15,34 @@ import fr.adaming.service.IClasseStandardService;
 
 
 @RestController
-@RequestMapping("/csws")
+@RequestMapping("/wsCS")
 public class ClasseStandardRestController {
 
 	@Autowired
 	IClasseStandardService csService;
 
-	@RequestMapping(value = "/listeCS", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/liste", method = RequestMethod.GET, produces = "application/json")
 	public List<ClasseStandard> getClasseStandard() {
 		return csService.getAll();
 	}
 	
-	@RequestMapping(value = "/getCS", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/recherche", method = RequestMethod.GET, produces = "application/json")
 	public ClasseStandard getClasseStandardById(@RequestParam("pId") int id) {
 		return csService.getById(id);
 	}
 
-	@RequestMapping(value = "/addCS", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
+	@RequestMapping(value = "/ajout", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
 	public ClasseStandard addClasseStandard(@RequestBody ClasseStandard cs) {
 		return csService.add(cs);
 
 	}
 
-	@RequestMapping(value="/updateCS", method=RequestMethod.PUT, produces = "application/json", consumes = "application/json")
+	@RequestMapping(value="/modif", method=RequestMethod.PUT, produces = "application/json", consumes = "application/json")
 	public ClasseStandard updateClasseStandard(@RequestBody ClasseStandard cs){
 		return csService.update(cs) ;
 	}
 
-	@RequestMapping(value = "/deleteCS/{pId}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/suppr/{pId}", method = RequestMethod.DELETE)
 	public void deleteVClasseStandard(@PathVariable("pId") int id) {
 		csService.delete(id);
 	}

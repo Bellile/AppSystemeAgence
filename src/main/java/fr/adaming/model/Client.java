@@ -111,7 +111,7 @@ public class Client extends Personne {
 		this.contrat = contrat;
 	}
 	
-	@JsonIgnoreProperties("client")
+	
 	public List<ClasseStandard> getListeClasseStandard() {
 		return listeClasseStandard;
 	}
@@ -120,6 +120,7 @@ public class Client extends Personne {
 		this.listeClasseStandard = listeClasseStandard;
 	}
 
+	@JsonIgnoreProperties("client")
 	public List<Visite> getListeVisite() {
 		return listeVisite;
 	}
