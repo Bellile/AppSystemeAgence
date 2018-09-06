@@ -6,11 +6,18 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "agences")
@@ -24,8 +31,8 @@ public class Agence implements Serializable{
 	private String nom;
 
 	// association uml en java
-	
-	@OneToMany(mappedBy="agence")
+	@Fetch(FetchMode.SELECT)
+	@OneToMany(mappedBy="agence", fetch=FetchType.EAGER)
 	private List<Responsable> listeResponsable;
 	
 	@Embedded
@@ -37,23 +44,24 @@ public class Agence implements Serializable{
 		super();
 	}
 
-	public Agence(int id, String nom) {
+	public Agence(String nom, Adresse adresse) {
+		super();
+		this.nom = nom;
+		this.adresse = adresse;
+	}
+
+	public Agence(int id, String nom, Adresse adresse) {
 		super();
 		this.id = id;
 		this.nom = nom;
-	}
-
-	public Agence(String nom) {
-		super();
-		this.nom = nom;
+		this.adresse = adresse;
 	}
 
 	// getter et setter	
-
 	public int getId() {
 		return id;
 	}
-
+	@JsonIgnoreProperties("agence")
 	public List<Responsable> getListeResponsable() {
 		return listeResponsable;
 	}
