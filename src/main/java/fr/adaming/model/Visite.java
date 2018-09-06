@@ -61,6 +61,17 @@ public class Visite implements Serializable{
 		super();
 		this.dateHeure = dateHeure;
 	}
+	
+
+	public Visite(Date dateHeure, Client client, BienImmobilierALouer bienImmobilierALouer,
+			BienImmobilierAVendre bienImmobilierAVendre, Responsable responsable) {
+		super();
+		this.dateHeure = dateHeure;
+		this.client = client;
+		this.bienImmobilierALouer = bienImmobilierALouer;
+		this.bienImmobilierAVendre = bienImmobilierAVendre;
+		this.responsable = responsable;
+	}
 
 	// getter et setter
 
