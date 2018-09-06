@@ -6,10 +6,17 @@ import java.util.List;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="biensimmobilieralouer")
@@ -25,11 +32,15 @@ public class BienImmobilierALouer extends BienImmobilier{
 	//transformation des associations UML en JAVA
 	@Embedded
 	private Adresse adresse;
-	@OneToMany(mappedBy="bienImmobilierALouer")
+	
+	@Fetch(FetchMode.SELECT)
+	@OneToMany(mappedBy="bienImmobilierALouer", fetch=FetchType.EAGER)
 	private List<Visite> listeVisite;
+	
 	@ManyToOne
 	@JoinColumn(name="cs_id", referencedColumnName="id_cs")
 	private ClasseStandard classeStandard;
+	
 	@ManyToOne
 	@JoinColumn(name="p_id", referencedColumnName="id_p")
 	private Proprietaire proprietaire;
@@ -122,6 +133,7 @@ public class BienImmobilierALouer extends BienImmobilier{
 		this.adresse = adresse;
 	}
 
+	@JsonIgnoreProperties("bienImmobilierALouer")
 	public List<Visite> getListeVisite() {
 		return listeVisite;
 	}

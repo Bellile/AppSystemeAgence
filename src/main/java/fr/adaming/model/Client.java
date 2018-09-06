@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +14,12 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "clients")
@@ -30,10 +37,12 @@ public class Client extends Personne {
 	@Embedded
 	private Adresse adresse;
 
-	@OneToMany(mappedBy = "client")
+	@Fetch(FetchMode.SELECT)
+	@OneToMany(mappedBy = "client", fetch=FetchType.EAGER)	
 	private List<Visite> listeVisite;
 
-	@OneToMany(mappedBy = "client")
+	@Fetch(FetchMode.SELECT)
+	@OneToMany(mappedBy = "client", fetch=FetchType.EAGER)
 	private List<Contrat> contrat;
 
 	@ManyToMany
@@ -93,7 +102,7 @@ public class Client extends Personne {
 	public void setAdresse(Adresse adresse) {
 		this.adresse = adresse;
 	}
-
+	@JsonIgnoreProperties("client")
 	public List<Contrat> getContrat() {
 		return contrat;
 	}
@@ -101,7 +110,8 @@ public class Client extends Personne {
 	public void setContrat(List<Contrat> contrat) {
 		this.contrat = contrat;
 	}
-
+	
+	@JsonIgnoreProperties("client")
 	public List<ClasseStandard> getListeClasseStandard() {
 		return listeClasseStandard;
 	}

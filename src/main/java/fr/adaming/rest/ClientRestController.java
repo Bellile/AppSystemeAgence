@@ -44,7 +44,7 @@ public class ClientRestController {
 		return clService.update(cl);
 	}
 	
-	@RequestMapping(value="deleteCL",  method = RequestMethod.DELETE)
+	@RequestMapping(value="deleteCL/{pId}",  method = RequestMethod.DELETE)
 	public void deleteClient(@PathVariable int id){
 		clService.delete(id);
 	}
