@@ -15,31 +15,38 @@ public class VisiteServiceImpl implements IVisiteService{
 
 	//Transformation de l'association UML en java
 	@Autowired
-	private IDaoGeneric<Visite, Integer> vDao;
-	
+	private IDaoGeneric<Visite> vDao;
+
 	@Override
-	public List<Class<Visite>> getAll() {
+	public List<Visite> getAll() {
+		// TODO Auto-generated method stub
 		return vDao.getAll();
 	}
 
 	@Override
-	public Class<Visite> getById(Integer id) {
+	public Visite getById(int id) {
+		// TODO Auto-generated method stub
 		return vDao.getById(id);
 	}
 
 	@Override
-	public Class<Visite> add(Visite v) {
+	public Visite add(Visite v) {
+		// TODO Auto-generated method stub
 		return vDao.add(v);
 	}
 
 	@Override
-	public Class<Visite> update(Visite v) {
+	public Visite update(Visite v) {
+		// TODO Auto-generated method stub
 		return vDao.update(v);
 	}
 
 	@Override
-	public int delete(Visite v) {
-		return vDao.delete(v);
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		vDao.delete(id);
 	}
+	
+
 
 }

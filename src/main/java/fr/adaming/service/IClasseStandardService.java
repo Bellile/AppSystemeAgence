@@ -6,14 +6,14 @@ import fr.adaming.model.ClasseStandard;
 
 public interface IClasseStandardService {
 	
-	public List<Class<ClasseStandard>> getAll();
+	public List<ClasseStandard> getAll();
 	
-	public Class<ClasseStandard> getById(Integer id);
+	public ClasseStandard getById(int id);
 	
-	public Class<ClasseStandard> add(ClasseStandard cs);
+	public ClasseStandard add(ClasseStandard cs);
 	
-	public Class<ClasseStandard> update(ClasseStandard cs);
+	public ClasseStandard update(ClasseStandard cs);
 	
-	public int delete(ClasseStandard cs);
+	public void delete(int id);
 
 }

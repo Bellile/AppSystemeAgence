@@ -6,13 +6,13 @@ import fr.adaming.model.Visite;
 
 public interface IVisiteService {
 
-public List<Class<Visite>> getAll();
+public List<Visite> getAll();
 	
-	public Class<Visite> getById(Integer id);
+	public Visite getById(int id);
 	
-	public Class<Visite> add(Visite v);
+	public Visite add(Visite v);
 	
-	public Class<Visite> update(Visite v);
+	public Visite update(Visite v);
 	
-	public int delete(Visite v);
+	public void delete(int id);
 }

@@ -15,31 +15,38 @@ public class ClasseStandardServiceImpl implements IClasseStandardService{
 	
 	//Transformation de l'association UML en java
 	@Autowired
-	private IDaoGeneric<ClasseStandard, Integer> csDao;
+	private IDaoGeneric<ClasseStandard> csDao;
 
 	@Override
-	public List<Class<ClasseStandard>> getAll() {
+	public List<ClasseStandard> getAll() {
+		// TODO Auto-generated method stub
 		return csDao.getAll();
 	}
 
 	@Override
-	public Class<ClasseStandard> getById(Integer id) {
+	public ClasseStandard getById(int id) {
+		// TODO Auto-generated method stub
 		return csDao.getById(id);
 	}
 
 	@Override
-	public Class<ClasseStandard> add(ClasseStandard cs) {
+	public ClasseStandard add(ClasseStandard cs) {
+		// TODO Auto-generated method stub
 		return csDao.add(cs);
 	}
 
 	@Override
-	public Class<ClasseStandard> update(ClasseStandard cs) {
+	public ClasseStandard update(ClasseStandard cs) {
+		// TODO Auto-generated method stub
 		return csDao.update(cs);
 	}
 
 	@Override
-	public int delete(ClasseStandard cs) {
-		return csDao.delete(cs);
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		csDao.delete(id);
 	}
+
+	
 
 }
