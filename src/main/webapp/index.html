@@ -17,14 +17,22 @@
 
 </head>
 <body ng-app="monApp">
-<nav class="navbar navbar-inverse bg-primary navbar-fixed-top">
-	<ul class="nav nav-pills">
+<nav class="navbar bg-primary navbar-fixed-top">
+	<div class="container-fluid">
+	<ul class="nav navbar-nav bg-info">
 		<li role="presentation"><a href="#!">A</a></li>
 		<li role="presentation"><a href="#!">B</a></li>
 		<li role="presentation"><a href="#!">C</a></li>
 		<li role="presentation"><a href="#!">D</a></li>
 		<li role="presentation"><a href="#!">E</a></li>
 	</ul>
+	<ul class="nav navbar-nav navbar-right">
+	<form class="navbar-form">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-info" type="submit">Search</button>
+    </form>
+    </ul>
+    </div>
 </nav>
 <div class="container">
 	<div ng-view=""></div>
