@@ -33,8 +33,8 @@ public class BienImmobilierALouer extends BienImmobilier{
 	@Embedded
 	private Adresse adresse;
 	
-	@JsonIgnore
-	@OneToMany(mappedBy="bienImmobilierALouer")	
+	@Fetch(FetchMode.SELECT)
+	@OneToMany(mappedBy="bienImmobilierALouer", fetch = FetchType.EAGER)	
 	private List<Visite> listeVisite;
 	
 	@ManyToOne
@@ -133,7 +133,7 @@ public class BienImmobilierALouer extends BienImmobilier{
 		this.adresse = adresse;
 	}
 
-	
+	@JsonIgnoreProperties({"client","bienImmobilierALouer","bienImmobilierAVendre","responsable"})
 	public List<Visite> getListeVisite() {
 		return listeVisite;
 	}
