@@ -30,6 +30,7 @@ public class ResponsableRestController {
 		return rService.getResponsableById(id);
 	}
 	
+	//blabla
 	@RequestMapping(value= "/ajout", method = RequestMethod.POST, produces = "application/json")
 	public Responsable add(@RequestBody Responsable responsable) {
 		return rService.addResponsable(responsable);
