@@ -1,5 +1,6 @@
 package fr.adaming.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -14,7 +15,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="classesstandard")
-public class ClasseStandard {
+public class ClasseStandard implements Serializable{
 	// attributs
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY )
