@@ -42,9 +42,9 @@ public class ProprietaireRestController {
 	}
 
 	@RequestMapping(name = "/deleteP", method = RequestMethod.DELETE)
-	public int deleteProprietaire(@PathVariable("pId") int id) {
+	public void deleteProprietaire(@PathVariable("pId") int id) {
 
-		return pService.delete(p);
+		pService.delete(id);
 	}
 
 }
