@@ -41,7 +41,8 @@ public class ClasseStandard implements Serializable {
 	@OneToMany(mappedBy = "classeStandard", fetch = FetchType.EAGER)
 	private List<BienImmobilierALouer> listeBienImmobilierLouer;
 
-	@ManyToMany(mappedBy = "listeClasseStandard")
+	@Fetch(FetchMode.SELECT)
+	@ManyToMany(mappedBy = "listeClasseStandard", fetch=FetchType.EAGER)
 	private List<Client> listeClient;
 
 	// constructeurs
@@ -106,7 +107,8 @@ public class ClasseStandard implements Serializable {
 	public void setSuperficieMin(double superficieMin) {
 		this.superficieMin = superficieMin;
 	}
-
+	
+	@JsonIgnoreProperties("classeStandard")
 	public List<Client> getListeClient() {
 		return listeClient;
 	}

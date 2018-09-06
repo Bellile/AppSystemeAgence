@@ -45,7 +45,8 @@ public class Client extends Personne {
 	@OneToMany(mappedBy = "client", fetch=FetchType.EAGER)
 	private List<Contrat> contrat;
 
-	@ManyToMany
+	@Fetch(FetchMode.SELECT)
+	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinTable(name = "cl_cs", joinColumns = @JoinColumn(name = "cl_id"), inverseJoinColumns = @JoinColumn(name = "cs_id"))
 	private List<ClasseStandard> listeClasseStandard;
 
@@ -111,7 +112,7 @@ public class Client extends Personne {
 		this.contrat = contrat;
 	}
 	
-	
+	@JsonIgnoreProperties("client")
 	public List<ClasseStandard> getListeClasseStandard() {
 		return listeClasseStandard;
 	}
