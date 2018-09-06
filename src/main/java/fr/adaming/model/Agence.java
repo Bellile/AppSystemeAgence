@@ -31,6 +31,7 @@ public class Agence implements Serializable{
 	private String nom;
 
 	// association uml en java
+	@JsonIgnore
 	@OneToMany(mappedBy="agence")
 	private List<Responsable> listeResponsable;
 	

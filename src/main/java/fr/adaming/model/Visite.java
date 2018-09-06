@@ -28,7 +28,6 @@ public class Visite implements Serializable{
 	
 
 	// association uml en java
-	
 	@ManyToOne
 	@JoinColumn(name="cl_id", referencedColumnName="id_cl")
 	private Client client;

@@ -16,6 +16,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonView;
 
@@ -36,7 +37,7 @@ public class Responsable extends Personne{
 	@JoinColumn(name="a_id", referencedColumnName="id_a")
 	private Agence agence;
 	
-
+	@JsonIgnore
 	@OneToMany(mappedBy="responsable")
 	private List<Visite> listeVisite;
 	
