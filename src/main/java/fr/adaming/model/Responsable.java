@@ -17,6 +17,7 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonView;
 
 @Entity
 @Table(name="responsables")
@@ -35,8 +36,8 @@ public class Responsable extends Personne{
 	@JoinColumn(name="a_id", referencedColumnName="id_a")
 	private Agence agence;
 	
-	@Fetch(FetchMode.SELECT)
-	@OneToMany(mappedBy="responsable", fetch=FetchType.EAGER)
+
+	@OneToMany(mappedBy="responsable")
 	private List<Visite> listeVisite;
 	
 	//Constructeurs
@@ -86,7 +87,7 @@ public class Responsable extends Personne{
 	public void setAgence(Agence agence) {
 		this.agence = agence;
 	}
-	@JsonIgnoreProperties("responsable")
+
 	public List<Visite> getListeVisite() {
 		return listeVisite;
 	}
