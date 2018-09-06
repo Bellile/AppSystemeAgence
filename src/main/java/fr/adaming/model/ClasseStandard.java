@@ -17,6 +17,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -33,16 +34,18 @@ public class ClasseStandard implements Serializable {
 	private double superficieMin;
 
 	// transfo de l'association
-	@Fetch(FetchMode.SELECT)
-	@OneToMany(mappedBy = "classeStandard", fetch = FetchType.EAGER)
+
+	// @Fetch(FetchMode.SELECT)
+	@JsonIgnore
+	@OneToMany(mappedBy = "classeStandard")
 	private List<BienImmobilierAVendre> listeBienImmobilierVendre;
 
-	@Fetch(FetchMode.SELECT)
-	@OneToMany(mappedBy = "classeStandard", fetch = FetchType.EAGER)
+	@JsonIgnore
+	@OneToMany(mappedBy = "classeStandard")
 	private List<BienImmobilierALouer> listeBienImmobilierLouer;
 
-	@Fetch(FetchMode.SELECT)
-	@ManyToMany(mappedBy = "listeClasseStandard", fetch=FetchType.EAGER)
+	@JsonIgnore
+	@ManyToMany(mappedBy = "listeClasseStandard")
 	private List<Client> listeClient;
 
 	// constructeurs
@@ -107,8 +110,7 @@ public class ClasseStandard implements Serializable {
 	public void setSuperficieMin(double superficieMin) {
 		this.superficieMin = superficieMin;
 	}
-	
-	@JsonIgnoreProperties("classeStandard")
+
 	public List<Client> getListeClient() {
 		return listeClient;
 	}
@@ -117,7 +119,6 @@ public class ClasseStandard implements Serializable {
 		this.listeClient = listeClient;
 	}
 
-	@JsonIgnoreProperties("classeStandard")
 	public List<BienImmobilierAVendre> getListeBienImmobilierVendre() {
 		return listeBienImmobilierVendre;
 	}
@@ -126,7 +127,6 @@ public class ClasseStandard implements Serializable {
 		this.listeBienImmobilierVendre = listeBienImmobilierVendre;
 	}
 
-	@JsonIgnoreProperties("classeStandard")
 	public List<BienImmobilierALouer> getListeBienImmobilierLouer() {
 		return listeBienImmobilierLouer;
 	}

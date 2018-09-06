@@ -15,6 +15,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -32,12 +33,12 @@ public class Proprietaire extends Personne {
 	@Embedded
 	private Adresse adresse;
 
-	@Fetch(FetchMode.SELECT)
-	@OneToMany(mappedBy = "proprietaire", fetch = FetchType.EAGER)
+	@JsonIgnore
+	@OneToMany(mappedBy = "proprietaire")
 	private List<BienImmobilierAVendre> listeBienImmobilierAVendre;
 
-	@Fetch(FetchMode.SELECT)
-	@OneToMany(mappedBy = "proprietaire", fetch = FetchType.EAGER)
+	@JsonIgnore
+	@OneToMany(mappedBy = "proprietaire")
 	private List<BienImmobilierALouer> listeBienImmobilierALouer;
 
 	// Constructeurs
@@ -83,7 +84,6 @@ public class Proprietaire extends Personne {
 		this.adresse = adresse;
 	}
 
-	@JsonIgnoreProperties("proprietaire")
 	public List<BienImmobilierAVendre> getListeBienImmobilierAVendre() {
 		return listeBienImmobilierAVendre;
 	}
@@ -92,7 +92,6 @@ public class Proprietaire extends Personne {
 		this.listeBienImmobilierAVendre = listeBienImmobilierAVendre;
 	}
 
-	@JsonIgnoreProperties("proprietaire")
 	public List<BienImmobilierALouer> getListeBienImmobilierALouer() {
 		return listeBienImmobilierALouer;
 	}

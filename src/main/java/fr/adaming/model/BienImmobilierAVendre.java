@@ -15,6 +15,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -29,8 +30,8 @@ public class BienImmobilierAVendre extends BienImmobilier{
 	@Embedded
 	private Adresse adresse;
 	
-	@Fetch(FetchMode.SELECT)
-	@OneToMany(mappedBy="bienImmobilierAVendre", fetch=FetchType.EAGER)
+	@JsonIgnore
+	@OneToMany(mappedBy="bienImmobilierAVendre")
 	private List<Visite> listeVisite;
 	
 	@ManyToOne
@@ -84,7 +85,7 @@ public class BienImmobilierAVendre extends BienImmobilier{
 		this.adresse = adresse;
 	}
 
-	@JsonIgnoreProperties("bienImmobilierAVendre")
+	
 	public List<Visite> getListeVisite() {
 		return listeVisite;
 	}
