@@ -37,23 +37,19 @@ public class BienImmobilierAVendre extends BienImmobilier{
 	}
 
 	public BienImmobilierAVendre(String typeBien, String statut, double revenuCadastre, String description,
-			Date dateSoumission, Date dateDisposition, byte[] listeImage, double prix, String etat, Adresse adresse,
-			Proprietaire proprietaire) {
+			Date dateSoumission, Date dateDisposition, byte[] listeImage, double prix, String etat, Adresse adresse) {
 		super(typeBien, statut, revenuCadastre, description, dateSoumission, dateDisposition, listeImage);
 		this.prix = prix;
 		this.etat = etat;
 		this.adresse = adresse;
-		this.proprietaire = proprietaire;
 	}
 	
 	public BienImmobilierAVendre(int id, String typeBien, String statut, double revenuCadastre, String description,
-			Date dateSoumission, Date dateDisposition, byte[] listeImage, double prix, String etat, Adresse adresse,
-			Proprietaire proprietaire) {
+			Date dateSoumission, Date dateDisposition, byte[] listeImage, double prix, String etat, Adresse adresse) {
 		super(id, typeBien, statut, revenuCadastre, description, dateSoumission, dateDisposition, listeImage);
 		this.prix = prix;
 		this.etat = etat;
 		this.adresse = adresse;
-		this.proprietaire = proprietaire;
 	}
 
 	//declaration des getter et setter
@@ -104,13 +100,10 @@ public class BienImmobilierAVendre extends BienImmobilier{
 
 	@Override
 	public String toString() {
-		return "BienImmobilierAVendre [prix=" + prix + ", etat=" + etat + ", id=" + id + ", typeBien=" + typeBien
-				+ ", statut=" + statut + ", revenuCadastre=" + revenuCadastre + ", dateSoumission=" + dateSoumission
-				+ ", dateDisposition=" + dateDisposition + ", listeImage=" + Arrays.toString(listeImage) + "]";
+		return "BienImmobilierAVendre [prix=" + prix + ", etat=" + etat + ", adresse=" + adresse + "]";
 	}
 
 
-	
 	
 
 }

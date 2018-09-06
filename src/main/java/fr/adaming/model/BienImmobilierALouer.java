@@ -42,7 +42,7 @@ public class BienImmobilierALouer extends BienImmobilier{
 
 	public BienImmobilierALouer(String typeBien, String statut, double revenuCadastre, String description,
 			Date dateSoumission, Date dateDisposition, byte[] listeImage, double caution, double loyer, double charges,
-			String typeBail, String garniture, Adresse adresse, Proprietaire proprietaire) {
+			String typeBail, String garniture, Adresse adresse) {
 		super(typeBien, statut, revenuCadastre, description, dateSoumission, dateDisposition, listeImage);
 		this.caution = caution;
 		this.loyer = loyer;
@@ -50,12 +50,11 @@ public class BienImmobilierALouer extends BienImmobilier{
 		this.typeBail = typeBail;
 		this.garniture = garniture;
 		this.adresse = adresse;
-		this.proprietaire = proprietaire;
 	}
 
 	public BienImmobilierALouer(int id, String typeBien, String statut, double revenuCadastre, String description,
 			Date dateSoumission, Date dateDisposition, byte[] listeImage, double caution, double loyer, double charges,
-			String typeBail, String garniture, Adresse adresse, Proprietaire proprietaire) {
+			String typeBail, String garniture, Adresse adresse) {
 		super(id, typeBien, statut, revenuCadastre, description, dateSoumission, dateDisposition, listeImage);
 		this.caution = caution;
 		this.loyer = loyer;
@@ -63,7 +62,6 @@ public class BienImmobilierALouer extends BienImmobilier{
 		this.typeBail = typeBail;
 		this.garniture = garniture;
 		this.adresse = adresse;
-		this.proprietaire = proprietaire;
 	}
 
 	//declaration des getter et setter
@@ -151,16 +149,9 @@ public class BienImmobilierALouer extends BienImmobilier{
 	@Override
 	public String toString() {
 		return "BienImmobilierALouer [caution=" + caution + ", loyer=" + loyer + ", charges=" + charges + ", typeBail="
-				+ typeBail + ", garniture=" + garniture + ", adresse=" + adresse + ", proprietaire=" + proprietaire
-				+ ", id=" + id + ", typeBien=" + typeBien + ", statut=" + statut + ", revenuCadastre=" + revenuCadastre
-				+ ", dateSoumission=" + dateSoumission + ", dateDisposition=" + dateDisposition + ", listeImage="
-				+ Arrays.toString(listeImage) + "]";
+				+ typeBail + ", garniture=" + garniture + "]";
 	}
 
 
-
-	
-	
-	
 
 }
