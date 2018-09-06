@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import fr.adaming.dao.IDao;
 import fr.adaming.model.BienImmobilierAVendre;
 
-@Service
+@Service("bienVendreService")
 @Transactional
 public class BienImmobilierAVendreServiceImpl implements IBienImmobilierAVendreService {
 

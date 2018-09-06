@@ -2,6 +2,7 @@ package fr.adaming.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +14,7 @@ import fr.adaming.model.Visite;
 public class VisiteServiceImpl implements IVisiteService{
 
 	//Transformation de l'association UML en java
+	@Autowired
 	private IDao<Visite, Integer> vDao;
 	
 	@Override
