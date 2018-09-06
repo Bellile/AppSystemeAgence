@@ -44,19 +44,20 @@ public class Agence implements Serializable{
 		super();
 	}
 
-	public Agence(int id, String nom) {
+	public Agence(String nom, Adresse adresse) {
+		super();
+		this.nom = nom;
+		this.adresse = adresse;
+	}
+
+	public Agence(int id, String nom, Adresse adresse) {
 		super();
 		this.id = id;
 		this.nom = nom;
-	}
-
-	public Agence(String nom) {
-		super();
-		this.nom = nom;
+		this.adresse = adresse;
 	}
 
 	// getter et setter	
-
 	public int getId() {
 		return id;
 	}
