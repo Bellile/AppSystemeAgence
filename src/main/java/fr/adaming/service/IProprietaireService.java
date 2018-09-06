@@ -7,10 +7,10 @@ import fr.adaming.model.Proprietaire;
 public interface IProprietaireService {
 
 	
-	public List<Class<Proprietaire>> getAll();
-	public Class<Proprietaire> getById(Integer id);
-	public Class<Proprietaire> add(Proprietaire p);
-	public Class<Proprietaire> update(Proprietaire p);
-	public int delete(Proprietaire p);
+	public List<Proprietaire> getAll();
+	public Proprietaire getById(int id);
+	public Proprietaire add(Proprietaire p);
+	public Proprietaire update(Proprietaire p);
+	public void delete(int id);
 	
 }

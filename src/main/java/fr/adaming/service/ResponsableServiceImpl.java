@@ -7,41 +7,46 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.adaming.dao.IDaoGeneric;
+import fr.adaming.dao.IResponsableDao;
 import fr.adaming.model.Responsable;
 
-@Service("rService")
+@Service("responsableService")
 @Transactional
 public class ResponsableServiceImpl implements IResponsableService{
 	
 	//transformation de l'asso
 	@Autowired
-	private IDaoGeneric<Responsable, Integer> responsableDao;
+	private IResponsableDao rDao;
+
+	@Override
+	public List<Responsable> getAllResponsable() {
+		
+		return rDao.getAll();
+	}
+
+	@Override
+	public Responsable getResponsableById(int id) {
+		return rDao.getById(id);
+	}
+
+	@Override
+	public Responsable addResponsable(Responsable r) {
+		return rDao.add(r);
+	}
+
+	@Override
+	public Responsable updateResponsable(Responsable r) {
+		return rDao.update(r);
+	}
+
+	@Override
+	public void deleteResponsable(int id) {
+		rDao.delete(id);
+		
+	}
 	
 
-	@Override
-	public List<Class<Responsable>> getAllResponsables() {
-		return responsableDao.getAll();
-	}
-
-	@Override
-	public Class<Responsable> getResponsableById(Integer id) {
-		return responsableDao.getById(id);
-	}
-
-	@Override
-	public Class<Responsable> addResponsable(Responsable r) {
-		return responsableDao.add(r);
-	}
-
-	@Override
-	public Class<Responsable> updateResponsable(Responsable r) {
-		return responsableDao.update(r);
-	}
-
-	@Override
-	public int deleteResponsable(Responsable r) {
-		return responsableDao.delete(r);
-	}
+	
 
 
 

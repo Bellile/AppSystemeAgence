@@ -6,14 +6,10 @@ import fr.adaming.model.Responsable;
 
 public interface IResponsableService {
 
-	public List<Class<Responsable>> getAllResponsables();
-
-	public Class<Responsable> getResponsableById(Integer id);
-
-	public Class<Responsable> addResponsable(Responsable r);
-
-	public Class<Responsable> updateResponsable(Responsable r);
-
-	public int deleteResponsable(Responsable r);
+	public List<Responsable> getAllResponsable();
+	public Responsable getResponsableById(int id);
+	public Responsable addResponsable(Responsable r);
+	public Responsable updateResponsable(Responsable r);
+	public void deleteResponsable(int id);
 
 }

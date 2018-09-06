@@ -14,41 +14,38 @@ import fr.adaming.model.Proprietaire;
 public class ProprietaireServiceImpl implements IProprietaireService {
 
 	@Autowired
-	private IDaoGeneric<Proprietaire, Integer> pDao;
-
-	public void setpDao(IDaoGeneric<Proprietaire, Integer> pDao) {
-		this.pDao = pDao;
-	}
+	private IDaoGeneric<Proprietaire> pDao;
 
 	@Override
-	public List<Class<Proprietaire>> getAll() {
-		
+	public List<Proprietaire> getAll() {
 		return pDao.getAll();
 	}
 
 	@Override
-	public Class<Proprietaire> getById(Integer id) {
-		
+	public Proprietaire getById(int id) {
+		// TODO Auto-generated method stub
 		return pDao.getById(id);
 	}
 
 	@Override
-	public Class<Proprietaire> add(Proprietaire p) {
-		
+	public Proprietaire add(Proprietaire p) {
+		// TODO Auto-generated method stub
 		return pDao.add(p);
 	}
 
 	@Override
-	public Class<Proprietaire> update(Proprietaire p) {
-		
+	public Proprietaire update(Proprietaire p) {
+		// TODO Auto-generated method stub
 		return pDao.update(p);
 	}
 
 	@Override
-	public int delete(Proprietaire p) {
+	public void delete(int id) {
+		pDao.delete(id);
 		
-		return pDao.delete(p);
 	}
+
+	
 
 	
 
