@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.adaming.dao.IDao;
+import fr.adaming.dao.IDaoGeneric;
 import fr.adaming.model.Client;
 
 @Service("clientService")
@@ -14,7 +14,7 @@ import fr.adaming.model.Client;
 public class ClientServiceImpl implements IClientService {
 
 	@Autowired
-	private IDao<Client, Integer> clDao;
+	private IDaoGeneric<Client, Integer> clDao;
 
 	@Override
 	public List<Class<Client>> getAll() {

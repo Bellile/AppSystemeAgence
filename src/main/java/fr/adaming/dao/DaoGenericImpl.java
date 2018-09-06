@@ -14,62 +14,62 @@ import javax.persistence.criteria.CriteriaQuery;
 import org.springframework.stereotype.Repository;
 
 
-@Repository
-public class Dao<T, PK extends Serializable> implements IDao<T, Serializable> {
+
+public abstract class DaoGenericImpl<T> implements IDaoGeneric<T> {
 	
 	/** 1 : créer un entityManagerFactory */
 	@PersistenceContext(unitName="PU")
 	private EntityManager em;
 
-	private Class<T> type;
+	protected Class<T> clazz;
 
-	@Override
-	public List<Class<T>> getAll() {
-		
-		
-		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<T> cr= cb.createQuery(type);
-		TypedQuery<T> tq = em.createQuery(cr);
-		
-		return (List<Class<T>>) tq.getResultList();
+	
+	
+	public Class<T> getClazz() {
+		return clazz;
+	}
+
+	public void setClazz(Class<T> clazz) {
+		this.clazz = clazz;
+	}
+
+	public void setEm(EntityManager em) {
+		this.em = em;
 	}
 
 	@Override
-	public Class<T> getById(Serializable id) {
-		
-		
-		return (Class<T>) em.find(type, id);
+	public List<T> getAll() {
+		String req="FROM "+clazz.getName();
+		return em.createQuery(req).getResultList();
 	}
 
 	@Override
-	public Class<T> add(T t) {
+	public T getById(int id) {
 		
+		return em.find(clazz, id);
+	}
+
+	@Override
+	public T add(T t) {
+	
 		em.persist(t);
-		
-		return (Class<T>) t;
+		return t;
 	}
 
 	@Override
-	public Class<T> update(T t) {
-		
-		em.find(type, t);
+	public T update(T t) {
 		em.merge(t);
-		return (Class<T>) t;
+		return t;
 	}
 
 	@Override
-	public int delete(T t) {
-	
+	public void delete(int id) {
+		T t=this.getById(id);
+		
 		em.remove(t);
-		if(em.find(type, t)==null){
-			return 1;
-		}else{
-			return 0;
-		}
 		
 	}
 
-	
 	
 	
 	

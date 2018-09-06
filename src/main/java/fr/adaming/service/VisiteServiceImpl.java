@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.adaming.dao.IDao;
+import fr.adaming.dao.IDaoGeneric;
 import fr.adaming.model.Visite;
 
 @Service("vService")
@@ -15,7 +15,7 @@ public class VisiteServiceImpl implements IVisiteService{
 
 	//Transformation de l'association UML en java
 	@Autowired
-	private IDao<Visite, Integer> vDao;
+	private IDaoGeneric<Visite, Integer> vDao;
 	
 	@Override
 	public List<Class<Visite>> getAll() {

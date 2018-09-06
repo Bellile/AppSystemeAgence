@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.adaming.dao.IDao;
+import fr.adaming.dao.IDaoGeneric;
 import fr.adaming.model.ClasseStandard;
 
 @Service("csService")
@@ -15,7 +15,7 @@ public class ClasseStandardServiceImpl implements IClasseStandardService{
 	
 	//Transformation de l'association UML en java
 	@Autowired
-	private IDao<ClasseStandard, Integer> csDao;
+	private IDaoGeneric<ClasseStandard, Integer> csDao;
 
 	@Override
 	public List<Class<ClasseStandard>> getAll() {

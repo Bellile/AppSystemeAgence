@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.adaming.dao.IDao;
+import fr.adaming.dao.IDaoGeneric;
 import fr.adaming.model.Agence;
 
 @Service("aService")
@@ -15,7 +15,7 @@ public class AgenceServiceImpl implements IAgenceService{
 	
 	//transformation de l'asso
 	@Autowired
-	private IDao<Agence, Integer> agenceDao;
+	private IDaoGeneric<Agence, Integer> agenceDao;
 
 	@Override
 	public List<Class<Agence>> getAllAgence() {

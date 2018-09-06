@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.adaming.dao.IDao;
+import fr.adaming.dao.IDaoGeneric;
 import fr.adaming.model.Responsable;
 
 @Service("rService")
@@ -15,7 +15,7 @@ public class ResponsableServiceImpl implements IResponsableService{
 	
 	//transformation de l'asso
 	@Autowired
-	private IDao<Responsable, Integer> responsableDao;
+	private IDaoGeneric<Responsable, Integer> responsableDao;
 	
 
 	@Override

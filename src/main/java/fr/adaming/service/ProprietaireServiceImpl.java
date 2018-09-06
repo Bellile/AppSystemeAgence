@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.adaming.dao.IDao;
+import fr.adaming.dao.IDaoGeneric;
 import fr.adaming.model.Proprietaire;
 
 @Service("proprietaireService")
@@ -14,9 +14,9 @@ import fr.adaming.model.Proprietaire;
 public class ProprietaireServiceImpl implements IProprietaireService {
 
 	@Autowired
-	private IDao<Proprietaire, Integer> pDao;
+	private IDaoGeneric<Proprietaire, Integer> pDao;
 
-	public void setpDao(IDao<Proprietaire, Integer> pDao) {
+	public void setpDao(IDaoGeneric<Proprietaire, Integer> pDao) {
 		this.pDao = pDao;
 	}
 
