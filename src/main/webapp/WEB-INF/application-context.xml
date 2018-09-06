@@ -16,15 +16,15 @@
 	<context:component-scan base-package="fr.adaming" />
 
 	<!-- Chargement du fichier ressource -->
-    <context:property-placeholder location="classpath*:datasource.properties" />
+    <context:property-placeholder location="classpath*:db.properties" />
  
     <!-- Déclaration du bean DataSource -->
     <bean id="dataSourceBean"
         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="${property.jdbc.driver}"></property>
-        <property name="url" value="${property.jdbc.url}"></property>
-        <property name="username" value="${property.jdbc.username}"></property>
-        <property name="password" value="${property.jdbc.password}"></property>
+        <property name="driverClassName" value="${jdbc.driver}"></property>
+        <property name="url" value="${jdbc.url}"></property>
+        <property name="username" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
     </bean>
      
     <bean id="persistenceUnitBean" class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
@@ -34,8 +34,8 @@
      
     <bean id="entityManagerFactoryBean" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="persistenceUnitManager" ref="persistenceUnitBean"></property>
-        <property name="persistenceUnitName" value="PU_boVoyage"></property>
-        <property name="packagesToScan" value="fr.adaming.entities"></property>
+        <property name="persistenceUnitName" value="PU"></property>
+        <property name="packagesToScan" value="fr.adaming.model"></property>
     </bean>
      
     <bean id="transactionManagerBean" class="org.springframework.orm.jpa.JpaTransactionManager">
@@ -45,11 +45,11 @@
     <tx:annotation-driven transaction-manager="transactionManagerBean"/>
      
     <!-- Configuration du bean mailSender -->
-    <bean id="mailSenderBean" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+  <!--  <bean id="mailSenderBean" class="org.springframework.mail.javamail.JavaMailSenderImpl">
         <property name="host" value="smtp.gmail.com"></property>
         <property name="port" value="587"></property>
-        <property name="username" value="dellaiera.nicolas@gmail.com"></property>
-        <property name="password" value="projet59boVoyage"></property>
+        <property name="username" value="cancer.mail974@gmail.com"></property>
+        <property name="password" value="GmailBM97450"></property>
         <property name="javaMailProperties">
             <props>
                 <prop key="mail.transport.protocol">smtp</prop>
@@ -57,7 +57,7 @@
                 <prop key="mail.smtp.starttls.enable">true</prop>
             </props>
         </property>
-    </bean>
+    </bean>-->
      
     <!-- Configuration Upload pour l'enregistrement de photos -->
     <bean name="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

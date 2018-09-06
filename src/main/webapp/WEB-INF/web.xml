@@ -15,20 +15,21 @@
 	<!-- Specification le chemin du fichier de config de Spring Security -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/application-context.xml /WEB-INF/security-context.xml</param-value>
+		<param-value>/WEB-INF/application-context.xml</param-value>
 	</context-param>
 
-	<filter>
-		<filter-name>springSecurityFilterChain</filter-name>
-		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-	</filter>
 
-	<filter-mapping>
-		<filter-name>springSecurityFilterChain</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+<!-- Declaration de la servlet unique des web service -->
+<servlet>
+		<servlet-name>toto</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 
-
+		<!-- Specifier chemin du fichier de config spring mvc -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/mvc-context.xml</param-value>
+		</init-param>
+	</servlet>
 
 
 
