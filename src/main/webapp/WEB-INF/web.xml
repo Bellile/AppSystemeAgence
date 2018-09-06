@@ -21,7 +21,7 @@
 
 <!-- Declaration de la servlet unique des web service -->
 <servlet>
-		<servlet-name>toto</servlet-name>
+		<servlet-name>projetImmo</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 
 		<!-- Specifier chemin du fichier de config spring mvc -->
@@ -30,8 +30,12 @@
 			<param-value>/WEB-INF/mvc-context.xml</param-value>
 		</init-param>
 	</servlet>
-
-
+	
+	<!-- Mapping de la servlet unique de spring mvc -->
+	<servlet-mapping>
+		<servlet-name>projetImmo</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
 
 
 	<welcome-file-list>
