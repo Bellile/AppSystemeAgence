@@ -6,14 +6,14 @@ import fr.adaming.model.Contrat;
 
 public interface IContratService {
 
-	public List<Class<Contrat>> getAllContrats();
+	public List<Contrat> getAllContrats();
 
-	public Class<Contrat> getContratById(Integer id);
+	public Contrat getContratById(int id);
 
-	public Class<Contrat> addContrat(Contrat c);
+	public Contrat addContrat(Contrat c);
 
-	public Class<Contrat> updateContrat(Contrat c);
+	public Contrat updateContrat(Contrat c);
 
-	public int deleteContrat(Contrat c);
+	public void deleteContrat(int id);
 
 }

@@ -6,14 +6,14 @@ import fr.adaming.model.Agence;
 
 public interface IAgenceService {
 
-	public List<Class<Agence>> getAllAgence();
+	public List<Agence> getAllAgences();
 
-	public Class<Agence> getAgenceById(Integer id);
+	public Agence getAgenceById(int id);
 
-	public Class<Agence> add(Agence a);
+	public Agence addAgence(Agence a);
 
-	public Class<Agence> update(Agence a);
+	public Agence updateAgence(Agence a);
 
-	public int delete(Agence a);
+	public void deleteAgence(int id);
 
 }

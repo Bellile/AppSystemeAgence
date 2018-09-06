@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.adaming.dao.IDaoGeneric;
+import fr.adaming.dao.IContratDao;
 import fr.adaming.model.Contrat;
 
 @Service("coService")
@@ -15,31 +15,33 @@ public class ContratServiceImpl implements IContratService{
 	
 	//transformation de l'asso
 	@Autowired
-	private IDaoGeneric<Contrat, Integer> contratDao;
+	private IContratDao contratDao;
 
 	@Override
-	public List<Class<Contrat>> getAllContrats() {
+	public List<Contrat> getAllContrats() {
 		return contratDao.getAll();
 	}
 
 	@Override
-	public Class<Contrat> getContratById(Integer id) {
+	public Contrat getContratById(int id) {
 		return contratDao.getById(id);
 	}
 
 	@Override
-	public Class<Contrat> addContrat(Contrat c) {
+	public Contrat addContrat(Contrat c) {
 		return contratDao.add(c);
 	}
 
 	@Override
-	public Class<Contrat> updateContrat(Contrat c) {
+	public Contrat updateContrat(Contrat c) {
 		return contratDao.update(c);
 	}
 
 	@Override
-	public int deleteContrat(Contrat c) {
-		return contratDao.delete(c);
+	public void deleteContrat(int id) {
+		contratDao.delete(id);
+		
 	}
+
 
 }
