@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,6 +12,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="responsables")
@@ -29,7 +35,8 @@ public class Responsable extends Personne{
 	@JoinColumn(name="a_id", referencedColumnName="id_a")
 	private Agence agence;
 	
-	@OneToMany(mappedBy="responsable")
+	@Fetch(FetchMode.SELECT)
+	@OneToMany(mappedBy="responsable", fetch=FetchType.EAGER)
 	private List<Visite> listeVisite;
 	
 	//Constructeurs
@@ -79,6 +86,7 @@ public class Responsable extends Personne{
 	public void setAgence(Agence agence) {
 		this.agence = agence;
 	}
+	@JsonIgnoreProperties("responsable")
 	public List<Visite> getListeVisite() {
 		return listeVisite;
 	}
