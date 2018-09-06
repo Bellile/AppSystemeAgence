@@ -12,13 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fr.adaming.dao.IBienImmobilierALouerDao;
 import fr.adaming.model.BienImmobilierALouer;
+import fr.adaming.service.IBienImmobilierALouerService;
 
 @RestController
 @RequestMapping("/wsBl")
 public class BienImmobilierALouerRestController {
 	
 	@Autowired
-	IBienImmobilierALouerDao blService;
+	IBienImmobilierALouerService blService;
 	
 	@RequestMapping(value="/listeBL", method=RequestMethod.GET, produces = "application/json")
 	public List<BienImmobilierALouer> getAllBL(){
