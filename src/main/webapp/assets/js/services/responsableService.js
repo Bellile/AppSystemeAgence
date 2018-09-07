@@ -5,7 +5,7 @@ monApp.factory("responsableProvider", function($http) {
 		// récupérer la liste à partir du serveur
 		$http({
 			method : "GET",
-			url : "http://localhost:8080/05_MVC_REST_IoC_Hibernate/wsResp/liste"
+			url : "http://localhost:8080/Projet_AppSystemeAgence/wsResp/liste"
 		}).then(function successCallback(response) {
 			// stocker les données dans la callBack afin des les tranférer au
 			// controller de manière asynchrone
@@ -19,7 +19,7 @@ monApp.factory("responsableProvider", function($http) {
 	// récupérer le responsable par l'ID
 	function recherche(id, callBack) {
 		
-		$http.get("http://localhost:8080/05_MVC_REST_IoC_Hibernate/wsResp/recherche",
+		$http.get("http://localhost:8080/Projet_AppSystemeAgence/wsResp/recherche",
 				{params : {pId : id}})
 				.then(function successCallback(response) {
 			// stocker les données dans la callBack afin des les tranférer au controller de manière asynchrone
@@ -33,7 +33,7 @@ monApp.factory("responsableProvider", function($http) {
 		
 		$http({
 			method : "POST",
-			url : "http://localhost:8080/05_MVC_REST_IoC_Hibernate/wsResp/ajout",
+			url : "http://localhost:8080/Projet_AppSystemeAgence/wsResp/ajout",
 			data:angular.toJson(rIn),
 			headers: {'Content-Type':'application/json'}
 		}).then(function successCallback(response) {
@@ -49,7 +49,7 @@ monApp.factory("responsableProvider", function($http) {
 		// récupérer la liste à partir du serveur
 		$http({
 			method : "PUT",
-			url : "http://localhost:8080/05_MVC_REST_IoC_Hibernate/wsResp/modif",
+			url : "http://localhost:8080/Projet_AppSystemeAgence/wsResp/modif",
 			data:angular.toJson(rIn),
 			headers: {'Content-Type':'application/json'}
 		}).then(function successCallback(response) {
@@ -65,7 +65,7 @@ monApp.factory("responsableProvider", function($http) {
 		
 		$http({
 			method : "DELETE",
-			url : "http://localhost:8080/05_MVC_REST_IoC_Hibernate/wsResp/suppr/" + id
+			url : "http://localhost:8080/Projet_AppSystemeAgence/wsResp/suppr/" + id
 		
 		}).then(function successCallback(response) {
 			// stocker les données dans la callBack afin des les tranférer au
