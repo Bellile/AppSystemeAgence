@@ -1,0 +1,37 @@
+<h2>Formulaire d'ajout d'un client</h2>
+
+
+
+<br />
+Nom
+<input type="text" placeholder="nom" ng-model="clForm.nom">
+<br />
+T&eacutel&eacutephone Personnel
+<input type="text" placeholder="tel personnel"
+	ng-model="clForm.telPerso">
+<br />
+Email
+<input type="text" placeholder="email" ng-model="clForm.mail">
+<br />
+Num&eacutero de rue
+<input type="number" placeholder="Numero"
+	ng-model="clForm.adresse.numRue">
+<br />
+Rue
+<input type="text" placeholder="rue" ng-model="clForm.adresse.rue">
+<br />
+Code Postal
+<input type="text" placeholder="code postal"
+	ng-model="clForm.adresse.cp">
+<br />
+Ville
+<input type="text" placeholder="ville"
+	ng-model="clForm.adresse.localite">
+<br />
+Pays
+<input type="text" placeholder="pays" ng-model="clForm.adresse.pays">
+<br />
+<input type="button" value="Ajouter" ng-click="ajouter()">
+<br />
+
+<h3>{{msg}}</h3>

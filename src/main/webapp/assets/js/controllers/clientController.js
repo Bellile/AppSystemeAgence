@@ -1,7 +1,7 @@
 monApp.controller("getAllClCtrl", function($scope, clProvider) {
 
 	clProvider.getAll(function(donnees) {
-		$scope.listeClient = donnees;
+		$scope.liste = donnees;
 	});
 
 })
@@ -34,7 +34,13 @@ monApp.controller("addClCtrl", function($scope, clProvider, $location) {
 		mail : "",
 		acquereur : "",
 		numCompostage : "",
-		adresse : ""
+		adresse:{
+			numRue:"",
+			rue:"",
+			cp:"",
+			localite:"",
+			pays:""
+		},
 	};
 	$scope.ajouter = function() {
 		clProvider.add($scope.clForm, function(donnees) {

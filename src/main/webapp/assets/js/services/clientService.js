@@ -3,7 +3,7 @@ monApp
 				"clProvider",
 				function($http) {
 
-					function recupListe(callback) {
+					function recupListe(callBack) {
 						$http(
 								{
 									method : "GET",
@@ -11,7 +11,7 @@ monApp
 
 								}).then(function successCallback(response) {
 
-							callBack(response.data);
+									callBack(response.data);
 
 						}, function errorCallback(response) {
 
@@ -21,7 +21,7 @@ monApp
 
 					}
 
-					function recupById(id, callback) {
+					function recupById(id, callBack) {
 
 						$http
 								.get(
@@ -44,7 +44,7 @@ monApp
 										});
 					}
 
-					function ajout(cIn, callback) {
+					function ajout(cIn, callBack) {
 						$http(
 								{
 									method : "POST",
@@ -55,7 +55,7 @@ monApp
 									}
 								}).then(function successCallback(response) {
 
-							callBack(response.data);
+									callBack(response.data);
 
 						}, function errorCallback(response) {
 
@@ -64,7 +64,7 @@ monApp
 						});
 					}
 
-					function modif(cIn, callback) {
+					function modif(cIn, callBack) {
 						$http(
 								{
 									method : "PUT",
@@ -75,7 +75,7 @@ monApp
 									}
 								}).then(function successCallback(response) {
 
-							callBack(response.data);
+									callBack(response.data);
 
 						}, function errorCallback(response) {
 
@@ -84,7 +84,7 @@ monApp
 						});
 					}
 
-					function suppr(id, callback) {
+					function suppr(id, callBack) {
 						$http(
 								{
 									method : "DELETE",
@@ -92,7 +92,7 @@ monApp
 											+ id
 								}).then(function successCallback(response) {
 
-							callBack(response.data);
+									callBack(response.data);
 
 						}, function errorCallback(response) {
 
@@ -100,19 +100,14 @@ monApp
 
 						});
 					}
-					
-					
-					return { 
+
+					return {
 						getAll : recupListe,
 						getId : recupById,
 						add : ajout,
 						update : modif,
 						del : suppr
-					
-				}
-					
-					
-					
-					
+
+					}
 
 				})
