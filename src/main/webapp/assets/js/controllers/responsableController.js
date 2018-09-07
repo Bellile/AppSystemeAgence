@@ -1,11 +1,11 @@
 // créer mes controllers
 monApp
-.controller("getAllRespCtrl", function($scope,responsableProvider, $rootScope, $location){
+.controller("getAllRCtrl", function($scope,responsableProvider, $rootScope, $location){
 	// appel de la fonction getListe de mon service
-	responsableProvider.getListe(function(donnees) {
+	responsableProvider.getAll(function(donnees) {
 		//stocker les données récupérées de service
 		$scope.liste=donnees;
-	})
+	});
 	//fonction appelée à partir du lien de la liste des responsables pour supprimer un responsable
 	$scope.deleteLien=function(rIn){
 		responsableProvider.del(rIn.id, function(retour) {
@@ -34,7 +34,7 @@ monApp
 }
 	
 })
-.controller("getIdRespCtrl", function($scope,responsableProvider) {
+.controller("getIdRCtrl", function($scope,responsableProvider) {
 	$scope.id=undefined;
     $scope.rechercher=function () {
         //appel de la fonction responsableProvider de de monService
@@ -45,7 +45,7 @@ monApp
     }
 	
 })
-.controller("addRespCtrl", function($scope, responsableProvider, $location) {
+.controller("addRCtrl", function($scope, responsableProvider, $location) {
 	$scope.rForm={
 			nom:"",
 			telPerso:"",
@@ -65,7 +65,7 @@ monApp
 		})
 	}
 })
-.controller("updateRespCtrl", function($scope, responsableProvider, $location) {
+.controller("updateRCtrl", function($scope, responsableProvider, $location) {
 
 	$scope.rForm={
 			id:undefined,
@@ -87,7 +87,7 @@ monApp
 		})
 	}
 })
-.controller("deleteRespCtrl", function($scope, responsableProvider, $location) {
+.controller("deleteRCtrl", function($scope, responsableProvider, $location) {
 	$scope.id=undefined;
 	// la fonction appelée à partir du bouton supprimer d ela vue
 	$scope.supprimer=function(){
