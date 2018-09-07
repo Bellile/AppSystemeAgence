@@ -38,7 +38,7 @@ monApp
 	$scope.id=undefined;
     $scope.rechercher=function () {
         //appel de la fonction responsableProvider de de monService
-    	responsableProvider.getResponsable($scope.id, function(donnees){
+    	responsableProvider.getId($scope.id, function(donnees){
     		
         	$scope.responsable=donnees;
         })
