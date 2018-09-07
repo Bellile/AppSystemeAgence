@@ -2,23 +2,23 @@
 monApp.config(function($routeProvider) {
 
 	$routeProvider.when("/listeAgence", {
-		templateUrl : "views/aListeVue.html",
+		templateUrl : "views/agence/aListeVue.html",
 		controller : "getAllACtrl"
 	})
 	$routeProvider.when("/rechercheAgence", {
-		templateUrl : "views/aRechercheVue.html",
+		templateUrl : "views/agence/aRechercheVue.html",
 		controller : "getIdACtrl"
 	})
 	$routeProvider.when("/ajoutAgence", {
-		templateUrl : "views/aAjoutVue.html",
+		templateUrl : "views/agence/aAjoutVue.html",
 		controller : "addACtrl"
 	})
 	$routeProvider.when("/modifAgence", {
-		templateUrl : "views/aModifVue.html",
+		templateUrl : "views/agence/aModifVue.html",
 		controller : "updateACtrl"
 	})
 	$routeProvider.when("/supprAgence", {
-		templateUrl : "views/aSupprVue.html",
+		templateUrl : "views/agence/aSupprVue.html",
 		controller : "delACtrl"
 	})
 
@@ -86,81 +86,81 @@ monApp.config(function($routeProvider) {
 
 	
 	$routeProvider.when("/listeClient", {
-		templateUrl : "views/clListeVue.html",
+		templateUrl : "views/client/clListeVue.html",
 		controller : "getAllClCtrl"
 	})
 	$routeProvider.when("/rechercheClient", {
-		templateUrl : "views/clRechercheVue.html",
+		templateUrl : "views/client/clRechercheVue.html",
 		controller : "getIdClCtrl"
 	})
 	$routeProvider.when("/ajoutClient", {
-		templateUrl : "views/clAjoutVue.html",
+		templateUrl : "views/client/clAjoutVue.html",
 		controller : "addClCtrl"
 	})
 	$routeProvider.when("/modifClient", {
-		templateUrl : "views/clModifVue.html",
+		templateUrl : "views/client/clModifVue.html",
 		controller : "updateClCtrl"
 	})
 	$routeProvider.when("/supprClient", {
-		templateUrl : "views/clSupprVue.html",
+		templateUrl : "views/client/clSupprVue.html",
 		controller : "delClCtrl"
 	})
 
 	
 	$routeProvider.when("/listeContrat", {
-		templateUrl : "views/coListeVue.html",
+		templateUrl : "views/contrat/coListeVue.html",
 		controller : "getAllCoCtrl"
 	})
 	$routeProvider.when("/rechercheContrat", {
-		templateUrl : "views/coRechercheVue.html",
+		templateUrl : "views/contrat/coRechercheVue.html",
 		controller : "getIdCoCtrl"
 	})
 	$routeProvider.when("/ajoutContrat", {
-		templateUrl : "views/coAjoutVue.html",
+		templateUrl : "views/contrat/coAjoutVue.html",
 		controller : "addCoCtrl"
 	})
 	$routeProvider.when("/modifContrat", {
-		templateUrl : "views/coModifVue.html",
+		templateUrl : "views/contrat/coModifVue.html",
 		controller : "updateCtrl"
 	})
 	$routeProvider.when("/supprContrat", {
-		templateUrl : "views/coSupprVue.html",
+		templateUrl : "views/contrat/coSupprVue.html",
 		controller : "delCoCtrl"
 	})
 	
 	
 	$routeProvider.when("/listeProprietaire", {
-		templateUrl : "views/pListeVue.html",
+		templateUrl : "views/proprietaire/pListeVue.html",
 		controller : "getAllPCtrl"
 	})
 	$routeProvider.when("/rechercheProprietaire", {
-		templateUrl : "views/pRechercheVue.html",
+		templateUrl : "views/proprietaire/pRechercheVue.html",
 		controller : "getIdPCtrl"
 	})
 	$routeProvider.when("/ajoutProprietaire", {
-		templateUrl : "views/pAjoutVue.html",
+		templateUrl : "views/proprietaire/pAjoutVue.html",
 		controller : "addPCtrl"
 	})
 	$routeProvider.when("/modifProprietaire", {
-		templateUrl : "views/pModifVue.html",
+		templateUrl : "views/proprietaire/pModifVue.html",
 		controller : "updatePCtrl"
 	})
 	$routeProvider.when("/supprProprietaire", {
-		templateUrl : "views/pSupprVue.html",
+		templateUrl : "views/proprietaire/pSupprVue.html",
 		controller : "delPCtrl"
 	})
 
 	
 	$routeProvider.when("/listeResponsable", {
-		templateUrl : "views/rListeVue.html",
+		templateUrl : "views/responsable/rListeVue.html",
 		controller : "getAllRCtrl"
 	})
 	$routeProvider.when("/rechercheResponsable", {
-		templateUrl : "views/rRechercheVue.html",
+		templateUrl : "views/responsable/rRechercheVue.html",
 		controller : "getIdRCtrl"
 	})
 	$routeProvider.when("/ajoutResponsable", {
-		templateUrl : "views/rAjoutVue.html",
+		templateUrl : "views/responsable/rAjoutVue.html",
 		controller : "addRCtrl"
 	})
 	$routeProvider.when("/modifResponsable", {
@@ -168,29 +168,29 @@ monApp.config(function($routeProvider) {
 		controller : "updateRCtrl"
 	})
 	$routeProvider.when("/supprResponsable", {
-		templateUrl : "views/rSupprVue.html",
+		templateUrl : "views/responsable/rSupprVue.html",
 		controller : "delRCtrl"
 	})
 	
 	
 	$routeProvider.when("/listeVisite", {
-		templateUrl : "views/vListeVue.html",
+		templateUrl : "views/visite/vListeVue.html",
 		controller : "getAllVCtrl"
 	})
 	$routeProvider.when("/rechercheVisite", {
-		templateUrl : "views/vRechercheVue.html",
+		templateUrl : "views/visite/vRechercheVue.html",
 		controller : "getIdVCtrl"
 	})
 	$routeProvider.when("/ajoutVisite", {
-		templateUrl : "views/vAjoutVue.html",
+		templateUrl : "views/visite/vAjoutVue.html",
 		controller : "addVCtrl"
 	})
 	$routeProvider.when("/modifVisite", {
-		templateUrl : "views/vModifVue.html",
+		templateUrl : "views/visite/vModifVue.html",
 		controller : "updateVCtrl"
 	})
 	$routeProvider.when("/supprVisite", {
-		templateUrl : "views/vSupprVue.html",
+		templateUrl : "views/visite/vSupprVue.html",
 		controller : "delVCtrl"
 	})
 	
