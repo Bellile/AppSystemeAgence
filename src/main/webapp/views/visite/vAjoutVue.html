@@ -1,11 +1,7 @@
 <h2>Formulaire d'ajout d'une visite</h2>
 <br/>
-
-<div class="input-group date">
-   Date <input type="text" class="form-control" value="2018-09-12" ng-model="vForm.dateHeure">
-    <div class="input-group-addon">
-        <span class="glyphicon glyphicon-th"></span>
-    </div>
+Date <input type="datetime-local" placeholder="Date" ng-model="vForm.dateHeure">
 <br/>
-
+<input type="button" value="Ajouter" ng-click="ajout()" >
+<br/>
 <h3>{{msg}}</h3>

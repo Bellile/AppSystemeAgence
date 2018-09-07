@@ -40,7 +40,7 @@ monApp
 						$http(
 								{
 									method : "POST",
-									url : "http://localhost:8080/Projet_AppSystemeAgence/wsV/recherche",
+									url : "http://localhost:8080/Projet_AppSystemeAgence/wsV/ajout",
 									data : angular.toJson(vIn),
 									headers : {
 										'Content-Type' : 'application/json'

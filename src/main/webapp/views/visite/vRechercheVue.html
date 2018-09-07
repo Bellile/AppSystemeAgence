@@ -1,0 +1,21 @@
+<h2>Formulaire d'ajout d'une visite</h2>
+<br/>
+ID : <input type="number" placeholder="identifiant" ng-model="id" >
+<br/>
+<input type="button" value="Rechercher" ng-click="recherche()" >
+<br/>
+<div ng-show="indice">
+<h1>Informations de la visite</h1>
+
+<table class="table table-striped">
+	<tr>
+		<th>Date et heure</th>
+	</tr>
+	<tr>
+		<td>{{visite.dateHeure | date: "dd/MM/yyyy HH:mm"}}</td>
+	</tr>
+</table>
+
+</div>
+
+<h3>{{msg}}</h3>
