@@ -3,7 +3,6 @@
 	<tr>
 		<th>Nom</th>
 		<th>Email</th>
-		<th>N° de rue</th>
 		<th>Rue</th>
 		<th>Code Postal</th>
 		<th>Ville</th>
@@ -14,8 +13,7 @@
 	<tr ng-repeat="p in liste">
 		<td>{{p.nom}}</td>
 		<td>{{p.mail}}</td>
-		<td>{{p.adresse.numRue}}</td>
-		<td>{{p.adresse.rue}}</td>
+		<td>{{p.adresse.numRue}}, {{p.adresse.rue}}</td>
 		<td>{{p.adresse.cp}}</td> 
 		<td>{{p.adresse.localite}}</td>
 		<td>{{p.adresse.pays}}</td>
