@@ -1,5 +1,5 @@
 //Configuration de la table de routing
-app.config(function($routeProvider) {
+monApp.config(function($routeProvider) {
 
 	$routeProvider.when("/listeAgence", {
 		templateUrl : "views/aListeVue.html",
