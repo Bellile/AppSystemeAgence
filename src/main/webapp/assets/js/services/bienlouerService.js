@@ -25,6 +25,8 @@ monApp.factory("blProvider", function ($http){
 	
 	//fonction pour ajouter un bl
 	function ajoutBL(blIn, callBack){
+		
+		blIn.listeImage=blIn.listeImage.base64;
 		$http({
 			method: "POST",
 			url:"http://localhost:8080/Projet_AppSystemeAgence/wsBl/ajout",

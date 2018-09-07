@@ -1,10 +1,41 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<h2>Formulaire d'ajout d'un Bien immobilier en location</h2>
+<br/>
+Type de Bien <input type="text" placeholder="type" ng-model="blForm.typeBien">
+<br/>
+Statut <input type="text" placeholder="statut" ng-model="blForm.statut">
+<br/>
+Revenu cadastral <input type="number" placeholder="revenu" ng-model="blForm.revenuCadastre">
+<br/>
+Description <input type="text" placeholder="description" ng-model="blForm.description">
+<br/>
+Date de soumission <input type="date" placeholder="date" ng-model="blForm.dateSoumission">
+<br/>
+Date de disposition <input type="date" placeholder="date" ng-model="blForm.dateDisposition">
+<br/>
+Photo descriptive <input type="file" placeholder="image" ng-model="blForm.listeImage" accept="image/*" base-sixty-four-input>
+<br/>
+Caution locative <input type="number" placeholder="caution" ng-model="blForm.caution">
+<br/>
+Loyer Mensuel <input type="number" placeholder="loyer" ng-model="blForm.loyer">
+<br/>
+Charges mensuelles <input type="number" placeholder="charges" ng-model="blForm.charges">
+<br/>
+Type de bail <input type="text" placeholder="bail" ng-model="blForm.typeBail">
+<br/>
+Garniture <input type="text" placeholder="garniture" ng-model="blForm.garniture">
+<br/>
+Num&eacutero de rue <input type="number" placeholder="Numéro" ng-model="blForm.adresse.numRue">
+<br/>
+Rue <input type="text" placeholder="rue" ng-model="blForm.adresse.rue">
+<br/>
+Code Postal <input type="text" placeholder="code postal" ng-model="blForm.adresse.cp">
+<br/>
+Ville <input type="text" placeholder="ville" ng-model="blForm.adresse.localite">
+<br/>
+Pays <input type="text" placeholder="pays" ng-model="blForm.adresse.pays">
+<br/>
+<input type="button" value="Ajouter" ng-click="ajouter()" >
+<br/>
+<h3>{{msg}}</h3>
+		
 
-</body>
-</html>

@@ -7,10 +7,9 @@
 		<th>Description</th>
 		<th>Date de soumission</th>
 		<th>Date de disposition</th>
-		<th>Liste Image</th>
-		<th>Caution</th>
-		<th>Loyer Mensuel</th>
+		<th>Photo descriptive</th>
 		<th>Caution locative</th>
+		<th>Loyer Mensuel</th>
 		<th>Charges mensuelles</th>
 		<th>Tye de bail</th>
 		<th>Garniture</th>
@@ -26,7 +25,7 @@
 		<td>{{b.description}}</td>
 		<td>{{b.dateSoumission}}</td>
 		<td>{{b.dateDisposition}}</td>
-		<td>{{b.listeImage}}</td>
+		<td><img ng-src="data:image/JPEG;base64,{{b.listeImage}}" style="max-height:50px;max-width:50px"></td>
 		<td>{{b.caution}}</td>
 		<td>{{b.loyer}}</td>
 		<td>{{b.charges}}</td>

@@ -1,10 +1,49 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+<h2>Formulaire de recherche d'un bien immobilier en location</h2>
+<br/>
+ID : <input type="number" placeholder="identifiant" ng-model="id" >
+<br/>
+<input type="button" value="Rechercher" ng-click="rechercher()" >
+<br/>
+<div ng-show="indice">
+<h1>Informations du bien</h1>
+<br/>
+<table class="table table-striped">
+	<tr>
+		<th>Type de Bien</th>
+		<th>Statut</th>
+		<th>Revenu cadastral</th>
+		<th>Description</th>
+		<th>Date de soumission</th>
+		<th>Date de disposition</th>
+		<th>Photo descriptive</th>
+		<th>Caution locative</th>
+		<th>Loyer Mensuel</th>
+		<th>Charges mensuelles</th>
+		<th>Tye de bail</th>
+		<th>Garniture</th>
+		<th>Rue</th>
+		<th>Code Postal</th>
+		<th>Ville</th>
+		<th>Pays</th>
+	</tr>
+	<tr>
+		<td>{{bienlouer.typeBien}}</td>
+		<td>{{bienlouer.statut}}</td>
+		<td>{{bienlouer.revenuCadastre}}</td>
+		<td>{{bienlouer.description}}</td>
+		<td>{{bienlouer.dateSoumission}}</td>
+		<td>{{bienlouer.dateDisposition}}</td>
+		<td>{{bienlouer.listeImage}}</td>
+		<td>{{bienlouer.caution}}</td>
+		<td>{{bienlouer.loyer}}</td>
+		<td>{{bienlouer.charges}}</td>
+		<td>{{bienlouer.typeBail}}</td>
+		<td>{{bienlouer.garniture}}</td>
+		<td>{{bienlouer.adresse.numRue}}, {{p.adresse.rue}}</td>
+		<td>{{bienlouer.adresse.cp}}</td> 
+		<td>{{bienlouer.adresse.localite}}</td>
+		<td>{{bienlouer.adresse.pays}}</td>
+	</tr>
+</table>
+<br/>
+<h3>{{msg}}</h3>
