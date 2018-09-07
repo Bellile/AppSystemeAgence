@@ -24,10 +24,13 @@
 <!-- Ajout des services -->
 <script type="text/javascript" src="assets/js/services/responsableService.js"></script>
 <script type="text/javascript" src="assets/js/services/AgenceService.js"></script>
+<script type="text/javascript" src="assets/js/services/proprietaireService.js"></script>
 
 <!-- Ajout des controllers -->
 <script type="text/javascript" src="assets/js/controllers/responsableController.js"></script>
 <script type="text/javascript" src="assets/js/controllers/AgenceController.js"></script>
+<script type="text/javascript" src="assets/js/controllers/proprietaireController.js"></script>
+
 </head>
 <body ng-app="monApp">
 <nav class="navbar bg-primary navbar-fixed-top">
@@ -57,10 +60,10 @@
         <a class="dropdown-toggle" data-toggle="dropdown">Proprietaire<span class="caret"></span></a>
         	<ul class="dropdown-menu">
           	<li><a href="#!listeProprietaire">Liste</a></li>
-          	<li><a href="#">Ajout</a></li>
-          	<li><a href="#">Suppression</a></li>
-          	<li><a href="#">Modification</a></li>
-          	<li><a href="#">Recherche</a></li>
+          	<li><a href="#!ajoutProprietaire">Ajout</a></li>
+          	<li><a href="#!supprProprietaire">Suppression</a></li>
+          	<li><a href="#!modifProprietaire">Modification</a></li>
+          	<li><a href="#!rechercheProprietaire">Recherche</a></li>
         	</ul>
       	</li>
       	<li class="dropdown">

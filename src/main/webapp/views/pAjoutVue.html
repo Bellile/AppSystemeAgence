@@ -1,0 +1,15 @@
+<h2>Formulaire d'ajout d'un Propri&eacutetaire</h2>
+
+Nom <input type="text" placeholder="nom" ng-model="pForm.nom">
+Email <input type="text" placeholder="mail" ng-model="pForm.mail">
+N° de rue <input type="number" placeholder="N°" ng-model="pForm.adresse.numRue">
+Rue <input type="text" placeholder="rue" ng-model="pForm.adresse.rue">
+Code Postal <input type="text" placeholder="cp" ng-model="pForm.adresse.cp">
+Ville <input type="text" placeholder="ville" ng-model="pForm.adresse.localite">
+Pays <input type="text" placeholder="pays" ng-model="pForm.adresse.pays">
+T&eacutel&eacutephone Personnel <input type="text" placeholder="tel personnel" ng-model="pForm.telPerso">
+T&eacutel&eacutephone Professionnel <input type="text" placeholder="tel pro" ng-model="pForm.telPro">
+<br/>
+<input type="button" value="Ajouter" ng-click="ajouter()" >
+
+<h3>{{msg}}</h3>

@@ -46,5 +46,4 @@ public class AgenceRestController {
 		agenceService.deleteAgence(id);
 	}
 	
-	
 }
