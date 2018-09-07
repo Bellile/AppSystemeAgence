@@ -21,27 +21,27 @@ public class ContratRestController {
 	@Autowired
 	private IContratService contratService;
 	
-	@RequestMapping(value="/listeContrat", method=RequestMethod.GET, produces="application/json")
+	@RequestMapping(value="/liste", method=RequestMethod.GET, produces="application/json")
 	public List<Contrat> getAllCo(){
 		return contratService.getAllContrats();
 	}
 	
-	@RequestMapping(value="/rechercheContrat", method=RequestMethod.GET, produces="application/json")
+	@RequestMapping(value="/recherche", method=RequestMethod.GET, produces="application/json")
 	public Contrat getCoById(@RequestParam("pId") int id) {
 		return contratService.getContratById(id);
 	}
 	
-	@RequestMapping(value="/ajoutContrat", method=RequestMethod.POST, produces="application/json", consumes="application/json")
+	@RequestMapping(value="/ajout", method=RequestMethod.POST, produces="application/json", consumes="application/json")
 	public Contrat addCo(@RequestBody Contrat c) {
 		return contratService.addContrat(c);
 	}
 	
-	@RequestMapping(value="/modifContrat", method=RequestMethod.PUT, produces="application/json", consumes="application/json")
+	@RequestMapping(value="/modif", method=RequestMethod.PUT, produces="application/json", consumes="application/json")
 	public Contrat updateCo(@RequestBody Contrat c) {
 		return contratService.updateContrat(c);
 	}
 	
-	@RequestMapping(value="/supprContrat/{pId}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/suppr/{pId}", method=RequestMethod.DELETE)
 	public void deleteCo(@PathVariable("pId") int id) {
 		contratService.deleteContrat(id);
 	}
