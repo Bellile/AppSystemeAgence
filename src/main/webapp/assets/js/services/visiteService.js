@@ -53,12 +53,12 @@ monApp
 					}
 
 					// modifier une visite
-					function modifVisite(eIn, callBack) {
+					function modifVisite(vIn, callBack) {
 						$http(
 								{
 									method : "PUT",
 									url : "http://localhost:8080/Projet_AppSystemeAgence/wsV/modif",
-									data : angular.toJson(eIn),
+									data : angular.toJson(vIn),
 									headers : {
 										'Content-Type' : 'application/json'
 									}
@@ -77,7 +77,7 @@ monApp
 						$http(
 								{
 									method : "DELETE",
-									url : "http://localhost:8080/Projet_AppSystemeAgence/wsV/suppr"
+									url : "http://localhost:8080/Projet_AppSystemeAgence/wsV/suppr/"
 											+ id
 								}).then(function successCallback(response) {
 

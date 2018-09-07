@@ -1,5 +1,5 @@
 //Création des controllers de VisiteController
-monApp.controller("getAllVCtrl", function($scope, visiteProvider, $rootScope) {
+monApp.controller("getAllVCtrl", function($scope, visiteProvider) {
 
 	// appel de la fonction getAll de mon service etudiantProvider
 	visiteProvider.getAll(function(donnees) {
@@ -54,17 +54,12 @@ monApp.controller("getAllVCtrl", function($scope, visiteProvider, $rootScope) {
 })
 
 .controller("updateVCtrl",
-		function($scope, visiteProvider, $location, $rootScope) {
-			if ($rootScope.vUpdate.id == undefined) {
+		function($scope, visiteProvider, $location) {
 
 				$scope.vModif = {
 					id : undefined,
 					dateHeure : ""
 				}
-
-			} else {
-				$scope.vModif = $rootScope.vUpdate;
-			}
 
 			// appel de la fonction modifiera partir du bouton de la vue
 			$scope.modif = function() {
@@ -85,7 +80,7 @@ monApp.controller("getAllVCtrl", function($scope, visiteProvider, $rootScope) {
 	$scope.id = undefined;
 	// appel de la fonction ajouter a partir du bouton de la vue
 	$scope.suppr = function() {
-		// appel de la fonction du service pour recup l'etudiant
+		// appel de la fonction du service pour recup la visite
 		visiteProvider.del($scope.id, function(retour) {
 			if (retour == 'OK') {
 				$scope.msg = "";

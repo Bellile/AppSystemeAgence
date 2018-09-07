@@ -1,7 +1,9 @@
 <h2>Formulaire de modification d'une visite </h2>
 <br />
-ID <input type="number" placeholder="ID" ng-model="vForm.id">
+ID <input type="number" placeholder="ID" ng-model="vModif.id">
 <br/>
-Date <input type="date" placeholder="Date" ng-model="vForm.dateHeure">
+Date <input type="datetime-local" placeholder="Date" ng-model="vModif.dateHeure">
+<br/>
+<input type="button" value="Modifier" ng-click="modif()">
 <br/>
 <h3>{{msg}}</h3>
