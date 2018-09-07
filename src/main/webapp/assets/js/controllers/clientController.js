@@ -1,7 +1,7 @@
 monApp.controller("getAllClCtrl", function($scope, clProvider) {
 
 	clProvider.getAll(function(donnees) {
-		$scope.liste = donnees;
+		$scope.listeClient = donnees;
 	});
 
 })
