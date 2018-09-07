@@ -25,6 +25,21 @@ public class BienImmoAVendreDaoImplTest {
 	@Test
 	@Ignore
 	@Transactional(readOnly=true)
+	public void testGetAllLoyerSize () {
+		double prix = 18250.25;
+		assertEquals(1, bImmoVDao.getVenteByPrix(prix).size());
+	}
+	
+	@Test
+	@Ignore
+	@Transactional(readOnly=true)
+	public void testGetAllRegionSize () {
+		assertEquals(1, bImmoVDao.getVenteByRegion("Nantes").size());
+	}
+	
+	@Test
+	@Ignore
+	@Transactional(readOnly=true)
 	public void testGetAllSize () {
 		assertEquals(1, bImmoVDao.getAll().size());
 	}

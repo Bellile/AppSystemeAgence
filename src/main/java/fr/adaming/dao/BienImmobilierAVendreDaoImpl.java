@@ -16,7 +16,7 @@ public class BienImmobilierAVendreDaoImpl extends DaoGenericImpl<BienImmobilierA
 	}
 
 	@Override
-	public List<BienImmobilierAVendre> getVenteByLoyer(double prix) {
+	public List<BienImmobilierAVendre> getVenteByPrix(double prix) {
 		//Création de la requête
 		String req = "FROM BienImmobilierAVendre bv WHERE bv.prix BETWEEN :pMin AND :pMax";
 		
@@ -35,7 +35,7 @@ public class BienImmobilierAVendreDaoImpl extends DaoGenericImpl<BienImmobilierA
 	@Override
 	public List<BienImmobilierAVendre> getVenteByRegion(String adresse) {
 		//Création de la requête
-		String req = "FROM BienImmobilierAVendre bv WHERE WHERE bv.adresse.localite LIKE :pVille OR bv.adresse.pays LIKE :pPays OR bv.adresse.rue LIKE :pRue OR bv.adresse.cp LIKE :pCp";
+		String req = "FROM BienImmobilierAVendre bv WHERE bv.adresse.localite LIKE :pVille OR bv.adresse.pays LIKE :pPays OR bv.adresse.rue LIKE :pRue OR bv.adresse.cp LIKE :pCp";
 		
 		//Récupération de la requête
 		Query query = em.createQuery(req);

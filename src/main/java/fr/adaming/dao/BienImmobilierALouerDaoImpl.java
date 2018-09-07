@@ -36,7 +36,7 @@ public class BienImmobilierALouerDaoImpl extends DaoGenericImpl<BienImmobilierAL
 	public List<BienImmobilierALouer> getLocationByRegion(String adresse) {
 		
 		//Création de la requête
-		String req = "FROM BienImmobilierALouer bl WHERE WHERE bl.adresse.localite LIKE :pVille OR bl.adresse.pays LIKE :pPays OR bl.adresse.rue LIKE :pRue OR bl.adresse.cp LIKE :pCp";
+		String req = "FROM BienImmobilierALouer bl WHERE bl.adresse.localite LIKE :pVille OR bl.adresse.pays LIKE :pPays OR bl.adresse.rue LIKE :pRue OR bl.adresse.cp LIKE :pCp";
 		
 		//Récupération de la requête
 		Query query = em.createQuery(req);

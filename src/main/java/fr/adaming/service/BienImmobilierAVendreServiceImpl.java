@@ -53,9 +53,9 @@ public class BienImmobilierAVendreServiceImpl implements IBienImmobilierAVendreS
 	}
 
 	@Override
-	public List<BienImmobilierAVendre> getVenteByLoyer(double prix) {
+	public List<BienImmobilierAVendre> getVenteByPrix(double prix) {
 		// TODO Auto-generated method stub
-		return bvDao.getVenteByLoyer(prix);
+		return bvDao.getVenteByPrix(prix);
 	}
 
 	@Override

@@ -25,6 +25,21 @@ public class BienImmoALouerDaoImplTest {
 	@Test
 	@Ignore
 	@Transactional(readOnly=true)
+	public void testGetAllLoyerSize () {
+		double loyer = 750.15;
+		assertEquals(1, bImmoLDao.getLocationByLoyer(loyer).size());
+	}
+	
+	@Test
+	@Ignore
+	@Transactional(readOnly=true)
+	public void testGetAllRegionSize () {
+		assertEquals(1, bImmoLDao.getLocationByRegion("Nantes").size());
+	}
+	
+	@Test
+	@Ignore
+	@Transactional(readOnly=true)
 	public void testGetAllSize () {
 		assertEquals(1, bImmoLDao.getAll().size());
 	}
