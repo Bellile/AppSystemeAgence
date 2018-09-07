@@ -1,0 +1,19 @@
+<h2>Formulaire d'ajout d'une agence</h2>
+<br/>
+Id <input type="text" placeholder="id" ng-model="agence.id">
+<br/>
+Nom <input type="text" placeholder="nom" ng-model="agence.nom">
+<br/>
+Num&eacutero de rue <input type="number" placeholder="Numéro" ng-model="agence.adresse.numRue">
+<br/>
+Rue <input type="text" placeholder="rue" ng-model="agence.adresse.rue">
+<br/>
+Code Postal <input type="text" placeholder="code postal" ng-model="agence.adresse.cp">
+<br/>
+Ville <input type="text" placeholder="ville" ng-model="agence.adresse.localite">
+<br/>
+Pays <input type="text" placeholder="pays" ng-model="agence.adresse.pays">
+<br/>
+<input type="button" value="Modifier" ng-click="modif()" >
+<br/>
+<h3>{{msg}}</h3>

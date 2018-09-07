@@ -24,64 +24,68 @@ monApp.config(function($routeProvider) {
 
 	
 	$routeProvider.when("/listeLouer", {
-		templateUrl : "views/bLListeVue.html",
+		templateUrl : "views/bl/bLListeVue.html",
 		controller : "getAllBLCtrl"
 	})
 	$routeProvider.when("/rechercheLouer", {
-		templateUrl : "views/bLRechercheVue.html",
+		templateUrl : "views/bl/bLRechercheVue.html",
 		controller : "getIdBLCtrl"
 	})
 	$routeProvider.when("/ajoutLouer", {
-		templateUrl : "views/bLAjoutVue.html",
+		templateUrl : "views/bl/bLAjoutVue.html",
 		controller : "addBLCtrl"
 	})
 	$routeProvider.when("/modifAgence", {
-		templateUrl : "views/bLModifVue.html",
+		templateUrl : "views/bl/bLModifVue.html",
 		controller : "updateBLCtrl"
 	})
 	$routeProvider.when("/supprLouer", {
-		templateUrl : "views/bLSupprVue.html",
+		templateUrl : "views/bl/bLSupprVue.html",
 		controller : "delBLCtrl"
 	})
 
 	
 	$routeProvider.when("/listeVendre", {
-		templateUrl : "views/bVListeVue.html",
+		templateUrl : "views/bv/bVListeVue.html",
 		controller : "getAllBVCtrl"
 	})
 	$routeProvider.when("/rechercheVendre", {
-		templateUrl : "views/bVRechercheVue.html",
+		templateUrl : "views/bv/bVRechercheVue.html",
 		controller : "getIdBVCtrl"
 	})
 	$routeProvider.when("/ajoutVendre", {
-		templateUrl : "views/bLAjoutVue.html",
+		templateUrl : "views/bv/bVAjoutVue.html",
 		controller : "addBVCtrl"
 	})
 	$routeProvider.when("/modifVendre", {
-		templateUrl : "views/bVModifVue.html",
+		templateUrl : "views/bv/bVModifVue.html",
 		controller : "updateCtrl"
 	})
 	$routeProvider.when("/supprVendre", {
-		templateUrl : "views/bVSupprVue.html",
+		templateUrl : "views/bv/bVSupprVue.html",
 		controller : "delBVCtrl"
 	})
 
 	
 	$routeProvider.when("/listeClasseStandard", {
-		templateUrl : "views/cSListeVue.html",
+		templateUrl : "views/cs/cSListeVue.html",
 		controller : "getAllCSCtrl"
 	})
 	$routeProvider.when("/rechercheClasseStandard", {
-		templateUrl : "views/cSRechercheVue.html",
+		templateUrl : "views/cs/cSRechercheVue.html",
 		controller : "getIdCSCtrl"
 	})
 	$routeProvider.when("/ajoutClasseStandard", {
-		templateUrl : "views/cSAjoutVue.html",
+		templateUrl : "views/cs/cSAjoutVue.html",
 		controller : "addCSCtrl"
 	})
 	$routeProvider.when("/modifClasseStandard", {
-		templateUrl : "views/cSModifVue.html",
+		templateUrl : "views/cs/cSModifVue.html",
 		controller : "updateCSCtrl"
+	})
+		$routeProvider.when("/supprClasseStandard", {
+		templateUrl : "views/cs/cSSupprVue.html",
+		controller : "delCSCtrl"
 	})
 
 	

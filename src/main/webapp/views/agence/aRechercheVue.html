@@ -1,0 +1,26 @@
+<h2>Formulaire de recherche d'une agence</h2>
+<br/>
+ID : <input type="number" placeholder="identifiant" ng-model="id" >
+<br/>
+<input type="button" value="Rechercher" ng-click="rech(id)" >
+<br/>
+<div ng-show="indice">
+<h2 style="color : aquamarine; text-align: center">Resultat</h2>
+<table class="table table-striped">
+	<tr>
+		<th>Nom</th>
+		<th>Rue</th>
+		<th>Code Postale</th>
+		<th>Ville</th>
+		<th>Pays</th>
+		<th>Liens</th>
+	</tr>
+	<tr>
+		<td>{{aOut.nom}}</td>
+		<td>{{aOut.adresse.numRue}}, {{a.adresse.rue}}</td>
+		<td>{{aOut.adresse.cp}}</td>
+		<td>{{aOut.adresse.localite}}</td>
+		<td>{{aOut.adresse.pays}}</td>
+		<td><a ng-click="delLink(a.id)">Supprimer</a> | <a ng-click="updLink(a)">Modifier</a></td>
+	</tr>
+</table>
