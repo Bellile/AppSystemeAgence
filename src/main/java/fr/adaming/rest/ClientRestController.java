@@ -14,37 +14,37 @@ import fr.adaming.model.Client;
 import fr.adaming.service.IClientService;
 
 @RestController
-@RequestMapping("/wscl")
+@RequestMapping("/wsCl")
 public class ClientRestController {
 	
 	@Autowired
 	IClientService clService;
 	
 	
-	@RequestMapping(value="/listeCL", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value="/liste", method = RequestMethod.GET, produces = "application/json")
 	public List<Client> getAllClient(){
 		
 		return clService.getAll();
 	}
 	
-	@RequestMapping(value="/getCL", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value="/recherche", method = RequestMethod.GET, produces = "application/json")
 	public Client getClient(@RequestParam ("pId") int id){
 		return clService.getById(id);
 	}
 	
 	
-	@RequestMapping(value="/addCL", method = RequestMethod.POST, produces = "application/json", consumes = "application/json" )
+	@RequestMapping(value="/ajout", method = RequestMethod.POST, produces = "application/json", consumes = "application/json" )
 	public Client addClient(@RequestBody Client cl){
 		return clService.add(cl);
 	}
 	
 	
-	@RequestMapping(value="/updateCl",  method=RequestMethod.PUT, produces = "application/json", consumes = "application/json")
+	@RequestMapping(value="/modif",  method=RequestMethod.PUT, produces = "application/json", consumes = "application/json")
 	public Client updateClient(@RequestBody Client cl){
 		return clService.update(cl);
 	}
 	
-	@RequestMapping(value="deleteCL/{pId}",  method = RequestMethod.DELETE)
+	@RequestMapping(value="/suppr/{pId}",  method = RequestMethod.DELETE)
 	public void deleteClient(@PathVariable ("pId")int id){
 		clService.delete(id);
 	}
