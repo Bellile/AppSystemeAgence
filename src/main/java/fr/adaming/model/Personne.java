@@ -1,9 +1,11 @@
 package fr.adaming.model;
 
+import java.io.Serializable;
+
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public abstract class Personne {
+public abstract class Personne implements Serializable {
 	
 	//Attributs
 	protected String nom;

@@ -1,6 +1,5 @@
 package fr.adaming.model;
 
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -15,7 +14,6 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
