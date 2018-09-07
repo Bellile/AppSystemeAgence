@@ -35,7 +35,7 @@ monApp.config(function($routeProvider) {
 		templateUrl : "views/bl/bLAjoutVue.html",
 		controller : "addBLCtrl"
 	})
-	$routeProvider.when("/modifAgence", {
+	$routeProvider.when("/modifLouer", {
 		templateUrl : "views/bl/bLModifVue.html",
 		controller : "updateBLCtrl"
 	})
