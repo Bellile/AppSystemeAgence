@@ -97,7 +97,7 @@ monApp.controller("getAllACtrl", function ($rootScope, $scope, aProvider, $locat
 		$scope.suppr = function (id) {
 			//Appel de la fonction rechParId de AgenceSrevice
 			aProvider.del(id, function (donnee) {
-				if (typeof donnee=='OK'){
+				if (donnee=='OK'){
 					$scope.msg="";
 					//Rediriger vers la page accueil après ajout
 					$location.path("listeAgence")

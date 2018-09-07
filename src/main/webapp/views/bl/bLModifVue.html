@@ -2,9 +2,29 @@
 <br/>
 ID <input type="number" placeholder="ID" ng-model="blForm.id">
 <br/>
-Type de Bien <input type="text" placeholder="type" ng-model="blForm.typeBien">
+Type de Bien
+<select class="form-control" ng-model="blForm.typeBien">
+  <option value="maison">Maison</option>
+  <option value="appartement">Appartement</option>
+  <option value="studio">Studio</option>
+  <option value="entrepot">Entrepot</option>
+  <option value="emplacement">Emplacement</option>
+  <option value="terrain">Terrain</option>
+</select>
 <br/>
-Statut <input type="text" placeholder="statut" ng-model="blForm.statut">
+Statut
+<div class="radio">
+  <label>
+    <input type="radio" name="statut" value="disponible" ng-model="blForm.statut">
+    Disponible
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="statut" value="loue" ng-model="blForm.statut">
+    Lou&eacute
+  </label>
+</div>
 <br/>
 Revenu cadastral <input type="number" placeholder="revenu" ng-model="blForm.revenuCadastre">
 <br/>
@@ -24,7 +44,19 @@ Charges mensuelles <input type="number" placeholder="charges" ng-model="blForm.c
 <br/>
 Type de bail <input type="text" placeholder="bail" ng-model="blForm.typeBail">
 <br/>
-Garniture <input type="text" placeholder="garniture" ng-model="blForm.garniture">
+Garniture
+<div class="radio">
+  <label>
+    <input type="radio" name="garniture" value="meuble" ng-model="blForm.garniture">
+    Meubl&eacute
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="garniture" value="non meuble" ng-model="blForm.garniture">
+    Non meubl&eacute
+  </label>
+</div>
 <br/>
 Num&eacutero de rue <input type="number" placeholder="Numéro" ng-model="blForm.adresse.numRue">
 <br/>
@@ -36,6 +68,6 @@ Ville <input type="text" placeholder="ville" ng-model="blForm.adresse.localite">
 <br/>
 Pays <input type="text" placeholder="pays" ng-model="blForm.adresse.pays">
 <br/>
-<input type="button" value="Ajouter" ng-click="modifier()">
+<input type="button" value="Modifier" ng-click="modifier()">
 <br/>
 <h3>{{msg}}</h3>
