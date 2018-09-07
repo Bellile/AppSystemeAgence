@@ -1,0 +1,35 @@
+<h2>Formulaire d'ajout d'un Propri&eacutetaire</h2>
+<br/>
+ID : <input type="number" placeholder="identifiant" ng-model="id" >
+<br/>
+<input type="button" value="Rechercher" ng-click="rechercher()" >
+<br/>
+<div ng-show="indice">
+<h1>Informations du Propri&eacutetaire</h1>
+
+<table class="table table-striped">
+	<tr>
+		<th>Nom</th>
+		<th>Email</th>
+		<th>Rue</th>
+		<th>Code Postal</th>
+		<th>Ville</th>
+		<th>Pays</th>
+		<th>T&eacutel&eacutephone Personnel</th>
+		<th>T&eacutel&eacutephone Professionnel</th>
+	</tr>
+	<tr>
+		<td>{{proprio.nom}}</td>
+		<td>{{proprio.mail}}</td>
+		<td>{{proprio.adresse.numRue}}, {{proprio.adresse.rue}}</td>
+		<td>{{proprio.adresse.cp}}</td> 
+		<td>{{proprio.adresse.localite}}</td>
+		<td>{{proprio.adresse.pays}}</td>
+		<td>{{proprio.telPerso}}</td>
+		<td>{{proprio.telPro}}</td>
+	</tr>
+</table>
+
+</div>
+
+<h3>{{msg}}</h3>

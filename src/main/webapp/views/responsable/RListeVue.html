@@ -1,0 +1,21 @@
+<h2 style="color:red; text-align: center;">Liste des responsables</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th >Nom</th>
+      <th >Telephone</th>
+      <th >Mail</th>
+      <th >Identifiant</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="e in liste">
+      <td>{{r.nom}}</td>
+      <td>{{r.telPerso}}</td>
+      <td>{{r.mail}}</td>
+      <td>{{r.identifiant}}</td>
+      <td><a ng-click="deleteLien(r)">Supprimer</a> | <a ng-click="updateLien(r)">Modifier</a></td>
+    </tr>
+   
+  </tbody>
+</table>
