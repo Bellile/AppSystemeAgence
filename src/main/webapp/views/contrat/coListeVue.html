@@ -1,0 +1,15 @@
+<h2 style="color : aquamarine; text-align: center">Liste des contrats</h2>
+<table class="table table-striped">
+	<tr>
+		<th>Type</th>
+		<th>Date d'acquisition</th>
+	</tr>
+	<tr ng-repeat="a in liste">
+		<td>{{a.nom}}</td>
+		<td>{{a.adresse.numRue}}, {{a.adresse.rue}}</td>
+		<td>{{a.adresse.cp}}</td>
+		<td>{{a.adresse.localite}}</td>
+		<td>{{a.adresse.pays}}</td>
+		<td><a ng-click="delLink(a.id)">Supprimer</a> | <a ng-click="updLink(a)">Modifier</a></td>
+	</tr>
+</table>
