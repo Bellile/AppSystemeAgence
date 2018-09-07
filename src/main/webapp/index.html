@@ -30,6 +30,8 @@
 <script type="text/javascript" src="assets/js/controllers/clientController.js"></script>
 <script type="text/javascript" src="assets/js/controllers/visiteController.js"></script>
 <script type="text/javascript" src="assets/js/controllers/bienlouerController.js"></script>
+<script type="text/javascript" src="assets/js/controllers/ContratController.js"></script>
+
 
 <!-- Ajout des services -->
 <script type="text/javascript" src="assets/js/services/responsableService.js"></script>
@@ -38,6 +40,7 @@
 <script type="text/javascript" src="assets/js/services/clientService.js"></script>
 <script type="text/javascript" src="assets/js/services/visiteService.js"></script>
 <script type="text/javascript" src="assets/js/services/bienlouerService.js"></script>
+<script type="text/javascript" src="assets/js/services/ContratService.js"></script>
 
 
 </head>
@@ -56,33 +59,33 @@
         	</ul>
       	</li>
       	<li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown">Responsable<span class="caret"></span></a>
+        <a class="dropdown-toggle" data-toggle="dropdown">Biens en location<span class="caret"></span></a>
         	<ul class="dropdown-menu">
-          	<li><a href="#!listeResponsable">Liste</a></li>
-          	<li><a href="#!ajoutResponsable">Ajout</a></li>
-          	<li><a href="#!supprResponsable">Suppression</a></li>
-          	<li><a href="#!modifResponsable">Modification</a></li>
-          	<li><a href="#!rechercheResponsable">Recherche</a></li>
+          	<li><a href="#!listeLouer">Liste</a></li>
+          	<li><a href="#!ajoutLouer">Ajout</a></li>
+          	<li><a href="#!supprLouer">Suppression</a></li>
+          	<li><a href="#!modifLouer">Modification</a></li>
+          	<li><a href="#!rechercheLouer">Recherche</a></li>
         	</ul>
       	</li>
       	<li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown">Proprietaire<span class="caret"></span></a>
+        <a class="dropdown-toggle" data-toggle="dropdown">Biens en vente<span class="caret"></span></a>
         	<ul class="dropdown-menu">
-          	<li><a href="#!listeProprietaire">Liste</a></li>
-          	<li><a href="#!ajoutProprietaire">Ajout</a></li>
-          	<li><a href="#!supprProprietaire">Suppression</a></li>
-          	<li><a href="#!modifProprietaire">Modification</a></li>
-          	<li><a href="#!rechercheProprietaire">Recherche</a></li>
+          	<li><a href="#!listeVendre">Liste</a></li>
+          	<li><a href="#!ajoutVendre">Ajout</a></li>
+          	<li><a href="#!supprVendre">Suppression</a></li>
+          	<li><a href="#!modifVendre">Modification</a></li>
+          	<li><a href="#!rechercheVendre">Recherche</a></li>
         	</ul>
       	</li>
       	<li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown">Visite<span class="caret"></span></a>
+        <a class="dropdown-toggle" data-toggle="dropdown">Classe Standard<span class="caret"></span></a>
         	<ul class="dropdown-menu">
-          	<li><a href="#!listeVisite">Liste</a></li>
-          	<li><a href="#!ajoutVisite">Ajout</a></li>
-          	<li><a href="#!supprVisite">Suppression</a></li>
-          	<li><a href="#!modifVisite">Modification</a></li>
-          	<li><a href="#!rechercheVisite">Recherche</a></li>
+          	<li><a href="#!listeClasseStandard">Liste</a></li>
+          	<li><a href="#!ajoutClasseStandard">Ajout</a></li>
+          	<li><a href="#!supprClasseStandard">Suppression</a></li>
+          	<li><a href="#!modifClasseStandard">Modification</a></li>
+          	<li><a href="#!rechercheClasseStandard">Recherche</a></li>
         	</ul>
       	</li>
       	<li class="dropdown">
@@ -96,15 +99,47 @@
         	</ul>
       	</li>
       	<li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown">Bien en location<span class="caret"></span></a>
+        <a class="dropdown-toggle" data-toggle="dropdown">Contrat<span class="caret"></span></a>
         	<ul class="dropdown-menu">
-          	<li><a href="#!listeLouer">Liste</a></li>
-          	<li><a href="#!ajoutLouer">Ajout</a></li>
-          	<li><a href="#!supprLouer">Suppression</a></li>
-          	<li><a href="#!modifLouer">Modification</a></li>
-          	<li><a href="#!rechercheLouer">Recherche</a></li>
+          	<li><a href="#!listeContrat">Liste</a></li>
+          	<li><a href="#!ajoutContrat">Ajout</a></li>
+          	<li><a href="#!supprContrat">Suppression</a></li>
+          	<li><a href="#!modifContrat">Modification</a></li>
+          	<li><a href="#!rechercheContrat">Recherche</a></li>
         	</ul>
       	</li>
+      	<li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">Proprietaire<span class="caret"></span></a>
+        	<ul class="dropdown-menu">
+          	<li><a href="#!listeProprietaire">Liste</a></li>
+          	<li><a href="#!ajoutProprietaire">Ajout</a></li>
+          	<li><a href="#!supprProprietaire">Suppression</a></li>
+          	<li><a href="#!modifProprietaire">Modification</a></li>
+          	<li><a href="#!rechercheProprietaire">Recherche</a></li>
+        	</ul>
+      	</li>
+      	<li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">Responsable<span class="caret"></span></a>
+        	<ul class="dropdown-menu">
+          	<li><a href="#!listeResponsable">Liste</a></li>
+          	<li><a href="#!ajoutResponsable">Ajout</a></li>
+          	<li><a href="#!supprResponsable">Suppression</a></li>
+          	<li><a href="#!modifResponsable">Modification</a></li>
+          	<li><a href="#!rechercheResponsable">Recherche</a></li>
+        	</ul>
+      	</li>
+      	<li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">Visite<span class="caret"></span></a>
+        	<ul class="dropdown-menu">
+          	<li><a href="#!listeVisite">Liste</a></li>
+          	<li><a href="#!ajoutVisite">Ajout</a></li>
+          	<li><a href="#!supprVisite">Suppression</a></li>
+          	<li><a href="#!modifVisite">Modification</a></li>
+          	<li><a href="#!rechercheVisite">Recherche</a></li>
+        	</ul>
+      	</li>
+
+      	
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
 	<form class="navbar-form">

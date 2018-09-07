@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+<h2 style="color : aquamarine; text-align: center">Formulaire d'ajout de contrat</h2>
+<label>Type de mandat</label>
+<select class="form-control" ng-model="contrat.type">
+  <option value="">choisissez un type de contrat</option>
+  <option value="exclusif">Exclusif</option>
+  <option value="simple">Simple</option>
+  <option value="sous-mandat">Sous-mandat</option>
+</select>
+<br/>
+<label>Date d'acquisition</label>
+<input type="date" placeholder="Date" ng-model="contrat.dateAcquisition">
+<br/>
+<input type="button" value="Ajouter" ng-click="ajout()">
+<h3>{{msg}}</h3>

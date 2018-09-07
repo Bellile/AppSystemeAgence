@@ -3,13 +3,11 @@
 	<tr>
 		<th>Type</th>
 		<th>Date d'acquisition</th>
+		<th>Liens</th>
 	</tr>
-	<tr ng-repeat="a in liste">
-		<td>{{a.nom}}</td>
-		<td>{{a.adresse.numRue}}, {{a.adresse.rue}}</td>
-		<td>{{a.adresse.cp}}</td>
-		<td>{{a.adresse.localite}}</td>
-		<td>{{a.adresse.pays}}</td>
-		<td><a ng-click="delLink(a.id)">Supprimer</a> | <a ng-click="updLink(a)">Modifier</a></td>
+	<tr ng-repeat="co in liste">
+		<td>{{co.type}}</td>
+		<td>{{co.dateAcquisition}}</td>
+		<td><a ng-click="delLink(co.id)">Supprimer</a> | <a ng-click="updLink(co)">Modifier</a></td>
 	</tr>
 </table>

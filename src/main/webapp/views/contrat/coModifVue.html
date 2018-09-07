@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+<h2 style="color : aquamarine; text-align: center">Formulaire de modification de contrat</h2>
+<br/>
+<label>Numero du contrat</label>
+<input type="text" placeholder="Numero" ng-model="coModif.id">
+<br/>
+<label>Type de mandat</label>
+<select class="form-control" ng-model="coModif.type">
+  <option value="">choisissez un type de contrat</option>
+  <option value="exclusif">Exclusif</option>
+  <option value="simple">Simple</option>
+  <option value="sous-mandat">Sous-mandat</option>
+</select>
+<br/>
+<label>Date d'acquisition</label>
+<input type="datetime" placeholder="Date" ng-model="coModif.dateAcquisition">
+<br/>
+<input type="button" value="Ajouter" ng-click="modif()">
+<h3>{{msg}}</h3>
