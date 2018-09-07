@@ -33,7 +33,7 @@ ID : <input type="number" placeholder="identifiant" ng-model="id" >
 		<td>{{bienlouer.description}}</td>
 		<td>{{bienlouer.dateSoumission}}</td>
 		<td>{{bienlouer.dateDisposition}}</td>
-		<td>{{bienlouer.listeImage}}</td>
+		<td><img ng-src="data:image/JPEG;base64,{{bienlouer.listeImage}}" style="max-height:50px;max-width:50px"></td>
 		<td>{{bienlouer.caution}}</td>
 		<td>{{bienlouer.loyer}}</td>
 		<td>{{bienlouer.charges}}</td>
