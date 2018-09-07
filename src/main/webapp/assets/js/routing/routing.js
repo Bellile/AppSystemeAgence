@@ -59,7 +59,7 @@ monApp.config(function($routeProvider) {
 	})
 	$routeProvider.when("/modifVendre", {
 		templateUrl : "views/bv/bVModifVue.html",
-		controller : "updateCtrl"
+		controller : "updateBVCtrl"
 	})
 	$routeProvider.when("/supprVendre", {
 		templateUrl : "views/bv/bVSupprVue.html",
@@ -125,7 +125,7 @@ monApp.config(function($routeProvider) {
 	})
 	$routeProvider.when("/modifContrat", {
 		templateUrl : "views/contrat/coModifVue.html",
-		controller : "updateCtrl"
+		controller : "updateCoCtrl"
 	})
 	$routeProvider.when("/supprContrat", {
 		templateUrl : "views/contrat/coSupprVue.html",
