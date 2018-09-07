@@ -16,16 +16,16 @@ public class BienImmobilierAVendreDaoImpl extends DaoGenericImpl<BienImmobilierA
 	}
 
 	@Override
-	public List<BienImmobilierAVendre> getVenteByLoyer(double loyer) {
+	public List<BienImmobilierAVendre> getVenteByLoyer(double prix) {
 		//Création de la requête
-		String req = "FROM BienImmobilierAVendre bv WHERE bv.loyer BETWEEN :pMin AND :pMax";
+		String req = "FROM BienImmobilierAVendre bv WHERE bv.prix BETWEEN :pMin AND :pMax";
 		
 		//Récupération de la requête
 		Query query = em.createQuery(req);
 		
 		//Paramétrage de la requête
-		double min = loyer - loyer*0.05;
-		double max = loyer + loyer*0.05;
+		double min = prix - prix*0.05;
+		double max = prix + prix*0.05;
 		query.setParameter("pMin", min);
 		query.setParameter("pMax", max);
 		

@@ -47,5 +47,14 @@ public class BienImmobilierALouerRestController {
 		blService.delete(id);
 	}
 
-
+	@RequestMapping(value="/listeLoyer", method=RequestMethod.GET, produces = "application/json")
+	public List<BienImmobilierALouer> getAllBLLoyer (@RequestParam("pLoyer")double loyer) {
+		return blService.getLocationByLoyer(loyer);
+	}
+	
+	@RequestMapping(value="/listeRegion", method=RequestMethod.GET, produces = "application/json")
+	public List<BienImmobilierALouer> getAllBLRegion (@RequestParam("pRegion")String adresse) {
+		return blService.getLocationByRegion(adresse);
+	}
+	
 }

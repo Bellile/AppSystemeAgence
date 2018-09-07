@@ -45,7 +45,15 @@ public class BienImmobilierAVendreRestController {
 		bvService.delete(id);
 	}
 	
+	@RequestMapping(value="/listeLoyer", method=RequestMethod.GET, produces = "application/json")
+	public List<BienImmobilierAVendre> getAllBVLoyer(@RequestParam("pPrix")double prix){
+		return bvService.getVenteByLoyer(prix);
+	}
 	
+	@RequestMapping(value="/listeRegion", method=RequestMethod.GET, produces = "application/json")
+	public List<BienImmobilierAVendre> getAllBVRegion(@RequestParam("pRegion")String adresse){
+		return bvService.getVenteByRegion(adresse);
+	}
 	
 
 }
