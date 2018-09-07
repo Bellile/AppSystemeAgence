@@ -64,7 +64,13 @@ monApp.controller("updateClCtrl", function($scope, clProvider, $location) {
 		mail : "",
 		acquereur : "",
 		numCompostage : "",
-		adresse : ""
+		adresse:{
+			numRue:"",
+			rue:"",
+			cp:"",
+			localite:"",
+			pays:""
+		},
 	};
 
 	$scope.modifier = function() {

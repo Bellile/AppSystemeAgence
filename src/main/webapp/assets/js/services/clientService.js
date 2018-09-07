@@ -64,12 +64,12 @@ monApp
 						});
 					}
 
-					function modif(cIn, callBack) {
+					function modif(clIn, callBack) {
 						$http(
 								{
 									method : "PUT",
 									url : "http://localhost:8080/Projet_AppSystemeAgence/wsCl/modif",
-									data : angular.toJson(eIn),
+									data : angular.toJson(clIn),
 									headers : {
 										'Content-type' : 'application/json'
 									}

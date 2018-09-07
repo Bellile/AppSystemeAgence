@@ -1,0 +1,39 @@
+<h2>Formulaire de recherche d'un client</h2>
+<br />
+ID :
+<input type="number" placeholder="identifiant" ng-model="id">
+<br />
+<input type="button" value="Rechercher" ng-click="rechercher()">
+<br />
+<div ng-show="indice">
+	<h1>Informations du client</h1>
+
+	<table class="table table-striped">
+		<tr>
+			<th>Nom</th>
+			<th>Telephone</th>
+			<th>Mail</th>
+			<th>acquereur</th>
+			<th>numCompostage</th>
+			<th>Rue</th>
+			<th>Code Postale</th>
+			<th>Ville</th>
+			<th>Pays</th>
+			<th>operation</th>
+		</tr>
+		<tr>
+			<td>{{cl.nom}}</td>
+			<td>{{cl.telPerso}}</td>
+			<td>{{cl.mail}}</td>
+			<td>{{cl.acquereur}}</td>
+			<td>{{cl.numCompostage}}</td>
+			<td>{{cl.adresse.numRue}}, {{cl.adresse.rue}}</td>
+			<td>{{cl.adresse.cp}}</td>
+			<td>{{cl.adresse.localite}}</td>
+			<td>{{cl.adresse.pays}}</td>
+		</tr>
+	</table>
+
+</div>
+
+<h3>{{msg}}</h3>

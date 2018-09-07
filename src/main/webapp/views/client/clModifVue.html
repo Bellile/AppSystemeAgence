@@ -1,7 +1,7 @@
-<h2>Formulaire d'ajout d'un client</h2>
-
-
-
+<h2>Formulaire de modification d'un client</h2>
+<br />
+ID
+<input type="number" placeholder="ID" ng-model="clForm.id">
 <br />
 Nom
 <input type="text" placeholder="nom" ng-model="clForm.nom">
@@ -39,8 +39,6 @@ Num&eacutero de compostage
 <input type="number" placeholder="Numero"
 	ng-model="clForm.numCompostage">
 <br />
-
-<input type="button" value="Ajouter" ng-click="ajouter()">
+<input type="button" value="Modifier" ng-click="modifier()">
 <br />
-
 <h3>{{msg}}</h3>
