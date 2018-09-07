@@ -31,8 +31,8 @@ ID : <input type="number" placeholder="identifiant" ng-model="id" >
 		<td>{{bienlouer.statut}}</td>
 		<td>{{bienlouer.revenuCadastre}}</td>
 		<td>{{bienlouer.description}}</td>
-		<td>{{bienlouer.dateSoumission}}</td>
-		<td>{{bienlouer.dateDisposition}}</td>
+		<td>{{bienlouer.dateSoumission | date: "dd/MM/yyyy"}}</td>
+		<td>{{bienlouer.dateDisposition | date: "dd/MM/yyyy"}}</td>
 		<td><img ng-src="data:image/JPEG;base64,{{bienlouer.listeImage}}" style="max-height:50px;max-width:50px"></td>
 		<td>{{bienlouer.caution}}</td>
 		<td>{{bienlouer.loyer}}</td>

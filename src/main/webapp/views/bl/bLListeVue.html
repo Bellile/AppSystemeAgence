@@ -23,8 +23,8 @@
 		<td>{{b.statut}}</td>
 		<td>{{b.revenuCadastre}}</td>
 		<td>{{b.description}}</td>
-		<td>{{b.dateSoumission}}</td>
-		<td>{{b.dateDisposition}}</td>
+		<td>{{b.dateSoumission | date: "dd/MM/yyyy"}}</td>
+		<td>{{b.dateDisposition | date: "dd/MM/yyyy"}}</td>
 		<td><img ng-src="data:image/JPEG;base64,{{b.listeImage}}" style="max-height:50px;max-width:50px"></td>
 		<td>{{b.caution}}</td>
 		<td>{{b.loyer}}</td>
