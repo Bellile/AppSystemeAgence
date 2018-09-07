@@ -19,7 +19,7 @@ public abstract class DaoGenericImpl<T> implements IDaoGeneric<T> {
 	
 	/** 1 : créer un entityManagerFactory */
 	@PersistenceContext(unitName="PU")
-	private EntityManager em;
+	protected EntityManager em;
 
 	protected Class<T> clazz;
 

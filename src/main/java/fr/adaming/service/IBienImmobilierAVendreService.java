@@ -12,5 +12,7 @@ public interface IBienImmobilierAVendreService {
 	public BienImmobilierAVendre update(BienImmobilierAVendre bv);
 	public void delete(int id);
 	
+	public List<BienImmobilierAVendre> getVenteByLoyer(double loyer);
+	public List<BienImmobilierAVendre> getVenteByRegion(String adresse);
 	
 }

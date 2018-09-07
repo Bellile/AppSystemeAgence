@@ -12,5 +12,7 @@ public interface IBienImmobilierALouerService {
 	public BienImmobilierALouer add(BienImmobilierALouer bl);
 	public BienImmobilierALouer update(BienImmobilierALouer bl);
 	public void delete(int id);
-
+	
+	public List<BienImmobilierALouer> getLocationByLoyer(double loyer);	
+	public List<BienImmobilierALouer> getLocationByRegion(String adresse);
 }

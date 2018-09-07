@@ -51,10 +51,17 @@ public class BienImmobilierAVendreServiceImpl implements IBienImmobilierAVendreS
 		bvDao.delete(id);
 		
 	}
-	
-	
-	
 
-	
+	@Override
+	public List<BienImmobilierAVendre> getVenteByLoyer(double loyer) {
+		// TODO Auto-generated method stub
+		return bvDao.getVenteByLoyer(loyer);
+	}
+
+	@Override
+	public List<BienImmobilierAVendre> getVenteByRegion(String adresse) {
+		// TODO Auto-generated method stub
+		return bvDao.getVenteByRegion(adresse);
+	}
 
 }

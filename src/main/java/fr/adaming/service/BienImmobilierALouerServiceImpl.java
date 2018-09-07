@@ -52,9 +52,17 @@ public class BienImmobilierALouerServiceImpl implements IBienImmobilierALouerSer
 		blDao.delete(id);
 		
 	}
-	
-	
 
-	
+	@Override
+	public List<BienImmobilierALouer> getLocationByLoyer(double loyer) {
+		// TODO Auto-generated method stub
+		return blDao.getLocationByLoyer(loyer);
+	}
+
+	@Override
+	public List<BienImmobilierALouer> getLocationByRegion(String adresse) {
+		// TODO Auto-generated method stub
+		return blDao.getLocationByRegion(adresse);
+	}
 
 }
