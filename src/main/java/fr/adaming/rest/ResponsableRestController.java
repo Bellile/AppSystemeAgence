@@ -41,7 +41,7 @@ public class ResponsableRestController {
 		return rService.updateResponsable(responsable);
 	}
 	
-	@RequestMapping(value="/delete/{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/suppr/{id}", method=RequestMethod.DELETE)
 	public void deleteEtudiant(@PathVariable("id") int id){
 		rService.deleteResponsable(id);
 		
