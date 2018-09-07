@@ -1,0 +1,43 @@
+<h2 style="color:red; text-align: center;">Ajout d'un responsable</h2>
+
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="idNom" class="col-sm-2 control-label">Nom</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idNom" placeholder="nom" ng-model="rForm.nom">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idTel" class="col-sm-2 control-label">Telephone</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idTel" placeholder="Telephone" ng-model="rForm.telPerso">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idMail" class="col-sm-2 control-label">Mail</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idMail" placeholder="adresse mail" ng-model="rForm.mail">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idIdent" class="col-sm-2 control-label">Identifiant</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idIdent" placeholder="Identifiant" ng-model="rForm.identifiant">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idMdp" class="col-sm-2 control-label">Mot de passe</label>
+    <div class="col-sm-5">
+      <input type="password" class="form-control" id="idMdp" placeholder="Mot de passe" ng-model="rForm.mdp">
+    </div>
+  </div>
+  
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button class="btn btn-default" ng-click="ajouter()">Ajouter</button>
+    </div>
+  </div>
+  
+</form>
+<h2 style="color: red;text-align: center">{{msg}}</h2>

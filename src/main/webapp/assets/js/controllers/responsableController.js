@@ -87,7 +87,7 @@ monApp
 		})
 	}
 })
-.controller("deleteRCtrl", function($scope, responsableProvider, $location) {
+.controller("delRCtrl", function($scope, responsableProvider, $location) {
 	$scope.id=undefined;
 	// la fonction appelée à partir du bouton supprimer d ela vue
 	$scope.supprimer=function(){
