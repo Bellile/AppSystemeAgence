@@ -25,7 +25,7 @@ public class VisiteRestController {
 		return vService.getAll();
 	}
 
-	@RequestMapping(value = "/rechercher", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/recherche", method = RequestMethod.GET, produces = "application/json")
 	public Visite getVisiteById(@RequestParam("pId") int id) {
 		return vService.getById(id);
 	}

@@ -20,28 +20,28 @@ public class ProprietaireRestController {
 	@Autowired
 	IProprietaireService pService;
 
-	@RequestMapping(value = "/listeP", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/liste", method = RequestMethod.GET, produces = "application/json")
 	public List<Proprietaire> getAll() {
 		return pService.getAll();
 	}
 
-	@RequestMapping(value = "/getP", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/recherche", method = RequestMethod.GET, produces = "application/json")
 	public Proprietaire getProprietaire(@RequestParam("pId") int id) {
 		return pService.getById(id);
 	}
 
-	@RequestMapping(value = "/addP", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
+	@RequestMapping(value = "/ajout", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
 	public Proprietaire addProprietaire(@RequestBody Proprietaire p) {
 		return pService.add(p);
 
 	}
 
-	@RequestMapping(value="/updateP", method=RequestMethod.PUT, produces = "application/json", consumes = "application/json")
+	@RequestMapping(value="/modif", method=RequestMethod.PUT, produces = "application/json", consumes = "application/json")
 	public Proprietaire updateProprietaire(@RequestBody Proprietaire p){
 		return pService.update(p);
 	}
 
-	@RequestMapping(value = "/deleteP/{pId}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/suppr/{pId}", method = RequestMethod.DELETE)
 	public void deleteProprietaire(@PathVariable("pId") int id) {
 
 		pService.delete(id);
