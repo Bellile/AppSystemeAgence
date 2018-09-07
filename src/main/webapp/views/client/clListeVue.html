@@ -7,7 +7,10 @@
 			<th>Mail</th>
 			<th>acquereur</th>
 			<th>numCompostage</th>
-			<th>adresse</th>
+			<th>Rue</th>
+			<th>Code Postale</th>
+			<th>Ville</th>
+			<th>Pays</th>
 			<th>operation</th>
 		</tr>
 	</thead>
@@ -18,7 +21,10 @@
 			<td>{{cl.mail}}</td>
 			<td>{{cl.acquereur}}</td>
 			<td>{{cl.numCompostage}}</td>
-			<td>{{cl.adresse}}</td>
+			<td>{{cl.adresse.numRue}}, {{cl.adresse.rue}}</td>
+			<td>{{cl.adresse.cp}}</td>
+			<td>{{cl.adresse.localite}}</td>
+			<td>{{cl.adresse.pays}}</td>
 			<td><a ng-click="deleteLien(cl)">Supprimer</a> | <a
 				ng-click="updateLien(cl)">Modifier</a></td>
 		</tr>
