@@ -168,7 +168,7 @@ monApp.config(function($routeProvider) {
 		controller : "addRCtrl"
 	})
 	$routeProvider.when("/modifResponsable", {
-		templateUrl : "views/rModifVue.html",
+		templateUrl : "views/responsable/rModifVue.html",
 		controller : "updateRCtrl"
 	})
 	$routeProvider.when("/supprResponsable", {
