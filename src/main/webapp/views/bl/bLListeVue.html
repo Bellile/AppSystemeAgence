@@ -1,0 +1,40 @@
+<h1>Liste des Biens immobilier en location</h1>
+<table class="table table-striped">
+	<tr>
+		<th>Type de Bien</th>
+		<th>Statut</th>
+		<th>Revenu cadastral</th>
+		<th>Description</th>
+		<th>Date de soumission</th>
+		<th>Date de disposition</th>
+		<th>Liste Image</th>
+		<th>Caution</th>
+		<th>Loyer Mensuel</th>
+		<th>Caution locative</th>
+		<th>Charges mensuelles</th>
+		<th>Tye de bail</th>
+		<th>Garniture</th>
+		<th>Rue</th>
+		<th>Code Postal</th>
+		<th>Ville</th>
+		<th>Pays</th>
+	</tr>
+	<tr ng-repeat="b in liste">
+		<td>{{b.typeBien}}</td>
+		<td>{{b.statut}}</td>
+		<td>{{b.revenuCadastre}}</td>
+		<td>{{b.description}}</td>
+		<td>{{b.dateSoumission}}</td>
+		<td>{{b.dateDisposition}}</td>
+		<td>{{b.listeImage}}</td>
+		<td>{{b.caution}}</td>
+		<td>{{b.loyer}}</td>
+		<td>{{b.charges}}</td>
+		<td>{{b.typeBail}}</td>
+		<td>{{b.garniture}}</td>
+		<td>{{b.adresse.numRue}}, {{p.adresse.rue}}</td>
+		<td>{{b.adresse.cp}}</td> 
+		<td>{{b.adresse.localite}}</td>
+		<td>{{b.adresse.pays}}</td>
+	</tr>
+</table>
