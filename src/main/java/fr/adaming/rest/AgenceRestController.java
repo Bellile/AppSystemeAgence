@@ -21,27 +21,27 @@ public class AgenceRestController {
 	@Autowired
 	private IAgenceService agenceService;
 	
-	@RequestMapping(value="/listeAgence", method=RequestMethod.GET, produces="application/json")
+	@RequestMapping(value="/liste", method=RequestMethod.GET, produces="application/json")
 	public List<Agence> getAllAg(){
 		return agenceService.getAllAgences();
 	}
 	
-	@RequestMapping(value="/rechercheAgence", method=RequestMethod.GET, produces="application/json")
+	@RequestMapping(value="/recherche", method=RequestMethod.GET, produces="application/json")
 	public Agence getAgById(@RequestParam("pId") int id) {
 		return agenceService.getAgenceById(id);
 	}
 	
-	@RequestMapping(value="/ajoutAgence", method=RequestMethod.POST, produces="application/json", consumes="application/json")
+	@RequestMapping(value="/ajout", method=RequestMethod.POST, produces="application/json", consumes="application/json")
 	public Agence addAg(@RequestBody Agence a){
 		return agenceService.addAgence(a);
 	}
 	
-	@RequestMapping(value="/modifAgence", method=RequestMethod.PUT, produces="application/json", consumes="application/json")
+	@RequestMapping(value="/modif", method=RequestMethod.PUT, produces="application/json", consumes="application/json")
 	public Agence updateAg(@RequestBody Agence a) {
 		return agenceService.updateAgence(a);
 	}
 	
-	@RequestMapping(value="/supprAgence/{pId}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/suppr/{pId}", method=RequestMethod.DELETE)
 	public void deleteAg(@PathVariable("pId") int id) {
 		agenceService.deleteAgence(id);
 	}

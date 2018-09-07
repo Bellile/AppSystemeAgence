@@ -21,28 +21,28 @@ public class BienImmobilierALouerRestController {
 	@Autowired
 	IBienImmobilierALouerService blService;
 	
-	@RequestMapping(value="/listeBL", method=RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value="/liste", method=RequestMethod.GET, produces = "application/json")
 	public List<BienImmobilierALouer> getAllBL(){
 		return blService.getAll();
 	}
 	
-	@RequestMapping(value="/rechercheBL",  method = RequestMethod.GET, produces = "application/json" )
+	@RequestMapping(value="/recherche",  method = RequestMethod.GET, produces = "application/json" )
 	public BienImmobilierALouer getBL(@RequestParam("pId") int id){
 		return blService.getById(id);
 	}
 	
 	
-	@RequestMapping(value="/ajoutBL", method = RequestMethod.POST, produces = "application/json", consumes = "application/json" )
+	@RequestMapping(value="/ajout", method = RequestMethod.POST, produces = "application/json", consumes = "application/json" )
 	public BienImmobilierALouer addBL(@RequestBody BienImmobilierALouer bl){
 		return blService.add(bl);
 	}
 	
-	@RequestMapping(value="/modifBL",  method=RequestMethod.PUT, produces = "application/json", consumes = "application/json")
+	@RequestMapping(value="/modif",  method=RequestMethod.PUT, produces = "application/json", consumes = "application/json")
 	public BienImmobilierALouer updateBL(@RequestBody BienImmobilierALouer bl){
 		return blService.update(bl);
 	}
 	
-	@RequestMapping(value="/supprBL/{pId}", method = RequestMethod.DELETE)
+	@RequestMapping(value="/suppr/{pId}", method = RequestMethod.DELETE)
 	public void deleteBL(@PathVariable("pId") int id){
 		blService.delete(id);
 	}
