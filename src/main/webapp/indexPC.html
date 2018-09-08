@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AppSystemeAgence</title>
+
+<!-- Ajout de la librairie de bootstrap -->
+<link rel="stylesheet" href="assets/resources/css/bootstrap.css">
+
+<!-- Ajout des librairie JS de bootstrap -->
+<script type="text/javascript" src="assets/resources/js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="assets/resources/js/bootstrap.js"></script>
+
+<!-- Ajout des librairies de angularJS -->
+<script type="text/javascript" src="assets/resources/js/angular.js"></script>
+<script type="text/javascript" src="assets/resources/js/angular-route.js"></script>
+<script type="text/javascript" src="assets/resources/js/angular-base64-upload.js"></script>
+
+
+<!-- Ajout du module principale -->
+<script type="text/javascript" src="assets/js/client/modules/appClient.js"></script>
+
+<!-- Ajout du script routing -->
+<script type="text/javascript" src="assets/js/client/routing/routing.js"></script>
+
+<!-- Ajout des controllers -->
+<script type="text/javascript" src="assets/js/client/controllers/agencePCController.js"></script>
+<script type="text/javascript" src="assets/js/client/controllers/bienlouerPCController.js"></script>
+<script type="text/javascript" src="assets/js/client/controllers/bienvendrePCController.js"></script>
+<script type="text/javascript" src="assets/js/client/controllers/cSPCController.js"></script>
+
+<!-- Ajout des services -->
+<script type="text/javascript" src="assets/js/client/services/agencePCService.js"></script>
+<script type="text/javascript" src="assets/js/client/services/bienlouerPCService.js"></script>
+<script type="text/javascript" src="assets/js/client/services/bienvendrePCService.js"></script>
+<script type="text/javascript" src="assets/js/client/services/cSPCService.js"></script>
+
+</head>
+
+<body ng-app="appClient">
+
+
+<nav class="navbar bg-primary navbar-fixed-top" style="height:65px">
+	<div class="container-fluid">
+	<ul class="nav navbar-nav bg-info">
+		<li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">Nos Agence<span class="caret"></span></a>
+        	<ul class="dropdown-menu">
+          	<li><a href="#!listeAgencePC">Liste</a></li>          
+        	</ul>
+      	</li>
+      	<li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">Biens en location<span class="caret"></span></a>
+        	<ul class="dropdown-menu">
+          	<li><a href="#!listeLouerPC">Liste</a></li>          
+        	</ul>
+      	</li>
+      	<li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">Biens en vente<span class="caret"></span></a>
+        	<ul class="dropdown-menu">
+          	<li><a href="#!listeVendrePC">Liste</a></li>          	
+        	</ul>
+      	</li>
+      	<li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">Classe Standard<span class="caret"></span></a>
+        	<ul class="dropdown-menu">
+          	<li><a href="#!listeClasseStandardPC">Liste</a></li>          	
+        	</ul>
+      	</li>
+      	  
+      	
+      	<li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">Visite<span class="caret"></span></a>
+        	<ul class="dropdown-menu">
+          	<li><a href="#!listeVisite">Liste</a></li>
+          	<li><a href="#!ajoutVisite">Ajout</a></li>
+          	<li><a href="#!supprVisite">Suppression</a></li>
+          	<li><a href="#!modifVisite">Modification</a></li>
+          	<li><a href="#!rechercheVisite">Recherche</a></li>
+        	</ul>
+      	</li>
+
+      	
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+	<form class="navbar-form">
+      <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
+      <button class="btn btn-info" type="submit">Rechercher</button>
+    </form>
+    </ul>
+    </div>
+</nav>
+<br/>
+<br/>
+<hr/>
+<div class="container">
+	<div ng-view=""></div>
+</div>
+
+</body>
+</html>

@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+<h2 style="color : aquamarine; text-align: center">Liste des agences</h2>
+<table class="table table-striped">
+	<tr>
+		<th>Nom</th>
+		<th>Rue</th>
+		<th>Code Postale</th>
+		<th>Ville</th>
+		<th>Pays</th>		
+	</tr>
+	<tr ng-repeat="a in liste">
+		<td>{{a.nom}}</td>
+		<td>{{a.adresse.numRue}}, {{a.adresse.rue}}</td>
+		<td>{{a.adresse.cp}}</td>
+		<td>{{a.adresse.localite}}</td>
+		<td>{{a.adresse.pays}}</td>
+		
+	

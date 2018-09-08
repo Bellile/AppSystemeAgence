@@ -1,10 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+<h1>Liste des Biens immobilier en vente</h1>
+<table class="table table-striped">
+	<tr>
+		<th>Type de Bien</th>
+		<th>Statut</th>
+		<th>Revenu cadastral</th>
+		<th>Description</th>
+		<th>Date de soumission</th>
+		<th>Date de disposition</th>
+		<th>Photo descriptive</th>		
+		<th>Prix</th>
+		<th>Etat</th>		
+		<th>Rue</th>
+		<th>Code Postal</th>
+		<th>Ville</th>
+		<th>Pays</th>
+	</tr>
+	<tr ng-repeat="b in liste">
+		<td>{{b.typeBien}}</td>
+		<td>{{b.statut}}</td>
+		<td>{{b.revenuCadastre}}</td>
+		<td>{{b.description}}</td>
+		<td>{{b.dateSoumission | date: "dd/MM/yyyy"}}</td>
+		<td>{{b.dateDisposition | date: "dd/MM/yyyy"}}</td>
+		<td><img ng-src="data:image/JPEG;base64,{{b.listeImage}}" style="max-height:50px;max-width:50px"></td>
+		<td>{{b.caution}}</td>
+		<td>{{b.loyer}}</td>
+		<td>{{b.charges}}</td>
+		<td>{{b.typeBail}}</td>
+		<td>{{b.garniture}}</td>
+		<td>{{b.adresse.numRue}}, {{p.adresse.rue}}</td>
+		<td>{{b.adresse.cp}}</td> 
+		<td>{{b.adresse.localite}}</td>
+		<td>{{b.adresse.pays}}</td>
+	</tr>
+</table>
