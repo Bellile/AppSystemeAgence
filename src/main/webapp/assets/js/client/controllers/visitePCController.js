@@ -13,13 +13,15 @@ appClient.controller("myNgController", ["$scope", "$http", "uiCalendarConfig", f
         cache: true,
         params: {}
     }).then(function (data) {
+    	
         $scope.events.slice(0, $scope.events.length);
         angular.forEach(data.data, function (value) {
+        	console.log("La date est : "+value.dateHeure);
             $scope.events.push({
                 title: "Visite",
                 description: "Visite de bien immobilier",
-                start: new Date(parseInt(value.dateHeure.substr(6))),
-                end: new Date(parseInt(value.dateHeure.substr(6))), // rajouter 30 min <----------------
+                start: new Date(value.dateHeure),
+                end: new Date((value.dateHeure)+1800000), // on rajoute 30 min 
                 allDay : false,
                 stick: true
             });
