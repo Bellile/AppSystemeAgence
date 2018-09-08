@@ -1,5 +1,12 @@
 <h1>Liste des Biens immobilier en vente</h1>
 <table class="table table-striped">
+
+Rechercher type de bien : <input type="text" ng-model="findtype">
+Rechercher en fonction de l'etat : <input type="text" ng-model="findetat">
+
+<br>
+<br>
+
 	<tr>
 		<th>Type de Bien</th>
 		<th>Statut</th>
@@ -15,7 +22,7 @@
 		<th>Ville</th>
 		<th>Pays</th>
 	</tr>
-	<tr ng-repeat="b in liste">
+	<tr ng-repeat="b in liste | filter: {typeBien : findtype, etat: findetat}">
 		<td>{{b.typeBien}}</td>
 		<td>{{b.statut}}</td>
 		<td>{{b.revenuCadastre}}</td>

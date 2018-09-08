@@ -1,5 +1,12 @@
 <h1>Liste des Biens immobilier en location</h1>
 <table class="table table-striped">
+
+Rechercher par type de bien : <input type="text" ng-model="recherche">
+rechercher par garniture : <input type="text" ng-model="findGarniture">
+
+<br>
+<br>
+
 	<tr>
 		<th>Type de Bien</th>
 		<th>Statut</th>
@@ -18,7 +25,7 @@
 		<th>Ville</th>
 		<th>Pays</th>
 	</tr>
-	<tr ng-repeat="b in liste">
+	<tr ng-repeat="b in liste | filter:{typeBien : recherche, garniture : findGarniture}">
 		<td>{{b.typeBien}}</td>
 		<td>{{b.statut}}</td>
 		<td>{{b.revenuCadastre}}</td>

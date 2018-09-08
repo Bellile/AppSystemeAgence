@@ -1,5 +1,10 @@
 <h2 style="color : aquamarine; text-align: center">Liste des agences</h2>
 <table class="table table-striped">
+
+Rechercher par nom : <input type="text" ng-model="recherche">
+Rechercher par ville : <input type="text" ng-model="findville">
+<br>
+<br>
 	<tr>
 		<th>Nom</th>
 		<th>Rue</th>
@@ -7,11 +12,13 @@
 		<th>Ville</th>
 		<th>Pays</th>		
 	</tr>
-	<tr ng-repeat="a in liste">
+	<tr ng-repeat="a in liste | filter: {nom : recherche}">
 		<td>{{a.nom}}</td>
 		<td>{{a.adresse.numRue}}, {{a.adresse.rue}}</td>
 		<td>{{a.adresse.cp}}</td>
 		<td>{{a.adresse.localite}}</td>
 		<td>{{a.adresse.pays}}</td>
 		
+	
+	
 	
