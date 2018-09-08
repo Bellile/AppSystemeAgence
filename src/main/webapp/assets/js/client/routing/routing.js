@@ -21,6 +21,11 @@ appClient.config(function($routeProvider) {
 		templateUrl : "views/pc/cSListePCVue.html",
 		controller : "findAllCSCtrl"
 	})
+	
+	$routeProvider.when("/listeVisitePC", {
+		templateUrl : "views/pc/vListePCVue.html",
+		controller : "myNgController"
+	})
 
 	
 });

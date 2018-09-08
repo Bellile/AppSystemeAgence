@@ -1,4 +1,5 @@
-monApp.controller('myNgController', ['$scope', '$http', 'uiCalendarConfig', function ($scope, $http, uiCalendarConfig) {
+var app = angular.module('myApp', ["ngRoute",'ui.calendar']);
+app.controller("myNgController", ["$scope", "$http", "uiCalendarConfig", function ($scope, $http, uiCalendarConfig) {
     
     $scope.SelectedEvent = null;
     var isFirstTime = true;
@@ -8,14 +9,18 @@ monApp.controller('myNgController', ['$scope', '$http', 'uiCalendarConfig', func
  
  
     //Load events from server
-    $http.get('http://localhost:8080/Projet_AppSystemeAgence/wsV/liste', {
+    $http.get("http://localhost:8080/Projet_AppSystemeAgence/wsV/liste", {
         cache: true,
         params: {}
     }).then(function (data) {
         $scope.events.slice(0, $scope.events.length);
         angular.forEach(data.data, function (value) {
             $scope.events.push({
-                dateHeure: value.dateHeure,
+                title: "Visite",
+                description: "Visite de bien immobilier",
+                start: new Date(parseInt(value.dateHeure.substr(6))),
+                end: new Date(parseInt(value.dateHeure.substr(6))), // rajouter 30 min <----------------
+                allDay : false,
                 stick: true
             });
         });
