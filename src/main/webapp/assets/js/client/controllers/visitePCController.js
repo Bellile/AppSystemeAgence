@@ -8,7 +8,7 @@ appClient.controller("myNgController", ["$scope", "$http", "uiCalendarConfig", f
     $scope.eventSources = [$scope.events];
  
  
-    //Load events from server
+    //Récupérer les visites du WS
     $http.get("http://localhost:8080/Projet_AppSystemeAgence/wsV/liste", {
         cache: true,
         params: {}
@@ -17,6 +17,7 @@ appClient.controller("myNgController", ["$scope", "$http", "uiCalendarConfig", f
         $scope.events.slice(0, $scope.events.length);
         angular.forEach(data.data, function (value) {
         	console.log("La date est : "+value.dateHeure);
+        	// création des objets visite pouvant être affichés sur le calendrier
             $scope.events.push({
                 title: "Visite",
                 description: "Visite de bien immobilier",
@@ -28,7 +29,7 @@ appClient.controller("myNgController", ["$scope", "$http", "uiCalendarConfig", f
         });
     });
  
-    //configure calendar
+    // configuration du calendrier
     $scope.uiConfig = {
         calendar: {
             height: 450,
@@ -44,7 +45,7 @@ appClient.controller("myNgController", ["$scope", "$http", "uiCalendarConfig", f
             },
             eventAfterAllRender: function () {
                 if ($scope.events.length > 0 && isFirstTime) {
-                    //Focus first event
+                    
                     uiCalendarConfig.calendars.myCalendar.fullCalendar('gotoDate', $scope.events[0].start);
                     isFirstTime = false;
                 }
