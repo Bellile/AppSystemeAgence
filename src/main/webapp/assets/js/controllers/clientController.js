@@ -4,7 +4,7 @@ monApp.controller("getAllClCtrl", function($scope, clProvider) {
 		$scope.liste = donnees;
 	});
 
-})
+});
 
 monApp.controller("getIdClCtrl", function($scope, clProvider) {
 
@@ -15,7 +15,7 @@ monApp.controller("getIdClCtrl", function($scope, clProvider) {
 		clProvider.getId($scope.id, function(donnees) {
 			if (typeof donnees == 'object') {
 				$scope.indice = true;
-				$scope.client = donnees;
+				$scope.cl = donnees;
 				$scope.msg = "";
 			} else {
 				$scope.indice = false;
@@ -24,7 +24,7 @@ monApp.controller("getIdClCtrl", function($scope, clProvider) {
 		})
 	}
 
-})
+});
 
 monApp.controller("addClCtrl", function($scope, clProvider, $location) {
 
@@ -34,73 +34,73 @@ monApp.controller("addClCtrl", function($scope, clProvider, $location) {
 		mail : "",
 		acquereur : "",
 		numCompostage : "",
-		adresse:{
-			numRue:"",
-			rue:"",
-			cp:"",
-			localite:"",
-			pays:""
+		adresse : {
+			numRue : "",
+			rue : "",
+			cp : "",
+			localite : "",
+			pays : ""
 		},
 	};
 	$scope.ajouter = function() {
 		clProvider.add($scope.clForm, function(donnees) {
 			if (typeof donnees == 'object') {
 				$scope.msg = "";
-				$location.path("liste")
+				$location.path("listeClient")
 			} else {
 				$scope.msg = "L'ajout a echoue"
 			}
 		})
 	}
 
-})
+});
 
 monApp.controller("updateClCtrl", function($scope, clProvider, $location) {
 
-	$scope.clModif = {
-		id : "",
+	$scope.clForm = {
+		id : undefined,
 		nom : "",
 		telPerso : "",
 		mail : "",
 		acquereur : "",
 		numCompostage : "",
-		adresse:{
-			numRue:"",
-			rue:"",
-			cp:"",
-			localite:"",
-			pays:""
+		adresse : {
+			numRue : "",
+			rue : "",
+			cp : "",
+			localite : "",
+			pays : ""
 		},
 	};
 
 	$scope.modifier = function() {
 
-		clProvider.update($scope.clModif, function(donnees) {
+		clProvider.update($scope.clForm, function(donnees) {
 			if (typeof donnees == 'object') {
 				$scope.msg = "";
-				$location.path("liste")
+				$location.path("listeClient");
 			} else {
-				$scope.msg = "La modification a echoue"
+				$scope.msg = "La modification a echoue";
 			}
 
 		})
 	}
 
-})
+});
 
-monApp.controller("deleteClCtrl", function($scope, clprovider, $location) {
+monApp.controller("delClCtrl", function($scope, clProvider, $location) {
 
 	$scope.id = undefined;
 	$scope.supprimer = function() {
 
-		clprovider.del($scope.id, function(retour) {
+		clProvider.del($scope.id, function(retour) {
 			if (retour == 'OK') {
 				$scope.msg = "";
-				$location.path("liste")
+				$location.path("listeClient");
 			} else {
-				$scope.msg = "la suppression a echoue"
+				$scope.msg = "La suppression a echoue";
 			}
 		})
 	}
 
-})
+});

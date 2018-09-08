@@ -3,7 +3,7 @@
 ID :
 <input type="number" placeholder="identifiant" ng-model="id">
 <br />
-<input type="button" value="Rechercher" ng-click="rechercher()">
+<input type="button" value="Rechercher" ng-click="recherche()">
 <br />
 <div ng-show="indice">
 	<h1>Informations du client</h1>
@@ -19,7 +19,8 @@ ID :
 			<th>Code Postale</th>
 			<th>Ville</th>
 			<th>Pays</th>
-			<th>operation</th>
+			
+			
 		</tr>
 		<tr>
 			<td>{{cl.nom}}</td>

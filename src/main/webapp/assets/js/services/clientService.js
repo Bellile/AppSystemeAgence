@@ -11,7 +11,7 @@ monApp
 
 								}).then(function successCallback(response) {
 
-									callBack(response.data);
+							callBack(response.data);
 
 						}, function errorCallback(response) {
 
@@ -55,7 +55,7 @@ monApp
 									}
 								}).then(function successCallback(response) {
 
-									callBack(response.data);
+							callBack(response.data);
 
 						}, function errorCallback(response) {
 
@@ -75,7 +75,7 @@ monApp
 									}
 								}).then(function successCallback(response) {
 
-									callBack(response.data);
+							callBack(response.data);
 
 						}, function errorCallback(response) {
 
@@ -88,11 +88,11 @@ monApp
 						$http(
 								{
 									method : "DELETE",
-									url : "http://localhost:8080/Projet_AppSystemeAgence/wsCl/suppr"
+									url : "http://localhost:8080/Projet_AppSystemeAgence/wsCl/suppr/"
 											+ id
 								}).then(function successCallback(response) {
 
-									callBack(response.data);
+							callBack(response.statusText);
 
 						}, function errorCallback(response) {
 
