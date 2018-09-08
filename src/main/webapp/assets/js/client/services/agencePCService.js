@@ -11,4 +11,8 @@ appClient.factory("aPCProvider", function($http) {
 			console.log("Erreur : " + response.statusText);
 		  });
 	}
+	return {
+		getAll:affListe
+		
+	}
 });

@@ -12,5 +12,8 @@ appClient.factory("bvPCProvider", function ($http){
 			console.log("erreur : "+response.statusText);
 		});
 	}
+	return {
+		getAll : recupListe
+	}
 	
 });

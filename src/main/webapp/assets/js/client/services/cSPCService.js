@@ -13,4 +13,8 @@ appClient.factory("cSPCProvider", function ($http){
 		});
 	}
 	
+	return {
+		getAll : recupListe
+	}
+	
 });

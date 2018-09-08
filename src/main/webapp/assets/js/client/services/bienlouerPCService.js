@@ -12,6 +12,8 @@ appClient.factory("blPCProvider", function ($http){
 			console.log("erreur : "+response.statusText);
 		});
 	}
-	
+	return {
+		getAll : recupListe
+	}
 
 });
