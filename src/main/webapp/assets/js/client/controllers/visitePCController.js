@@ -1,5 +1,5 @@
-var app = angular.module('myApp', ["ngRoute",'ui.calendar']);
-app.controller("myNgController", ["$scope", "$http", "uiCalendarConfig", function ($scope, $http, uiCalendarConfig) {
+/** Pour l'instant le service est à l'intérieur du controller, je le séparerai plus tard */
+appClient.controller("myNgController", ["$scope", "$http", "uiCalendarConfig", function ($scope, $http, uiCalendarConfig) {
     
     $scope.SelectedEvent = null;
     var isFirstTime = true;
