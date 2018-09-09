@@ -1,0 +1,22 @@
+<h2>Formulaire de recherche d'une classe standard</h2>
+<br/>
+ID : <input type="number" placeholder="identifiant" ng-model="id" >
+<br/>
+<input type="button" value="Rechercher" ng-click="recherche()" >
+<br/>
+<div ng-show="indice">
+<h1>Informations de la classe standard</h1>
+<table class="table table-striped">
+	<tr>
+		<th>type de Bien</th>
+		<th>mode d'offre</th>
+		<th>prix Max</th>
+		<th>superficie Min</th>
+	</tr>
+	<tr>
+		<td>{{cs.typeBien}}</td>
+		<td>{{cs.modeOffre}}</td>
+		<td>{{cs.prixMax}}</td>
+		<td>{{cs.superficieMin}}</td> 
+	</tr>
+</table>

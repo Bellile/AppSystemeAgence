@@ -1,0 +1,32 @@
+<h2>Formulaire d'ajout d'une classe standard</h2>
+<br/>
+Type de bien <select class="form-control" ng-model="csForm.typeBien">
+  <option value="">choisissez un type de bien</option>
+  <option value="maison">Maison</option>
+  <option value="appartement">Appartement</option>
+  <option value="studio">Studio</option>
+  <option value="entrepot">Entrepot</option>
+  <option value="emplacement">Emplacement</option>
+  <option value="terrain">Terrain</option>
+</select>
+<br/>
+mode d'offre <div class="radio">
+  <label>
+    <input type="radio" name="statut" value="a louer" ng-model="csForm.modeOffre">
+    a louer
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="statut" value="a vendre" ng-model="csForm.modeOffre">
+    a vendre
+  </label>
+</div>
+<br/>
+prix maximum <input type="number" placeholder="prix max" ng-model="csForm.prixMax">
+<br/>
+superficie minimum<input type="number" placeholder="superficie min" ng-model="csForm.superficieMin">
+<br/>
+<input type="button" value="Ajouter" ng-click="ajout()" >
+<br/>
+<h3>{{msg}}</h3>
