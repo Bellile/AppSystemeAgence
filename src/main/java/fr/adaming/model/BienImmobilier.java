@@ -29,9 +29,6 @@ abstract class BienImmobilier implements Serializable{
 	protected Date dateSoumission;
 	@Temporal(TemporalType.DATE)
 	protected Date dateDisposition;
-	@Lob
-	protected byte[] listeImage;
-	
 	
 	//declaration des constructeurs
 	public BienImmobilier() {
@@ -39,7 +36,7 @@ abstract class BienImmobilier implements Serializable{
 	}
 
 	public BienImmobilier(String typeBien, String statut, double revenuCadastre, String description,
-			Date dateSoumission, Date dateDisposition, byte[] listeImage) {
+			Date dateSoumission, Date dateDisposition) {
 		super();
 		this.typeBien = typeBien;
 		this.statut = statut;
@@ -47,11 +44,11 @@ abstract class BienImmobilier implements Serializable{
 		this.description = description;
 		this.dateSoumission = dateSoumission;
 		this.dateDisposition = dateDisposition;
-		this.listeImage = listeImage;
+		
 	}
 
 	public BienImmobilier(int id, String typeBien, String statut, double revenuCadastre, String description,
-			Date dateSoumission, Date dateDisposition, byte[] listeImage) {
+			Date dateSoumission, Date dateDisposition) {
 		super();
 		this.id = id;
 		this.typeBien = typeBien;
@@ -60,7 +57,7 @@ abstract class BienImmobilier implements Serializable{
 		this.description = description;
 		this.dateSoumission = dateSoumission;
 		this.dateDisposition = dateDisposition;
-		this.listeImage = listeImage;
+		
 	}
 
 	//declaration des getters et setters
@@ -123,16 +120,6 @@ abstract class BienImmobilier implements Serializable{
 		this.dateDisposition = dateDisposition;
 	}
 
-
-	public byte[] getListeImage() {
-		return listeImage;
-	}
-
-
-	public void setListeImage(byte[] listeImage) {
-		this.listeImage = listeImage;
-	}
-
 	public String getDescription() {
 		return description;
 	}
@@ -145,7 +132,7 @@ abstract class BienImmobilier implements Serializable{
 	public String toString() {
 		return "BienImmobilier [id=" + id + ", typeBien=" + typeBien + ", statut=" + statut + ", revenuCadastre="
 				+ revenuCadastre + ", dateSoumission=" + dateSoumission + ", dateDisposition=" + dateDisposition
-				+ ", listeImage=" + Arrays.toString(listeImage) + "]";
+				+ ", listeImage=" + "]";
 	}
 
 

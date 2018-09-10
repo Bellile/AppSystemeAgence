@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -43,6 +44,10 @@ public class BienImmobilierALouer extends BienImmobilier{
 	@ManyToOne
 	@JoinColumn(name="p_id", referencedColumnName="id_p")
 	private Proprietaire proprietaire;
+	
+//	@Fetch(FetchMode.SELECT)
+	@OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+	private List<Photo> listeImages;
 
 	
 	//declaration des constructeurs
@@ -53,7 +58,7 @@ public class BienImmobilierALouer extends BienImmobilier{
 	public BienImmobilierALouer(String typeBien, String statut, double revenuCadastre, String description,
 			Date dateSoumission, Date dateDisposition, byte[] listeImage, double caution, double loyer, double charges,
 			String typeBail, String garniture, Adresse adresse) {
-		super(typeBien, statut, revenuCadastre, description, dateSoumission, dateDisposition, listeImage);
+		super(typeBien, statut, revenuCadastre, description, dateSoumission, dateDisposition);
 		this.caution = caution;
 		this.loyer = loyer;
 		this.charges = charges;
@@ -65,7 +70,7 @@ public class BienImmobilierALouer extends BienImmobilier{
 	public BienImmobilierALouer(int id, String typeBien, String statut, double revenuCadastre, String description,
 			Date dateSoumission, Date dateDisposition, byte[] listeImage, double caution, double loyer, double charges,
 			String typeBail, String garniture, Adresse adresse) {
-		super(id, typeBien, statut, revenuCadastre, description, dateSoumission, dateDisposition, listeImage);
+		super(id, typeBien, statut, revenuCadastre, description, dateSoumission, dateDisposition);
 		this.caution = caution;
 		this.loyer = loyer;
 		this.charges = charges;
@@ -155,6 +160,16 @@ public class BienImmobilierALouer extends BienImmobilier{
 
 	public void setProprietaire(Proprietaire proprietaire) {
 		this.proprietaire = proprietaire;
+	}
+
+
+
+	public List<Photo> getListeImages() {
+		return listeImages;
+	}
+
+	public void setListeImages(List<Photo> listeImages) {
+		this.listeImages = listeImages;
 	}
 
 	@Override

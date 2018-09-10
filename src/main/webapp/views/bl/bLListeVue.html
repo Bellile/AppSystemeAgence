@@ -25,7 +25,7 @@
 		<td>{{b.description}}</td>
 		<td>{{b.dateSoumission | date: "dd/MM/yyyy"}}</td>
 		<td>{{b.dateDisposition | date: "dd/MM/yyyy"}}</td>
-		<td><img ng-src="data:image/JPEG;base64,{{b.listeImage}}" style="max-height:50px;max-width:50px"></td>
+		<td><img ng-repeat="p in b.listeImages" ng-src="data:image/JPEG;base64,{{p.image}}" style="max-height:50px;max-width:50px"></td>
 		<td>{{b.caution}}</td>
 		<td>{{b.loyer}}</td>
 		<td>{{b.charges}}</td>
