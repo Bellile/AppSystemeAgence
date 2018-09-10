@@ -44,6 +44,9 @@ ID : <input type="number" placeholder="identifiant" ng-model="id" >
 		<td>{{bienlouer.adresse.localite}}</td>
 		<td>{{bienlouer.adresse.pays}}</td>
 	</tr>
+					
 </table>
+<a target="_blank" href="https://www.geoportail.gouv.fr/carte?c={{bienlouer.lng}},{{bienlouer.lat}}&z=20&l0=ORTHOIMAGERY.ORTHOPHOTOS::GEOPORTAIL:OGC:WMTS(1)&l1=CADASTRALPARCELS.PARCELS::GEOPORTAIL:OGC:WMTS(1)&permalink=yes"><p>cadastre</p></a>
+
 <br/>
 <h3>{{msg}}</h3>
