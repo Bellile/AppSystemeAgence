@@ -1,43 +1,20 @@
 
- <h1>Liste des Biens immobilier en location</h1>
+<h1>Liste des Biens immobilier en location</h1>
 
-<div class="row" ng-repeat="b in liste">
-	<div class="col-lg-4 col-sm-6 portfolio-item">
-		<div class="card h-100">
-			<img class="card-img-top" ng-click="displayInfos()"
-				 ng-repeat="p in b.listeImages" ng-src="data:image/JPEG;base64,{{p.image}}"></a>
-			<div class="card-body">
-				<h4 class="card-title">{{b.typeBien}}
-				</h4>
-				<p class="card-text">{{b.statut}}</p>
-			</div>
-		</div>
-	</div>
-	
-	<div style="width: 500px; height: 500px" class="center-block">
-	<div id="myCarousel" class="carousel slide" data-ride="carousel">
-		<!-- Indicators -->
-		<ol class="carousel-indicators">
-			<li data-target="#myCarousel" ng-repeat="p in bienlouer.listeImages"
-				ng-class="{active: ($index === 0)}" data-slide-to="{{$index}}"></li>
-		</ol>
-		<div class="carousel-inner">
-			<div ng-class="{item: true, active: ($index === 0)}"
-				ng-repeat="p in bienlouer.listeImages">
+<div class="container">
 
-				<img class="d-block w-100"
+	<div class="row" >
+		<div class="col-lg-4 col-sm-6 portfolio-item" ng-repeat="b in liste" style="border: solid; border-width: 1px">
+			<div class="card h-100">
+				<img class="card-img-top" ng-repeat="p in b.listeImages"
 					ng-src="data:image/JPEG;base64,{{p.image}}"
-					alt="Slide number {{$index}}">
+					style="min-height: 100px; max-height: 100px; min-width: 100px; min-width: 100px" />
+				<div class="card-body" >
+					<h4 class="card-title">{{b.typeBien}}</h4>
+					<p class="card-text">{{b.statut}}</p>
+				</div>
 			</div>
 		</div>
-
-		<span class="left carousel-control" data-target="#myCarousel"
-			data-slide="prev"> <span
-			class="glyphicon glyphicon-chevron-left"></span>
-		</span> <span class="right carousel-control" data-target="#myCarousel"
-			data-slide="next"> <span
-			class="glyphicon glyphicon-chevron-right"></span>
-		</span>
 	</div>
 </div>
-</div>
+

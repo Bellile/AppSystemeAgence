@@ -1,5 +1,5 @@
 // creation des controllers du bien immo à louer
-monApp.controller("getAllBLCtrl", function($scope, blProvider, $rootscope, $location) {
+monApp.controller("getAllBLCtrl", function($scope, blProvider, $rootScope, $location) {
 
 	blProvider.getAll(function(donnees) {
 		$scope.liste = donnees;
