@@ -36,7 +36,8 @@ monApp.controller("getAllVCtrl", function($scope, visiteProvider) {
 
 .controller("addVCtrl", function($scope, visiteProvider, $location) {
 	$scope.vForm = {
-		dateHeure : ""
+		dateHeure : ""		
+			
 	};
 	// appel de la fonction ajouter a partir du bouton de la vue
 	$scope.ajout = function() {
@@ -82,7 +83,7 @@ monApp.controller("getAllVCtrl", function($scope, visiteProvider) {
 	$scope.suppr = function() {
 		// appel de la fonction du service pour recup la visite
 		visiteProvider.del($scope.id, function(retour) {
-			if (retour == 'OK') {
+			if (typeof retour == 'OK') {
 				$scope.msg = "";
 				// rediriger vers accueil
 				$location.path("listeVisite");

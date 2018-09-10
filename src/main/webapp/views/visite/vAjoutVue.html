@@ -1,7 +1,68 @@
+
 <h2>Formulaire d'ajout d'une visite</h2>
-<br/>
-Date <input type="datetime-local" placeholder="Date" ng-model="vForm.dateHeure">
-<br/>
-<input type="button" value="Ajouter" ng-click="ajout()" >
-<br/>
+
+<form class="form-horizontal">
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Date</label>
+		<div class="col-sm-10">
+			<input type="datetime-local" placeholder="Date"
+				ng-model="vForm.dateHeure">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="bien" class="col-sm-2 control-label">Type de bien</label>
+		<div class="col-sm-10">
+			<div class="radio">
+				<label> <input type="radio" name="bien"> en
+					location
+					<div class="form-group">
+						<label class="col-sm-2 control-label">ID</label>
+						<div class="col-sm-10">
+							<input type="number" placeholder="ID"
+								ng-model="vForm.bienImmobilierALouer.id">
+						</div>
+					</div>
+				</label>
+			</div>
+			<div class="radio">
+				<label> <input type="radio" name="bien"> en
+					vente
+					<div class="form-group">
+						<label class="col-sm-2 control-label">ID</label>
+						<div class="col-sm-10">
+							<input type="number" placeholder="ID"
+								ng-model="vForm.bienImmobilierAVendre.id">
+						</div>
+					</div>
+				</label>
+			</div>
+		</div>
+	</div>
+	
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">ID client</label>
+		<div class="col-sm-10">
+			<input type="number" placeholder="ID" ng-model="vForm.client.id">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">ID responsable</label>
+		<div class="col-sm-10">
+			<input type="number" placeholder="ID" ng-model="vForm.responsable.id">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button type="button" class="btn btn-default" value="Ajouter"
+				ng-click="ajout()">Ajouter</button>
+		</div>
+	</div>
+
+</form>
+<br />
 <h3>{{msg}}</h3>
