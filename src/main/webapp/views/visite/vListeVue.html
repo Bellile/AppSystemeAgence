@@ -1,10 +1,17 @@
 <h2 style="color : aquamarine; text-align: center">Liste des visites</h2>
 <table class="table table-striped">
 	<tr>
-		<th>Date</th>
+		<th>Date et heure</th>
+		<th>Ref bien en location</th>
+		<th>Ref bien en vente</th>
+		<th>Nom client</th>
+		<th>Nom responsable</th>
 	</tr>
 	<tr ng-repeat="v in listeVisite">
 		<td>{{v.dateHeure | date: "dd/MM/yyyy HH:mm"}}</td>
-		<td><a ng-click="delLink(v.id)">Supprimer</a> | <a ng-click="updLink(v)">Modifier</a></td>
+		<td>{{v.bienImmobilierALouer.id}}</td>
+		<td>{{v.bienImmobilierAVendre.id}}</td>
+		<td>{{v.client.nom}}</td>
+		<td>{{v.responsable.nom}}</td>
 	</tr>
 </table>

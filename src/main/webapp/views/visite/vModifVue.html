@@ -1,9 +1,90 @@
-<h2>Formulaire de modification d'une visite </h2>
+<script>
+	function grise(elem) {
+		if (elem[0].checked) {
+			document.bType.idBl.disabled = false;
+			document.bType.idBV.disabled = true;
+		} else {
+			document.bType.idBl.disabled = true;
+			document.bType.idBV.disabled = false;
+		}
+	}
+</script>
+
+<h2>Formulaire d'ajout d'une visite</h2>
+
+<form class="form-horizontal" name="bType">
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Ref</label>
+		<div class="col-sm-5">
+			<input type="number" class="form-control" placeholder="Ref"
+				ng-model="vModif.id">
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Date</label>
+		<div class="col-sm-5">
+			<input type="datetime-local" class="form-control" placeholder="Date"
+				ng-model="vModif.dateHeure">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="bien" class="col-sm-2 control-label">Type de bien</label>
+		<div class="col-sm-10">
+			<div class="radio">
+				<label> <input type="radio" name="bien" value="location"
+					onClick="grise(this.form.bien);" checked> en location
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Ref</label>
+						<div class="col-sm-5">
+							<input type="number" class="form-control" id="idBl" name="pBl"
+								 ng-model="vModif.bienImmobilierALouer.id">
+						</div>
+					</div>
+				</label>
+			</div>
+			<div class="radio">
+				<label> <input type="radio" name="bien" value="vente"
+					onClick="grise(this.form.bien);"> en vente
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Ref</label>
+						<div class="col-sm-5">
+							<input name="pBv" type="number" class="form-control"
+								placeholder="ref" ng-model="vModif.bienImmobilierAVendre.id"
+								id="idBV" disabled="disabled">
+						</div>
+					</div>
+				</label>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Ref client</label>
+		<div class="col-sm-5">
+			<input type="number" class="form-control" placeholder="ref"
+				ng-model="vModif.client.id">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Ref responsable</label>
+		<div class="col-sm-5">
+			<input type="number" class="form-control" placeholder="ref"
+				ng-model="vModif.responsable.id">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-5">
+			<button type="button" class="btn btn-default" value="Modifier"
+				ng-click="modif()">Modifier</button>
+		</div>
+	</div>
+
+</form>
 <br />
-ID <input type="number" placeholder="ID" ng-model="vModif.id">
-<br/>
-Date <input type="datetime-local" placeholder="Date" ng-model="vModif.dateHeure">
-<br/>
-<input type="button" value="Modifier" ng-click="modif()">
-<br/>
 <h3>{{msg}}</h3>
