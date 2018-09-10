@@ -1,0 +1,34 @@
+<h2>Formulaire de modification d'une classe standard</h2>
+<br/>
+ID <input type="number" placeholder="id" ng-model="csModif.id">
+<br/>
+Type de bien <select class="form-control" ng-model="csModif.typeBien">
+  <option value="">choisissez un type de bien</option>
+  <option value="maison">Maison</option>
+  <option value="appartement">Appartement</option>
+  <option value="studio">Studio</option>
+  <option value="entrepot">Entrepot</option>
+  <option value="emplacement">Emplacement</option>
+  <option value="terrain">Terrain</option>
+</select>
+<br/>
+mode d'offre <div class="radio">
+  <label>
+    <input type="radio" name="offre" value="a louer" ng-model="csModif.modeOffre">
+    en location
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="offre" value="a vendre" ng-model="csModif.modeOffre">
+    en vente
+  </label>
+</div>
+<br/>
+prix maximum <input type="number" placeholder="prix max" ng-model="csModif.prixMax">
+<br/>
+superficie minimum<input type="number" placeholder="superficie min" ng-model="csModif.superficieMin">
+<br/>
+<input type="button" value="Modifier" ng-click="modif()" >
+<br/>
+<h3>{{msg}}</h3>

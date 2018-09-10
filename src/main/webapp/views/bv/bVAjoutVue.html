@@ -1,0 +1,60 @@
+<h2>Formulaire d'ajout d'un Bien immobilier en vente</h2>
+<br/>
+Type de Bien
+<select class="form-control" ng-model="bvForm.typeBien">
+  <option value="">choisissez un type de bien</option>
+  <option value="maison">Maison</option>
+  <option value="appartement">Appartement</option>
+  <option value="studio">Studio</option>
+  <option value="entrepot">Entrepot</option>
+  <option value="emplacement">Emplacement</option>
+  <option value="terrain">Terrain</option>
+</select>
+<br/>
+Statut
+<div class="radio">
+  <label>
+    <input type="radio" name="statut" value="disponible" ng-model="bvForm.statut">
+    Disponible
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="statut" value="achete" ng-model="bvForm.statut">
+    Achet&eacute
+  </label>
+</div>
+<br/>
+Revenu cadastral <input type="number" placeholder="revenu" ng-model="bvForm.revenuCadastre">
+<br/>
+Description <input type="text" placeholder="description" ng-model="bvForm.description">
+<br/>
+Date de soumission <input type="date" placeholder="date" ng-model="bvForm.dateSoumission">
+<br/>
+Date de disposition <input type="date" placeholder="date" ng-model="bvForm.dateDisposition">
+<br/>
+Photo descriptive <input type="file" placeholder="image" ng-model="bvForm.listeImage" accept="image/*" base-sixty-four-input>
+<br/>
+Prix d'achat demand&eacute <input type="number" placeholder="prix" ng-model="bvForm.prix">
+<br/>
+Etat
+<select class="form-control" ng-model="bvForm.etat">
+  <option value="">choisissez un &eacutetat</option>
+  <option value="a restaurer">A restaurer</option>
+  <option value="correct">Correct</option>
+  <option value="impeccable">Impeccable</option>
+</select>
+<br/>
+Num&eacutero de rue <input type="number" placeholder="Num&eacutero" ng-model="bvForm.adresse.numRue">
+<br/>
+Rue <input type="text" placeholder="rue" ng-model="bvForm.adresse.rue">
+<br/>
+Code Postal <input type="text" placeholder="code postal" ng-model="bvForm.adresse.cp">
+<br/>
+Ville <input type="text" placeholder="ville" ng-model="bvForm.adresse.localite">
+<br/>
+Pays <input type="text" placeholder="pays" ng-model="bvForm.adresse.pays">
+<br/>
+<input type="button" value="Ajouter" ng-click="ajouter()" >
+<br/>
+<h3>{{msg}}</h3>

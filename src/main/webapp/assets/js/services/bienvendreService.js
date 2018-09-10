@@ -39,7 +39,7 @@ monApp.factory("bvProvider", function ($http){
 	}
 	
 	//fonction pour modifier un bv
-	function modifV(bvIn, callBack){
+	function modifBV(bvIn, callBack){
 		$http({
 			method: "PUT",
 			url:"http://localhost:8080/Projet_AppSystemeAgence/wsBv/modif",

@@ -1,0 +1,42 @@
+<h2>Formulaire de recherche d'un bien immobilier en vente</h2>
+<br/>
+ID : <input type="number" placeholder="identifiant" ng-model="id" >
+<br/>
+<input type="button" value="Rechercher" ng-click="rechercher()" >
+<br/>
+<div ng-show="indice">
+<h1>Informations du bien</h1>
+<br/>
+<table class="table table-striped">
+	<tr>
+		<th>Type de Bien</th>
+		<th>Statut</th>
+		<th>Revenu cadastral</th>
+		<th>Description</th>
+		<th>Date de soumission</th>
+		<th>Date de disposition</th>
+		<th>Photo descriptive</th>
+		<th>Prix</th>
+		<th>Etat</th>
+		<th>Rue</th>
+		<th>Code Postal</th>
+		<th>Ville</th>
+		<th>Pays</th>
+
+	</tr>
+	<tr>
+		<td>{{bienvendre.typeBien}}</td>
+		<td>{{bienvendre.statut}}</td>
+		<td>{{bienvendre.revenuCadastre}}</td>
+		<td>{{bienvendre.description}}</td>
+		<td>{{bienvendre.dateSoumission | date: "dd/MM/yyyy"}}</td>
+		<td>{{bienvendre.dateDisposition | date: "dd/MM/yyyy"}}</td>
+		<td><img ng-src="data:image/JPEG;base64,{{b.listeImage}}" style="max-height:50px;max-width:50px"></td>
+		<td>{{bienvendre.prix}}</td>
+		<td>{{bienvendre.etat}}</td>
+		<td>{{bienvendre.adresse.numRue}}, {{bienvendre.adresse.rue}}</td>
+		<td>{{bienvendre.adresse.cp}}</td> 
+		<td>{{bienvendre.adresse.localite}}</td>
+		<td>{{bienvendre.adresse.pays}}</td>
+	</tr>
+</table>

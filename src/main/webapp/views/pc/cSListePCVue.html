@@ -1,9 +1,12 @@
 <h1>Rechercher un bien par type</h1>
 <table class="table table-striped">
+Rechercher par type de bien : <input type="text" ng-model="recherche">
+<br>
+<br>	
 	<tr>
 		<th>Type de Bien</th>	
 	</tr>
-	<tr ng-repeat="c in liste">
+	<tr ng-repeat="c in liste | filter:{typeBien : recherche}">
 		<td>{{c.typeBien}}</td>		
 	</tr>
 </table>
