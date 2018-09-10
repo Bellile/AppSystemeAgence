@@ -23,7 +23,7 @@
 		<td>{{bv.description}}</td>
 		<td>{{bv.dateSoumission | date: "dd/MM/yyyy"}}</td>
 		<td>{{bv.dateDisposition | date: "dd/MM/yyyy"}}</td>
-		<td><img ng-src="data:image/JPEG;base64,{{bv.listeImage}}" style="max-height:50px;max-width:50px"></td>
+		<td><img ng-repeat="p in bv.listeImages" ng-src="data:image/JPEG;base64,{{p.image}}" style="max-height:50px;max-width:50px"></td>
 		<td>{{bv.prix}}</td>
 		<td>{{bv.etat}}</td>
 		<td>{{bv.adresse.numRue}}, {{bv.adresse.rue}}</td>

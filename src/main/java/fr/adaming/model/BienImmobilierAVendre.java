@@ -3,6 +3,7 @@ package fr.adaming.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -39,6 +40,10 @@ public class BienImmobilierAVendre extends BienImmobilier{
 	@ManyToOne
 	@JoinColumn(name="p_id", referencedColumnName="id_p")
 	private Proprietaire proprietaire;
+	
+	@Fetch(FetchMode.SELECT)
+	@OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+	private List<Photo> listeImages;
 	
 	//declaration des constructeurs
 	public BienImmobilierAVendre() {
@@ -106,6 +111,14 @@ public class BienImmobilierAVendre extends BienImmobilier{
 
 	public void setProprietaire(Proprietaire proprietaire) {
 		this.proprietaire = proprietaire;
+	}
+
+	public List<Photo> getListeImages() {
+		return listeImages;
+	}
+
+	public void setListeImages(List<Photo> listeImages) {
+		this.listeImages = listeImages;
 	}
 
 	@Override

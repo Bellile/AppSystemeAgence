@@ -26,7 +26,13 @@ monApp.factory("bvProvider", function ($http){
 	//fonction pour ajouter un bv
 	function ajoutBV(bvIn, callBack){
 		
-		bvIn.listeImage=bvIn.listeImage.base64;
+		for(var i in bvIn.photos){
+			photo= {
+					image: bvIn.photos[i].base64
+			};
+			bvIn.listeImages.push(photo)
+		}
+		
 		$http({
 			method: "POST",
 			url:"http://localhost:8080/Projet_AppSystemeAgence/wsBv/ajout",
@@ -40,6 +46,14 @@ monApp.factory("bvProvider", function ($http){
 	
 	//fonction pour modifier un bv
 	function modifBV(bvIn, callBack){
+		
+		for(var i in bvIn.photos){
+			photo= {
+					image: bvIn.photos[i].base64
+			};
+			bvIn.listeImages.push(photo)
+		}
+		
 		$http({
 			method: "PUT",
 			url:"http://localhost:8080/Projet_AppSystemeAgence/wsBv/modif",

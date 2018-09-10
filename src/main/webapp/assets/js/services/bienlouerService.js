@@ -46,6 +46,14 @@ monApp.factory("blProvider", function ($http){
 	
 	//fonction pour modifier un bl
 	function modifBL(blIn, callBack){
+		
+		for(var i in blIn.photos){
+			photo= {
+					image: blIn.photos[i].base64
+			};
+			blIn.listeImages.push(photo)
+		}
+		
 		$http({
 			method: "PUT",
 			url:"http://localhost:8080/Projet_AppSystemeAgence/wsBl/modif",

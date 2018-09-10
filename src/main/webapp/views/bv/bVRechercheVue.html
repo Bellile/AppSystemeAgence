@@ -31,7 +31,7 @@ ID : <input type="number" placeholder="identifiant" ng-model="id" >
 		<td>{{bienvendre.description}}</td>
 		<td>{{bienvendre.dateSoumission | date: "dd/MM/yyyy"}}</td>
 		<td>{{bienvendre.dateDisposition | date: "dd/MM/yyyy"}}</td>
-		<td><img ng-src="data:image/JPEG;base64,{{b.listeImage}}" style="max-height:50px;max-width:50px"></td>
+		<td><img ng-repeat="p in bienvendre.listeImages" ng-src="data:image/JPEG;base64,{{p.image}}" style="max-height:50px;max-width:50px"></td>
 		<td>{{bienvendre.prix}}</td>
 		<td>{{bienvendre.etat}}</td>
 		<td>{{bienvendre.adresse.numRue}}, {{bienvendre.adresse.rue}}</td>

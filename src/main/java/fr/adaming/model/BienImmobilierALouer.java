@@ -45,7 +45,7 @@ public class BienImmobilierALouer extends BienImmobilier{
 	@JoinColumn(name="p_id", referencedColumnName="id_p")
 	private Proprietaire proprietaire;
 	
-//	@Fetch(FetchMode.SELECT)
+	@Fetch(FetchMode.SELECT)
 	@OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
 	private List<Photo> listeImages;
 
