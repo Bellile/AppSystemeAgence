@@ -104,7 +104,7 @@ monApp.factory("bvProvider", function ($http){
 		getID: searchById,
 		add: ajoutBV,
 		update: modifBV,
-		del: supprBV
+		del: supprBV,
 		geoAdresse : localiserAdresse
 	}
 	
