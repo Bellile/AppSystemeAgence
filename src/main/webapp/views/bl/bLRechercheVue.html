@@ -1,52 +1,68 @@
 <h2>Formulaire de recherche d'un bien immobilier en location</h2>
-<br/>
-ID : <input type="number" placeholder="identifiant" ng-model="id" >
-<br/>
-<input type="button" value="Rechercher" ng-click="rechercher()" >
-<br/>
+<br />
+<br />
+<form class="form-horizontal">
+	<div class="form-group">
+		<label for="id" class="col-md-2 control-label">ID</label>
+		<div class="col-md-6">
+			<input type="number" class="form-control" id="id" ng-model="id">
+		</div>
+	</div>
+	<br />
+	<div class="form-group">
+		<div class="col-md-offset-2 col-md-10">
+			<input type="button" class="btn btn-default" value="Rechercher"
+				ng-click="rechercher()">
+		</div>
+	</div>
+</form>
+<br />
 <div ng-show="indice">
-<h1>Informations du bien</h1>
-<br/>
-<table class="table table-striped">
-	<tr>
-		<th>Type de Bien</th>
-		<th>Statut</th>
-		<th>Revenu cadastral</th>
-		<th>Description</th>
-		<th>Date de soumission</th>
-		<th>Date de disposition</th>
-		<th>Photo descriptive</th>
-		<th>Caution locative</th>
-		<th>Loyer Mensuel</th>
-		<th>Charges mensuelles</th>
-		<th>Tye de bail</th>
-		<th>Garniture</th>
-		<th>Rue</th>
-		<th>Code Postal</th>
-		<th>Ville</th>
-		<th>Pays</th>
-	</tr>
-	<tr>
-		<td>{{bienlouer.typeBien}}</td>
-		<td>{{bienlouer.statut}}</td>
-		<td>{{bienlouer.revenuCadastre}}</td>
-		<td>{{bienlouer.description}}</td>
-		<td>{{bienlouer.dateSoumission | date: "dd/MM/yyyy"}}</td>
-		<td>{{bienlouer.dateDisposition | date: "dd/MM/yyyy"}}</td>
-		<td><img ng-repeat="p in bienlouer.listeImages" ng-src="data:image/JPEG;base64,{{p.image}}" style="max-height:50px;max-width:50px"></td>
-		<td>{{bienlouer.caution}}</td>
-		<td>{{bienlouer.loyer}}</td>
-		<td>{{bienlouer.charges}}</td>
-		<td>{{bienlouer.typeBail}}</td>
-		<td>{{bienlouer.garniture}}</td>
-		<td>{{bienlouer.adresse.numRue}}, {{bienlouer.adresse.rue}}</td>
-		<td>{{bienlouer.adresse.cp}}</td> 
-		<td>{{bienlouer.adresse.localite}}</td>
-		<td>{{bienlouer.adresse.pays}}</td>
-	</tr>
-					
-</table>
-<a target="_blank" href="https://www.geoportail.gouv.fr/carte?c={{bienlouer.lng}},{{bienlouer.lat}}&z=20&l0=ORTHOIMAGERY.ORTHOPHOTOS::GEOPORTAIL:OGC:WMTS(1)&l1=CADASTRALPARCELS.PARCELS::GEOPORTAIL:OGC:WMTS(1)&permalink=yes"><p>cadastre</p></a>
+	<h1>Informations du bien</h1>
+	<br />
+	<table class="table table-striped">
+		<tr>
+			<th>Type de Bien</th>
+			<th>Statut</th>
+			<th>Revenu cadastral</th>
+			<th>Description</th>
+			<th>Date de soumission</th>
+			<th>Date de disposition</th>
+			<th>Photo descriptive</th>
+			<th>Caution locative</th>
+			<th>Loyer Mensuel</th>
+			<th>Charges mensuelles</th>
+			<th>Tye de bail</th>
+			<th>Garniture</th>
+			<th>Rue</th>
+			<th>Code Postal</th>
+			<th>Ville</th>
+			<th>Pays</th>
+		</tr>
+		<tr>
+			<td>{{bienlouer.typeBien}}</td>
+			<td>{{bienlouer.statut}}</td>
+			<td>{{bienlouer.revenuCadastre}}</td>
+			<td>{{bienlouer.description}}</td>
+			<td>{{bienlouer.dateSoumission | date: "dd/MM/yyyy"}}</td>
+			<td>{{bienlouer.dateDisposition | date: "dd/MM/yyyy"}}</td>
+			<td><img ng-repeat="p in bienlouer.listeImages"
+				ng-src="data:image/JPEG;base64,{{p.image}}"
+				style="max-height: 50px; max-width: 50px"></td>
+			<td>{{bienlouer.caution}}</td>
+			<td>{{bienlouer.loyer}}</td>
+			<td>{{bienlouer.charges}}</td>
+			<td>{{bienlouer.typeBail}}</td>
+			<td>{{bienlouer.garniture}}</td>
+			<td>{{bienlouer.adresse.numRue}}, {{bienlouer.adresse.rue}}</td>
+			<td>{{bienlouer.adresse.cp}}</td>
+			<td>{{bienlouer.adresse.localite}}</td>
+			<td>{{bienlouer.adresse.pays}}</td>
+		</tr>
 
-<br/>
-<h3>{{msg}}</h3>
+	</table>
+	<a target="_blank"
+		href="https://www.geoportail.gouv.fr/carte?c={{bienlouer.lng}},{{bienlouer.lat}}&z=20&l0=ORTHOIMAGERY.ORTHOPHOTOS::GEOPORTAIL:OGC:WMTS(1)&l1=CADASTRALPARCELS.PARCELS::GEOPORTAIL:OGC:WMTS(1)&permalink=yes"><p>cadastre</p></a>
+
+	<br />
+	<h3>{{msg}}</h3>

@@ -1,90 +1,183 @@
 <h2>Formulaire de modification d'un Bien immobilier en location</h2>
 <br />
-ID
-<input type="number" placeholder="ID" ng-model="blForm.id">
-<br />
-Type de Bien
-<select class="form-control" ng-model="blForm.typeBien">
-	<option value="">choisissez un type de bien</option>
-	<option value="maison">Maison</option>
-	<option value="appartement">Appartement</option>
-	<option value="studio">Studio</option>
-	<option value="entrepot">Entrepot</option>
-	<option value="emplacement">Emplacement</option>
-	<option value="terrain">Terrain</option>
-</select>
-<br />
-Statut
-<div class="radio">
-	<label> <input type="radio" name="statut" value="disponible"
-		ng-model="blForm.statut"> Disponible
-	</label>
-</div>
-<div class="radio">
-	<label> <input type="radio" name="statut" value="loue"
-		ng-model="blForm.statut"> Lou&eacute
-	</label>
-</div>
-<br />
-Revenu cadastral
-<input type="number" placeholder="revenu"
-	ng-model="blForm.revenuCadastre">
-<br />
-Description
-<input type="text" placeholder="description"
-	ng-model="blForm.description">
-<br />
-Date de soumission
-<input type="date" placeholder="date" ng-model="blForm.dateSoumission">
-<br />
-Date de disposition
-<input type="date" placeholder="date" ng-model="blForm.dateDisposition">
-<br />
-Photo descriptive
-<input type="file" placeholder="image" ng-model="blForm.photos" accept="image/*" base-sixty-four-input multiple>
-<br />
-Caution locative
-<input type="number" placeholder="caution" ng-model="blForm.caution">
-<br />
-Loyer Mensuel
-<input type="number" placeholder="loyer" ng-model="blForm.loyer">
-<br />
-Charges mensuelles
-<input type="number" placeholder="charges" ng-model="blForm.charges">
-<br />
-Type de bail
-<input type="text" placeholder="bail" ng-model="blForm.typeBail">
-<br />
-Garniture
-<div class="radio">
-	<label> <input type="radio" name="garniture" value="meuble"
-		ng-model="blForm.garniture"> Meubl&eacute
-	</label>
-</div>
-<div class="radio">
-	<label> <input type="radio" name="garniture" value="non meuble"
-		ng-model="blForm.garniture"> Non meubl&eacute
-	</label>
-</div>
-<br />
-Num&eacutero de rue
-<input type="number" placeholder="Num&eacutero"
-	ng-model="blForm.adresse.numRue">
-<br />
-Rue
-<input type="text" placeholder="rue" ng-model="blForm.adresse.rue">
-<br />
-Code Postal
-<input type="text" placeholder="code postal"
-	ng-model="blForm.adresse.cp">
-<br />
-Ville
-<input type="text" placeholder="ville"
-	ng-model="blForm.adresse.localite">
-<br />
-Pays
-<input type="text" placeholder="pays" ng-model="blForm.adresse.pays">
-<br />
-<input type="button" value="Modifier" ng-click="modifier()">
-<br />
+<form class="form-horizontal">
+	<div class="form-group">
+		<label for="id" class="col-md-2 control-label">ID</label>
+		<div class="col-md-6">
+			<input type="number" class="form-control" id="id"
+				ng-model="blForm.id">
+		</div>
+	</div>
+	<div class="col-md-6"
+		style="border-right-style: solid; border-right-color: lightgrey;">
+		<div class="form-group">
+			<label class="col-md-4 control-label">Type de bien</label>
+			<div class="col-md-6">
+				<select class="form-control" ng-model="blForm.typeBien">
+					<option value="">choisissez un type de bien</option>
+					<option value="maison">Maison</option>
+					<option value="appartement">Appartement</option>
+					<option value="studio">Studio</option>
+					<option value="entrepot">Entrepot</option>
+					<option value="emplacement">Emplacement</option>
+					<option value="terrain">Terrain</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-4 control-label">Statut</label>
+			<div class="col-md-6">
+				<div class="radio">
+					<label> <input type="radio" name="statut"
+						value="disponible" ng-model="blForm.statut"> Disponible
+					</label>
+				</div>
+				<div class="radio">
+					<label> <input type="radio" name="statut" value="loue"
+						ng-model="blForm.statut"> Lou&eacute
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="desc" class="col-md-4 control-label">Description</label>
+			<div class="col-md-6">
+				<input type="text" class="form-control" id="desc"
+					placeholder="description" ng-model="blForm.description">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="rev" class="col-md-4 control-label">Revenu
+				cadastral</label>
+			<div class="col-md-6">
+				<input type="number" class="form-control" id="rev"
+					placeholder="revenu" ng-model="blForm.revenuCadastre">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="date" class="col-md-4 control-label">Date de
+				soumission</label>
+			<div class="col-md-6">
+				<input type="date" class="form-control" id="date" placeholder="date"
+					ng-model="blForm.dateSoumission">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="date" class="col-md-4 control-label">Date de
+				disposition</label>
+			<div class="col-md-6">
+				<input type="date" class="form-control" id="date" placeholder="date"
+					ng-model="blForm.dateDisposition">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-4 control-label">Garniture</label>
+			<div class="col-md-6">
+				<div class="radio">
+					<label> <input type="radio" name="garniture" value="meuble"
+						ng-model="blForm.garniture"> Meubl&eacute
+					</label>
+				</div>
+				<div class="radio">
+					<label> <input type="radio" name="garniture"
+						value="non meuble" ng-model="blForm.garniture"> Non
+						meubl&eacute
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="photo" class="col-md-4 control-label">Photo
+				descriptive</label>
+			<div class="col-md-6">
+				<input type="file" class="form-control" id="photo"
+					placeholder="image" ng-model="blForm.photos" accept="image/*"
+					base-sixty-four-input multiple>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="col-md-6">
+		<div class="form-group">
+			<label for="loyer" class="col-md-4 control-label">Loyer
+				Mensuel</label>
+			<div class="col-md-6">
+				<input type="number" class="form-control" id="loyer"
+					placeholder="loyer" ng-model="blForm.loyer">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="charges" class="col-md-4 control-label">Charges
+				mensuelles</label>
+			<div class="col-md-6">
+				<input type="number" class="form-control" id="charges"
+					placeholder="charges" ng-model="blForm.charges">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="caution" class="col-md-4 control-label">Caution
+				locative</label>
+			<div class="col-md-6">
+				<input type="number" class="form-control" id="caution"
+					placeholder="caution" ng-model="blForm.caution">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="bail" class="col-md-4 control-label">Type de bail</label>
+			<div class="col-md-6">
+				<input type="text" class="form-control" id="bail" placeholder="bail"
+					ng-model="blForm.typeBail">
+			</div>
+		</div>
+		<hr />
+		<div class="form-group">
+			<label for="no" class="col-md-4 control-label">Num&eacutero
+				de rue</label>
+			<div class="col-md-6">
+				<input type="number" class="form-control" id="no"
+					placeholder="Num&eacutero" ng-model="blForm.adresse.numRue">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="rue" class="col-md-4 control-label">Rue</label>
+			<div class="col-md-6">
+				<input type="text" class="form-control" id="rue" placeholder="rue"
+					ng-model="blForm.adresse.rue">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="cp" class="col-md-4 control-label">Code Postal</label>
+			<div class="col-md-6">
+				<input type="text" class="form-control" id="cp"
+					placeholder="code postal" ng-model="blForm.adresse.cp">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="ville" class="col-md-4 control-label">Ville</label>
+			<div class="col-md-6">
+				<input type="text" class="form-control" id="ville"
+					placeholder="ville" ng-model="blForm.adresse.localite">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="pays" class="col-md-4 control-label">Pays</label>
+			<div class="col-md-6">
+				<input type="text" class="form-control" id="pays" placeholder="pays"
+					ng-model="blForm.adresse.pays">
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-md-offset-2 col-md-10">
+			<input type="button" class="btn btn-default" value="Modifier"
+				ng-click="modifier()">
+
+		</div>
+	</div>
+
+</form>
+
 <h3>{{msg}}</h3>
