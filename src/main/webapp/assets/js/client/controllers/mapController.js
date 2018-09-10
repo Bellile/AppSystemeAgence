@@ -2,23 +2,13 @@
 appClient.controller("mapBlCtrl", function ($scope, mapProvider){
 	//Appel de la fonction pour récupérer la liste
 	var liste = "";
+	var tabMarker = [];
 	mapProvider.getAll(function (donnee){
 		liste = donnee;
 		console.log(liste)
 	});
-	var tabMarker = [];
-	angular.forEach(liste, function(value, key) {
-		console.log(e)
-		var address = e.adresse;
-		console.log(address)
-		var localite = [];
-		var label = e.description;
-		mapProvider.getCoord(address, function(donnee){
-			localite = [label, donnee.geometry.location.lng(), donnee.geometry.location.lat()];
-			console.log(donnee.geometry.location.lng())
-		})
-		tabMarker.push(localite);
-	})
+	
+	
 	console.log("je suis là")
 	$scope.map = new ol.Map({
 		target : 'map',
@@ -31,6 +21,11 @@ appClient.controller("mapBlCtrl", function ($scope, mapProvider){
 		})
 	});
     
+	angular.forEach(liste, function(value, key) {
+		
+		
+	})
+	
     // Define markers as "features" of the vector layer:
     for (i = 0; i < tabMarker.length; i++) {
     	var feature = new ol.Feature.Vector(
@@ -93,4 +88,9 @@ appClient.controller("mapBlCtrl", function ($scope, mapProvider){
 //      });
 //      
 //    }
+//    mapProvider.getCoord(address, function(donnee){
+//		console.log(donnee.geometry)
+//		localite = [label, donnee.geometry.location.lng(), donnee.geometry.location.lat()];
+//		
+//	})
 }) 

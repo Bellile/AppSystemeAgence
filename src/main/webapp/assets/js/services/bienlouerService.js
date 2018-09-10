@@ -1,6 +1,8 @@
 //creation de mon service
 monApp.factory("blProvider", function ($http){
 	
+	var geoURL = 'https://nominatim.openstreetmap.org/search';
+	
 	//fonction pour recuperer la liste
 	function recupListe(callBack){
 		$http({
@@ -40,8 +42,8 @@ monApp.factory("blProvider", function ($http){
 			headers:{'Content-Type':'application/json'}	
 		}).then(function successCallback(response){
 			callBack(response.data);
-		}, function errorCallback(response){});
-		console.log("erreur : "+response.statusText);
+		}, function errorCallback(response){console.log("erreur : "+response.statusText);});
+
 	}
 	
 	//fonction pour modifier un bl
@@ -61,8 +63,8 @@ monApp.factory("blProvider", function ($http){
 			headers:{'Content-Type':'application/json'}
 		}).then(function successCallback(response){
 			callBack(response.data);
-		}, function errorCallback(response){});
-			console.log("erreur : "+response.statusText);
+		}, function errorCallback(response){console.log("erreur : "+response.statusText);});
+			
 	}
 	
 	//fonction pour supprimer un bl
@@ -72,8 +74,31 @@ monApp.factory("blProvider", function ($http){
 			url:"http://localhost:8080/Projet_AppSystemeAgence/wsBl/suppr/"+id,
 		}).then(function successCallback(response){
 			callBack(response.statusText);
-		}, function errorCallback(response){});
+		}, function errorCallback(response){
 			console.log("erreur : "+response.statusText);
+		});
+			
+	}
+	
+	
+	function localiserAdresse(pays, numRue,rue, cp,localite, calback) {
+		$http(
+				{
+					method : 'GET',
+					url : geoURL+ '?format=json'
+					+ "&city="+localite
+					+ '&street='+numRue+ " " + rue
+					+ "&postalcode="+cp
+							
+				}).then(
+				function successCalback(response) {
+					console.log(response.data);
+					calback(response.data);
+				},
+				function echecCalback(response) {
+					console.log("erreur : " + response.status
+							+ " " + response.statusText);
+				});
 	}
 	
 	//retour de ma fonction factory = un objet
@@ -82,7 +107,8 @@ monApp.factory("blProvider", function ($http){
 		getID: searchById,
 		add: ajoutBL,
 		update: modifBL,
-		del: supprBL
+		del: supprBL,
+		geoAdresse : localiserAdresse
 	}
 	
 });

@@ -34,6 +34,8 @@ public class BienImmobilierALouerRestController {
 	
 	@RequestMapping(value="/ajout", method = RequestMethod.POST, produces = "application/json", consumes = "application/json" )
 	public BienImmobilierALouer addBL(@RequestBody BienImmobilierALouer bl){
+		
+		System.out.println(bl.getLat());
 		return blService.add(bl);
 	}
 	

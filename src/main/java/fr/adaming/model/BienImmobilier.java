@@ -30,6 +30,8 @@ abstract class BienImmobilier implements Serializable{
 	@Temporal(TemporalType.DATE)
 	protected Date dateDisposition;
 	
+	protected double lat;
+	protected double lng;
 	//declaration des constructeurs
 	public BienImmobilier() {
 		super();
@@ -126,6 +128,22 @@ abstract class BienImmobilier implements Serializable{
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public double getLat() {
+		return lat;
+	}
+
+	public void setLat(double lat) {
+		this.lat = lat;
+	}
+
+	public double getLng() {
+		return lng;
+	}
+
+	public void setLng(double lng) {
+		this.lng = lng;
 	}
 
 	@Override
