@@ -1,14 +1,50 @@
 <h2 style="color : aquamarine; text-align: center">Formulaire d'ajout de contrat</h2>
-<label>Type de mandat</label>
-<select class="form-control" ng-model="contrat.type">
-  <option value="">choisissez un type de contrat</option>
-  <option value="exclusif">Exclusif</option>
-  <option value="simple">Simple</option>
-  <option value="sous-mandat">Sous-mandat</option>
-</select>
-<br/>
-<label>Date d'acquisition</label>
-<input type="date" placeholder="Date" ng-model="contrat.dateAcquisition">
-<br/>
-<input type="button" value="Ajouter" ng-click="ajout()">
+<form class="form-horizontal">
+ <div class="form-group">
+    <label for="idID" class="col-sm-2 control-label">Type de mandat</label>
+    <div class="col-sm-5">
+      <select class="form-control" id="idType" ng-model="contrat.type" placeholder="sélectionnez le type">
+		  <option value="">choisissez un type de contrat</option>
+		  <option value="exclusif">Exclusif</option>
+		  <option value="simple">Simple</option>
+		  <option value="sous-mandat">Sous-mandat</option>
+		</select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idDate" class="col-sm-2 control-label">Date</label>
+    <div class="col-sm-5">
+      <input type="date" id="idDate" placeholder="Entrez une date" ng-model="contrat.dateAcquisition">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idClient" class="col-sm-2 control-label">Client acquereur</label>
+    <div class="col-sm-5">
+      <input type="number" class="form-control" id="idClient" ng-model="contrat.client.id">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="idBIAV" class="col-sm-2 control-label">Bien immobilier à vendre</label>
+    <div class="col-sm-5">
+      <input type="number" class="form-control" id="idBIAV" ng-model="contrat.visite.bienImmobilierAVendre.id">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="idBIAL" class="col-sm-2 control-label">Bien immobilier à louer</label>
+    <div class="col-sm-5">
+      <input type="number" class="form-control" id="idBIAL" ng-model="contrat.visite.bienImmobilierALouer.id">
+    </div>
+  </div>
+  
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button class="btn btn-default" ng-click="ajout()">Ajouter</button>
+    </div>
+  </div>
+  
+</form>
+
 <h3>{{msg}}</h3>

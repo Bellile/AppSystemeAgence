@@ -2,17 +2,24 @@ package fr.adaming.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
 @Table(name = "visites")
@@ -43,6 +50,11 @@ public class Visite implements Serializable{
 	@ManyToOne
 	@JoinColumn(name="r_id", referencedColumnName="id_r")
 	private Responsable responsable;
+	
+	// lien avec le contrat
+	@Fetch(FetchMode.SELECT)
+	@OneToOne(mappedBy = "visite", fetch = FetchType.EAGER)
+	private Contrat contrat;
 	
 	// constructeurs
 
@@ -110,6 +122,14 @@ public class Visite implements Serializable{
 
 	public void setBienImmobilierAVendre(BienImmobilierAVendre bienImmobilierAVendre) {
 		this.bienImmobilierAVendre = bienImmobilierAVendre;
+	}
+	
+	public Contrat getContrat() {
+		return contrat;
+	}
+
+	public void setContrat(Contrat contrat) {
+		this.contrat = contrat;
 	}
 	
 	

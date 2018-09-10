@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -32,6 +33,11 @@ public class Contrat implements Serializable{
 	@ManyToOne
 	@JoinColumn(name="cl_id", referencedColumnName="id_cl")
 	private Client client;
+	
+	//lien avec la visite
+	@OneToOne
+	@JoinColumn(name="v_id", referencedColumnName="id_v")
+	private Visite visite;
 	
 	// constructeurs
 
@@ -85,9 +91,18 @@ public class Contrat implements Serializable{
 	public void setClient(Client client) {
 		this.client = client;
 	}
+	
+	public Visite getVisite() {
+		return visite;
+	}
+
+	public void setVisite(Visite visite) {
+		this.visite = visite;
+	}
+	
 
 	// to string
-	
+
 	@Override
 	public String toString() {
 		return "Contrat [id=" + id + ", type=" + type + ", dateAcquisition=" + dateAcquisition + "]";
