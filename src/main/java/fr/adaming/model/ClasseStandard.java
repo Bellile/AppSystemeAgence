@@ -25,6 +25,7 @@ public class ClasseStandard implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_cs")
 	private int id;
+	private String nom;
 	private String typeBien;
 	private String modeOffre;
 	private double prixMax;
@@ -41,23 +42,24 @@ public class ClasseStandard implements Serializable {
 	private List<BienImmobilierALouer> listeBienImmobilierLouer;
 
 
-
 	// constructeurs
 	public ClasseStandard() {
 		super();
 	}
 
-	public ClasseStandard(String typeBien, String modeOffre, double prixMax, double superficieMin) {
+	public ClasseStandard(String nom, String typeBien, String modeOffre, double prixMax, double superficieMin) {
 		super();
+		this.nom = nom;
 		this.typeBien = typeBien;
 		this.modeOffre = modeOffre;
 		this.prixMax = prixMax;
 		this.superficieMin = superficieMin;
 	}
 
-	public ClasseStandard(int id, String typeBien, String modeOffre, double prixMax, double superficieMin) {
+	public ClasseStandard(int id, String nom, String typeBien, String modeOffre, double prixMax, double superficieMin) {
 		super();
 		this.id = id;
+		this.nom = nom;
 		this.typeBien = typeBien;
 		this.modeOffre = modeOffre;
 		this.prixMax = prixMax;
@@ -122,6 +124,14 @@ public class ClasseStandard implements Serializable {
 
 	public void setListeBienImmobilierLouer(List<BienImmobilierALouer> listeBienImmobilierLouer) {
 		this.listeBienImmobilierLouer = listeBienImmobilierLouer;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
 
 	// toString

@@ -36,6 +36,7 @@ monApp.controller("getAllCSCtrl", function($scope, classeStandardProvider) {
 
 .controller("addCSCtrl", function($scope, classeStandardProvider, $location) {
 	$scope.csForm = {
+			nom:"",
 			typeBien : "",
 			modeOffre: "",
 			prixMax:"",
@@ -61,6 +62,7 @@ monApp.controller("getAllCSCtrl", function($scope, classeStandardProvider) {
 
 				$scope.csModif = {
 					id : undefined,
+					nom:"",
 					typeBien : "",
 					modeOffre: "",
 					prixMax:"",
@@ -93,7 +95,7 @@ monApp.controller("getAllCSCtrl", function($scope, classeStandardProvider) {
 				// rediriger vers accueil
 				$location.path("listeClasseStandard");
 			} else {
-				$scope.msg = "la suppression a echou�e";
+				$scope.msg = "la suppression a echoue";
 			}
 
 		});

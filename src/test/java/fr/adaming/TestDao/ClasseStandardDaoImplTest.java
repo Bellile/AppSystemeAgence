@@ -47,7 +47,7 @@ public class ClasseStandardDaoImplTest {
 	@Transactional
 	@Rollback(true)
 	public void testAddSize () {
-		ClasseStandard bImmoLIn = new ClasseStandard(null, null, 50, 10);
+		ClasseStandard bImmoLIn = new ClasseStandard(null, null, null, 50, 10);
 		csDao.add(bImmoLIn);
 		assertEquals(2, csDao.getAll().size());
 	}
@@ -66,7 +66,7 @@ public class ClasseStandardDaoImplTest {
 	@Transactional
 	@Rollback(true)
 	public void testUpdateName () {
-		ClasseStandard bImmoLIn = new ClasseStandard(1, "case", null, 150, 0);
+		ClasseStandard bImmoLIn = new ClasseStandard(1, null, "case", null, 150, 0);
 		csDao.update(bImmoLIn);
 		assertEquals("case", csDao.getById(1).getTypeBien());
 	}

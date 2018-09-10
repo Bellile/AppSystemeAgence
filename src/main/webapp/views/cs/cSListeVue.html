@@ -1,15 +1,17 @@
 <h1>Liste des classes standard</h1>
 <table class="table table-striped">
 	<tr>
+		<th>nom</th>
 		<th>type de Bien</th>
 		<th>mode d'offre</th>
 		<th>prix Max</th>
 		<th>superficie Min</th>
 	</tr>
 	<tr ng-repeat="cs in listeClasseStandard">
+		<td>{{cs.nom}}</td>
 		<td>{{cs.typeBien}}</td>
 		<td>{{cs.modeOffre}}</td>
 		<td>{{cs.prixMax}}</td>
-		<td>{{cs.superficieMin}}</td> 
+		<td>{{cs.superficieMin}}</td>
 	</tr>
 </table>
