@@ -6,6 +6,9 @@
       <th >Telephone</th>
       <th >Mail</th>
       <th >Identifiant</th>
+      <th>Agence</th>
+      <th>Lien</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -14,6 +17,7 @@
       <td>{{r.telPerso}}</td>
       <td>{{r.mail}}</td>
       <td>{{r.identifiant}}</td>
+      <td>{{r.agence.nom}}</td>
       <td><a ng-click="deleteLien(r)">Supprimer</a> | <a ng-click="updateLien(r)">Modifier</a></td>
     </tr>
    

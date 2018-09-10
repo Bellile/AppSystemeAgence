@@ -23,6 +23,7 @@ monApp
 			mail:"",
 			identifiant:"",
 			mdp:""
+			
 	};
 	$scope.modifLien=function(rIn){
 		responsableProvider.update(rIn, function() {
