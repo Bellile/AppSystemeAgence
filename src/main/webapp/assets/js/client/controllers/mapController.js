@@ -12,13 +12,13 @@ appClient.controller("mapBlCtrl", function ($scope, mapProvider){
 	});
 	
 	//Appel de la fonction pour récupérer la liste
-	var liste = "";
-	var tabMarker = [];
-	mapProvider.getAll(function (donnee){
-		liste = donnee;
-		console.log(liste)
+	var listeBl = "";
+	
+	mapProvider.getAllBl(function (donnee){
+		listeBl = donnee;
+		console.log(listeBl)
 		
-		angular.forEach(liste, function(value, key) {
+		angular.forEach(listeBl, function(value, key) {
 		
 			var coor = [value.lng, value.lat];
 			console.log(coor);
@@ -34,7 +34,47 @@ appClient.controller("mapBlCtrl", function ($scope, mapProvider){
 				    anchorXUnits: 'fraction',
 				    anchorYUnits: 'pixels',
 				    opacity: 0.75,
-				    src: 'assets/resources/image/marker.png'
+				    src: 'assets/resources/image/marker_red.png'
+				  }))
+				});
+			
+			marker.setStyle(iconStyle);
+			
+	    	var vectorSource = new ol.source.Vector({
+				features: [marker]
+			});
+		
+			var markerVectorLayer = new ol.layer.Vector({
+				source: vectorSource
+			});
+			$scope.map.addLayer(markerVectorLayer);
+			
+		})
+	});
+	
+	var listeBv = "";
+	
+	mapProvider.getAllBv(function (donnee){
+		listeBv = donnee;
+		console.log(listeBv)
+		
+		angular.forEach(listeBv, function(value, key) {
+		
+			var coor = [value.lng, value.lat];
+			console.log(coor);
+			
+			var marker = new ol.Feature({
+				geometry: new ol.geom.Point(ol.proj.fromLonLat(coor)),
+				
+			});  
+	    	
+			var iconStyle = new ol.style.Style({
+				  image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+				    anchor: [0.5, 46],
+				    anchorXUnits: 'fraction',
+				    anchorYUnits: 'pixels',
+				    opacity: 0.75,
+				    src: 'assets/resources/image/marker_green.png'
 				  }))
 				});
 			
