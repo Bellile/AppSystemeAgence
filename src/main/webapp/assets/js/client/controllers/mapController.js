@@ -1,15 +1,5 @@
 //Création des controller et appel des méthodes service
 appClient.controller("mapBlCtrl", function ($scope, mapProvider){
-	//Appel de la fonction pour récupérer la liste
-	var liste = "";
-	var tabMarker = [];
-	mapProvider.getAll(function (donnee){
-		liste = donnee;
-		console.log(liste)
-	});
-	
-	
-	console.log("je suis là")
 	$scope.map = new ol.Map({
 		target : 'map',
 		layers : [ new ol.layer.Tile({
@@ -17,35 +7,51 @@ appClient.controller("mapBlCtrl", function ($scope, mapProvider){
 		}) ],
 		view : new ol.View({
 			center : ol.proj.fromLonLat([ -1.560350, 47.213780]),
-			zoom : 3
+			zoom : 10
 		})
 	});
-    
-	angular.forEach(liste, function(value, key) {
-		
-		
-	})
 	
-    // Define markers as "features" of the vector layer:
-    for (i = 0; i < tabMarker.length; i++) {
-    	var feature = new ol.Feature.Vector(
-    			new ol.Geometry.Point( tabMarker[i][1], tabMarker[i][2] ).transform(epsg4326, projectTo),
-    			{description:tabMarker[i][0]} ,
-    			{externalGraphic: 'img/marker.png', graphicHeight: 25, graphicWidth: 21, graphicXOffset:-12, graphicYOffset:-25  }
-        	);  
-    	
-    	var vectorSource = new ol.source.Vector({
-			features: [marker]
-		});
-	
-		var markerVectorLayer = new ol.layer.Vector({
-			source: vectorSource,
-		});
-		map.addLayer(markerVectorLayer);
-    }
-       
-//    map.addLayer(vectorLayer);
-//
+	//Appel de la fonction pour récupérer la liste
+	var liste = "";
+	var tabMarker = [];
+	mapProvider.getAll(function (donnee){
+		liste = donnee;
+		console.log(liste)
+		
+		angular.forEach(liste, function(value, key) {
+		
+			var coor = [value.lng, value.lat];
+			console.log(coor);
+			
+			var marker = new ol.Feature({
+				geometry: new ol.geom.Point(ol.proj.fromLonLat(coor)),
+				
+			});  
+	    	
+			var iconStyle = new ol.style.Style({
+				  image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+				    anchor: [0.5, 46],
+				    anchorXUnits: 'fraction',
+				    anchorYUnits: 'pixels',
+				    opacity: 0.75,
+				    src: 'assets/resources/image/marker.png'
+				  }))
+				});
+			
+			marker.setStyle(iconStyle);
+			
+	    	var vectorSource = new ol.source.Vector({
+				features: [marker]
+			});
+		
+			var markerVectorLayer = new ol.layer.Vector({
+				source: vectorSource
+			});
+			$scope.map.addLayer(markerVectorLayer);
+			
+		})
+	});
+
 //    //Add a selector control to the vectorLayer with popup functions
 //    var controls = {
 //      selector: new ol.Control.SelectFeature(vectorLayer, { onSelect: createPopup, onUnselect: destroyPopup })
