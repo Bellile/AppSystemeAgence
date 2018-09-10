@@ -1,17 +1,54 @@
 <h2>Formulaire d'ajout d'une agence</h2>
-<br/>
-Nom <input type="text" placeholder="nom" ng-model="agence.nom">
-<br/>
-Num&eacutero de rue <input type="number" placeholder="Numero" ng-model="agence.adresse.numRue">
-<br/>
-Rue <input type="text" placeholder="rue" ng-model="agence.adresse.rue">
-<br/>
-Code Postal <input type="text" placeholder="code postal" ng-model="agence.adresse.cp">
-<br/>
-Ville <input type="text" placeholder="ville" ng-model="agence.adresse.localite">
-<br/>
-Pays <input type="text" placeholder="pays" ng-model="agence.adresse.pays">
-<br/>
-<input type="button" value="Ajouter" ng-click="ajout()" >
-<br/>
+<br />
+<form class="form-horizontal">
+	<div class="form-group">
+		<label for="nom" class="col-sm-2 control-label">Nom</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="nom" placeholder="Nom"
+				ng-model="agence.nom">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="no" class="col-sm-2 control-label">Num&eacutero de
+			rue</label>
+		<div class="col-sm-10">
+			<input type="number" class="form-control" id="no"
+				placeholder="Numero" ng-model="agence.adresse.numRue">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="rue" class="col-sm-2 control-label">Rue</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="rue" placeholder="Rue"
+				ng-model="agence.adresse.rue">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="cp" class="col-sm-2 control-label">Code Postal</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="cp"
+				placeholder="Code postal" ng-model="agence.adresse.cp">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="ville" class="col-sm-2 control-label">Ville</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="ville"
+				placeholder="ville" ng-model="agence.adresse.localite">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="pays" class="col-sm-2 control-label">Pays</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="pays" placeholder="pays"
+				ng-model="agence.adresse.pays">
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<input type="button" class="btn btn-default" value="Ajouter"
+				ng-click="ajout()">
+		</div>
+	</div>
+</form>
 <h3>{{msg}}</h3>

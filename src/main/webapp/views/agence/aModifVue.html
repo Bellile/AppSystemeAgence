@@ -1,19 +1,60 @@
 <h2>Formulaire de modification d'une agence</h2>
 <br/>
-Id <input type="text" placeholder="id" ng-model="aModif.id">
-<br/>
-Nom <input type="text" placeholder="nom" ng-model="aModif.nom">
-<br/>
-Num&eacutero de rue <input type="number" placeholder="Numero" ng-model="aModif.adresse.numRue">
-<br/>
-Rue <input type="text" placeholder="rue" ng-model="aModif.adresse.rue">
-<br/>
-Code Postal <input type="text" placeholder="code postal" ng-model="aModif.adresse.cp">
-<br/>
-Ville <input type="text" placeholder="ville" ng-model="aModif.adresse.localite">
-<br/>
-Pays <input type="text" placeholder="pays" ng-model="aModif.adresse.pays">
-<br/>
-<input type="button" value="Modifier" ng-click="modif()" >
-<br/>
+<form class="form-horizontal">
+<div class="form-group">
+		<label for="id" class="col-sm-2 control-label">ID</label>
+		<div class="col-sm-10">
+			<input type="number" class="form-control" id="id"
+				placeholder="ID" ng-model="aModif.id">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="nom" class="col-sm-2 control-label">Nom</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="nom" placeholder="Nom"
+				ng-model="aModif.nom">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="no" class="col-sm-2 control-label">Num&eacutero de
+			rue</label>
+		<div class="col-sm-10">
+			<input type="number" class="form-control" id="no"
+				placeholder="Numero" ng-model="aModif.adresse.numRue">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="rue" class="col-sm-2 control-label">Rue</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="rue" placeholder="Rue"
+				ng-model="aModif.adresse.rue">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="cp" class="col-sm-2 control-label">Code Postal</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="cp"
+				placeholder="Code postal" ng-model="aModif.adresse.cp">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="ville" class="col-sm-2 control-label">Ville</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="ville"
+				placeholder="ville" ng-model="aModif.adresse.localite">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="pays" class="col-sm-2 control-label">Pays</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="pays" placeholder="pays"
+				ng-model="aModif.adresse.pays">
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<input type="button" class="btn btn-default" value="Modifier" ng-click="modif()">
+		</div>
+	</div>
+</form>
 <h3>{{msg}}</h3>
