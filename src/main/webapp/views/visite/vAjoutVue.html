@@ -5,8 +5,8 @@
 
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Date</label>
-		<div class="col-sm-10">
-			<input type="datetime-local" placeholder="Date"
+		<div class="col-sm-5">
+			<input type="datetime-local" class="form-control" placeholder="Date"
 				ng-model="vForm.dateHeure">
 		</div>
 	</div>
@@ -18,9 +18,9 @@
 				<label> <input type="radio" name="bien"> en
 					location
 					<div class="form-group">
-						<label class="col-sm-2 control-label">ID</label>
-						<div class="col-sm-10">
-							<input type="number" placeholder="ID"
+						<label class="col-sm-2 control-label">Ref</label>
+						<div class="col-sm-5">
+							<input type="number" class="form-control" placeholder="ref"
 								ng-model="vForm.bienImmobilierALouer.id">
 						</div>
 					</div>
@@ -30,9 +30,9 @@
 				<label> <input type="radio" name="bien"> en
 					vente
 					<div class="form-group">
-						<label class="col-sm-2 control-label">ID</label>
-						<div class="col-sm-10">
-							<input type="number" placeholder="ID"
+						<label class="col-sm-2 control-label">Ref</label>
+						<div class="col-sm-5">
+							<input type="number" class="form-control" placeholder="ref"
 								ng-model="vForm.bienImmobilierAVendre.id">
 						</div>
 					</div>
@@ -43,21 +43,21 @@
 	
 
 	<div class="form-group">
-		<label class="col-sm-2 control-label">ID client</label>
-		<div class="col-sm-10">
-			<input type="number" placeholder="ID" ng-model="vForm.client.id">
+		<label class="col-sm-2 control-label">Ref client</label>
+		<div class="col-sm-5">
+			<input type="number" class="form-control" placeholder="ref" ng-model="vForm.client.id">
 		</div>
 	</div>
 
 	<div class="form-group">
-		<label class="col-sm-2 control-label">ID responsable</label>
-		<div class="col-sm-10">
-			<input type="number" placeholder="ID" ng-model="vForm.responsable.id">
+		<label class="col-sm-2 control-label">Ref responsable</label>
+		<div class="col-sm-5">
+			<input type="number" class="form-control" placeholder="ref" ng-model="vForm.responsable.id">
 		</div>
 	</div>
 
 	<div class="form-group">
-		<div class="col-sm-offset-2 col-sm-10">
+		<div class="col-sm-offset-2 col-sm-5">
 			<button type="button" class="btn btn-default" value="Ajouter"
 				ng-click="ajout()">Ajouter</button>
 		</div>
