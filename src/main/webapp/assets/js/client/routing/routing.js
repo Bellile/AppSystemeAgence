@@ -27,9 +27,5 @@ appClient.config(function($routeProvider) {
 		controller : "myNgController"
 	})
 
-	$routeProvider.when("/mapPC", {
-		templateUrl : "views/pc/mapPCVue.html",
-		controller : "mapBlCtrl"
-	})
 	
 });
