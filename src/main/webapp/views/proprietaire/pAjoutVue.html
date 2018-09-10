@@ -1,23 +1,79 @@
 <h2>Formulaire d'ajout d'un Propri&eacutetaire</h2>
-<br/>
-Nom <input type="text" placeholder="nom" ng-model="pForm.nom">
-<br/>
-Email <input type="text" placeholder="email" ng-model="pForm.mail">
-<br/>
-Num&eacutero de rue <input type="number" placeholder="Numéro" ng-model="pForm.adresse.numRue">
-<br/>
-Rue <input type="text" placeholder="rue" ng-model="pForm.adresse.rue">
-<br/>
-Code Postal <input type="text" placeholder="code postal" ng-model="pForm.adresse.cp">
-<br/>
-Ville <input type="text" placeholder="ville" ng-model="pForm.adresse.localite">
-<br/>
-Pays <input type="text" placeholder="pays" ng-model="pForm.adresse.pays">
-<br/>
-T&eacutel&eacutephone Personnel <input type="text" placeholder="tel personnel" ng-model="pForm.telPerso">
-<br/>
-T&eacutel&eacutephone Professionnel <input type="text" placeholder="tel pro" ng-model="pForm.telPro">
-<br/>
-<input type="button" value="Ajouter" ng-click="ajouter()" >
-<br/>
+<br />
+<form class="form-horizontal">
+	<div class="form-group">
+		<label for="nom" class="col-sm-2 control-label">Nom</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="nom" placeholder="nom"
+				ng-model="pForm.nom">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+		<div class="col-sm-10">
+			<input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" ng-model="pForm.mail">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="no" class="col-sm-2 control-label">Num&eacutero de
+			rue</label>
+		<div class="col-sm-10">
+			<input type="number" class="form-control" id="no"
+				placeholder="Numero" ng-model="pForm.adresse.numRue">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="rue" class="col-sm-2 control-label">Rue</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="rue" placeholder="Rue"
+				ng-model="pForm.adresse.rue">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="cp" class="col-sm-2 control-label">Code Postal</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="cp"
+				placeholder="code postal" ng-model="pForm.adresse.cp">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="Ville" class="col-sm-2 control-label">Ville</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="Ville"
+				placeholder="Ville" ng-model="pForm.adresse.localite">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="Pays" class="col-sm-2 control-label">Pays</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="Pays" placeholder="Pays"
+				ng-model="pForm.adresse.pays">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="tPerso" class="col-sm-2 control-label">T&eacutel&eacutephone
+			Personnel</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="tPerso"
+				placeholder="tel personnel" ng-model="pForm.telPerso">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="tPro" class="col-sm-2 control-label">T&eacutel&eacutephone
+			Professionnel</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="tPro"
+				placeholder="tel pro" ng-model="pForm.telPro">
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<input type="button" class="btn btn-default" value="Ajouter" ng-click="ajouter()">
+		</div>
+	</div>
+</form>
+<br />
 <h3>{{msg}}</h3>
+
+
