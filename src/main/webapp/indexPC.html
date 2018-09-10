@@ -16,6 +16,12 @@
 <script type="text/javascript" src="assets/resources/js/angular-route.js"></script>
 <script type="text/javascript" src="assets/resources/js/angular-base64-upload.js"></script>
 
+<!-- Ajout de la librairie openLayer -->
+<script type="text/javascript"
+	src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.1.3/build/ol.js"></script>
+<link rel="stylesheet"
+	href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.1.3/css/ol.css">
+
 <!-- Les librairies de calendar -->
 <!-- CSS -->
 <link href="assets/resources/css/fullcalendar.css" rel="stylesheet" />
@@ -38,12 +44,14 @@
 <script type="text/javascript" src="assets/js/client/controllers/bienvendrePCController.js"></script>
 <script type="text/javascript" src="assets/js/client/controllers/cSPCController.js"></script>
 <script type="text/javascript" src="assets/js/client/controllers/visitePCController.js"></script>
+<script type="text/javascript" src="assets/js/client/controllers/mapController.js"></script>
 
 <!-- Ajout des services -->
 <script type="text/javascript" src="assets/js/client/services/agencePCService.js"></script>
 <script type="text/javascript" src="assets/js/client/services/bienlouerPCService.js"></script>
 <script type="text/javascript" src="assets/js/client/services/bienvendrePCService.js"></script>
 <script type="text/javascript" src="assets/js/client/services/cSPCService.js"></script>
+<script type="text/javascript" src="assets/js/client/services/mapService.js"></script>
 
 </head>
 
@@ -77,6 +85,7 @@
           	<li><a href="#!listeClasseStandardPC">Liste</a></li>          	
         	</ul>
       	</li>
+      	<li><a href="#!mapPC">MAP</a></li> 
       	  
       	
       	<li class="dropdown">
