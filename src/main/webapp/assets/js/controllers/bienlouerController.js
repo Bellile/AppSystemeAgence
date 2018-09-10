@@ -1,15 +1,29 @@
 // creation des controllers du bien immo à louer
-monApp.controller("getAllBLCtrl", function($scope, blProvider) {
+monApp.controller("getAllBLCtrl", function($scope, blProvider, $rootscope, $location) {
 
 	blProvider.getAll(function(donnees) {
 		$scope.liste = donnees;
 	});
 
-}).controller("getIdBLCtrl", function($scope, blProvider) {
+$rootScope.blGetOne=undefined;
+
+	
+	$scope.displayInfos=function(l){
+		
+		console.log("-------------------- ")
+		$rootScope.blGetOne=l;
+		$location.path("rechercheLouer");
+	}
+
+}).controller("getIdBLCtrl", function($scope, blProvider, $rootScope) {
 	$scope.id = undefined;
 	$scope.indice = false;
 	$scope.msg = "";
 
+	if($rootScope.blGetOne!=undefined){
+		$scope.bienlouer=$rootScope.blGetOne;
+	}
+	
 	$scope.rechercher = function(input) {
 
 		blProvider.getID($scope.id, function(donnees) {

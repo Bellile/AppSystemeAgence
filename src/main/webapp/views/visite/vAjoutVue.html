@@ -1,7 +1,19 @@
 
+<script>
+	function grise(elem) {
+		if (elem[0].checked) {
+			document.bType.idBl.disabled = false;
+			document.bType.idBV.disabled = true;
+		} else {
+			document.bType.idBl.disabled = true;
+			document.bType.idBV.disabled = false;
+		}
+	}
+</script>
+
 <h2>Formulaire d'ajout d'une visite</h2>
 
-<form class="form-horizontal">
+<form class="form-horizontal" name="bType">
 
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Date</label>
@@ -15,44 +27,47 @@
 		<label for="bien" class="col-sm-2 control-label">Type de bien</label>
 		<div class="col-sm-10">
 			<div class="radio">
-				<label> <input type="radio" name="bien"> en
-					location
+				<label> <input type="radio" name="bien" value="location"
+					onClick="grise(this.form.bien);" checked> en location
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Ref</label>
 						<div class="col-sm-5">
-							<input type="number" class="form-control" placeholder="ref"
-								ng-model="vForm.bienImmobilierALouer.id">
+							<input type="number" class="form-control" id="idBl" name="pBl"
+								 ng-model="vForm.bienImmobilierALouer.id">
 						</div>
 					</div>
 				</label>
 			</div>
 			<div class="radio">
-				<label> <input type="radio" name="bien"> en
-					vente
+				<label> <input type="radio" name="bien" value="vente"
+					onClick="grise(this.form.bien);"> en vente
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Ref</label>
 						<div class="col-sm-5">
-							<input type="number" class="form-control" placeholder="ref"
-								ng-model="vForm.bienImmobilierAVendre.id">
+							<input name="pBv" type="number" class="form-control"
+								placeholder="ref" ng-model="vForm.bienImmobilierAVendre.id"
+								id="idBV" disabled="disabled">
 						</div>
 					</div>
 				</label>
 			</div>
 		</div>
 	</div>
-	
+
 
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Ref client</label>
 		<div class="col-sm-5">
-			<input type="number" class="form-control" placeholder="ref" ng-model="vForm.client.id">
+			<input type="number" class="form-control" placeholder="ref"
+				ng-model="vForm.client.id">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Ref responsable</label>
 		<div class="col-sm-5">
-			<input type="number" class="form-control" placeholder="ref" ng-model="vForm.responsable.id">
+			<input type="number" class="form-control" placeholder="ref"
+				ng-model="vForm.responsable.id">
 		</div>
 	</div>
 

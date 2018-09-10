@@ -61,6 +61,36 @@
 		</tr>
 
 	</table>
+	
+	
+<div style="width: 500px; height: 500px" class="center-block">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" ng-repeat="p in bienlouer.listeImages"
+				ng-class="{active: ($index === 0)}" data-slide-to="{{$index}}"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div ng-class="{item: true, active: ($index === 0)}"
+				ng-repeat="p in bienlouer.listeImages">
+
+				<img class="d-block w-100"
+					ng-src="data:image/JPEG;base64,{{p.image}}"
+					alt="Slide number {{$index}}">
+			</div>
+		</div>
+
+		<span class="left carousel-control" data-target="#myCarousel"
+			data-slide="prev"> <span
+			class="glyphicon glyphicon-chevron-left"></span>
+		</span> <span class="right carousel-control" data-target="#myCarousel"
+			data-slide="next"> <span
+			class="glyphicon glyphicon-chevron-right"></span>
+		</span>
+	</div>
+</div>
+</div>
+
 	<a target="_blank"
 		href="https://www.geoportail.gouv.fr/carte?c={{bienlouer.lng}},{{bienlouer.lat}}&z=20&l0=ORTHOIMAGERY.ORTHOPHOTOS::GEOPORTAIL:OGC:WMTS(1)&l1=CADASTRALPARCELS.PARCELS::GEOPORTAIL:OGC:WMTS(1)&permalink=yes"><p>cadastre</p></a>
 
