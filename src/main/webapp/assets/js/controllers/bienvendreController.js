@@ -36,23 +36,36 @@ monApp.controller("getAllBVCtrl", function($scope, bvProvider) {
 			photos: [],
 			prix:"",
 			etat:"",
-			numRue:"",
-			rue:"",
-			cp:"",
-			localite:"",
-			pays:""
+			adresse : {
+				numRue : "",
+				rue : "",
+				cp : "",
+				localite : "",
+				pays : ""
+			},
+			lat : "",
+			lng : ""
 		}
 
 	$scope.ajouter = function() {
-
-		bvProvider.add($scope.bvForm, function(donnees) {
-			if (typeof donnees == 'object') {
-				$scope.msg = "";
-				$location.path("listeVendre");
-			} else {
-				$scope.msg = "L'ajout a échoué";
+		bvProvider.geoAdresse($scope.bvForm.adresse.pays,$scope.bvForm.adresse.numRue,$scope.bvForm.adresse.rue, $scope.bvForm.adresse.cp,$scope.bvForm.adresse.localite, function(calback) {
+			if ((calback != 0) && (calback != "")) {
+				// $scope.montrerMap=true;
+				$scope.map = calback;
+				$scope.bvForm.lat = $scope.map[0].lat;
+				$scope.bvForm.lng = $scope.map[0].lon;
+				
+				bvProvider.add($scope.bvForm, function(donnees) {
+					if (typeof donnees == 'object') {
+						$scope.msg = "";
+						$location.path("listeVendre");
+					} else {
+						$scope.msg = "L'ajout a échoué";
+					}
+				})
 			}
-		})
+		});
+		
 
 	}
 }).controller("delBVCtrl", function($scope, bvProvider, $location) {

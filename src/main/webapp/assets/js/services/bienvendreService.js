@@ -1,6 +1,8 @@
 //creation de mon service
 monApp.factory("bvProvider", function ($http){
 	
+	var geoURL = 'https://nominatim.openstreetmap.org/search';
+	
 	//fonction pour recuperer la liste
 	function recupListe(callBack){
 		$http({
@@ -76,6 +78,26 @@ monApp.factory("bvProvider", function ($http){
 			console.log("erreur : "+response.statusText);
 	}
 	
+	function localiserAdresse(pays, numRue,rue, cp,localite, calback) {
+		$http(
+				{
+					method : 'GET',
+					url : geoURL+ '?format=json'
+					+ "&city="+localite
+					+ '&street='+numRue+ " " + rue
+					+ "&postalcode="+cp
+							
+				}).then(
+				function successCalback(response) {
+					console.log(response.data);
+					calback(response.data);
+				},
+				function echecCalback(response) {
+					console.log("erreur : " + response.status
+							+ " " + response.statusText);
+				});
+	}
+	
 	//retour de ma fonction factory = un objet
 	return {
 		getAll: recupListe,
@@ -83,6 +105,7 @@ monApp.factory("bvProvider", function ($http){
 		add: ajoutBV,
 		update: modifBV,
 		del: supprBV
+		geoAdresse : localiserAdresse
 	}
 	
 });
