@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -20,6 +21,8 @@ import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "visites")
@@ -124,6 +127,7 @@ public class Visite implements Serializable{
 		this.bienImmobilierAVendre = bienImmobilierAVendre;
 	}
 	
+	@JsonIgnoreProperties("visite")
 	public Contrat getContrat() {
 		return contrat;
 	}

@@ -3,11 +3,15 @@
 	<tr>
 		<th>Type</th>
 		<th>Date d'acquisition</th>
+		<th>Client</th>
+		<th>Visite</th>
 		<th>Liens</th>
 	</tr>
 	<tr ng-repeat="co in liste">
 		<td>{{co.type}}</td>
 		<td>{{co.dateAcquisition}}</td>
+		<td>{{co.client.nom}}</td>
+		<td>{{co.visite.id}}</td>
 		<td><a ng-click="delLink(co.id)">Supprimer</a> | <a ng-click="updLink(co)">Modifier</a></td>
 	</tr>
 </table>

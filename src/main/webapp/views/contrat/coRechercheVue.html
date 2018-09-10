@@ -1,19 +1,23 @@
-<h2 style="color : aquamarine; text-align: center">Formulaire de modification de contrat</h2>
+<h2 style="color : aquamarine; text-align: center">Formulaire de recherche de contrat</h2>
 <br/>
 <label>Numero du contrat</label>
 <input type="text" placeholder="Numero" ng-model="id">
 <br/>
-<input type="button" value="Ajouter" ng-click="rech(id)">
+<input type="button" value="Rechercher" ng-click="rech(id)">
 <h3>{{msg}}</h3>
 <table class="table table-striped">
 	<tr>
 		<th>Type</th>
 		<th>Date d'acquisition</th>
+		<th>Client</th>
+		<th>Visite</th>
 		<th>Liens</th>
 	</tr>
-	<tr>
-		<td>{{coOut.type}}</td>
-		<td>{{coOut.dateAcquisition}}</td>
+	<tr ng-repeat="co in liste">
+		<td>{{co.type}}</td>
+		<td>{{co.dateAcquisition}}</td>
+		<td>{{co.client.nom}}</td>
+		<td>{{co.visite.id}}</td>
 		<td><a ng-click="delLink(co.id)">Supprimer</a> | <a ng-click="updLink(co)">Modifier</a></td>
 	</tr>
 </table>

@@ -37,9 +37,6 @@ public class Client extends Personne {
 	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER)	
 	private List<Visite> listeVisite;
 
-	@Fetch(FetchMode.SELECT)
-	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
-	private List<Contrat> contrat;
 
 
 
@@ -97,19 +94,11 @@ public class Client extends Personne {
 		this.adresse = adresse;
 	}
 	
-	
-	@JsonIgnoreProperties("client")
-	public List<Contrat> getContrat() {
-		return contrat;
-	}
 
-	public void setContrat(List<Contrat> contrat) {
-		this.contrat = contrat;
-	}
 	
 
 	
-	@JsonIgnoreProperties({"client","bienImmobilierALouer","bienImmobilierAVendre","responsable"})
+	@JsonIgnoreProperties({"client","bienImmobilierALouer","bienImmobilierAVendre","responsable","contrat"})
 	public List<Visite> getListeVisite() {
 		return listeVisite;
 	}

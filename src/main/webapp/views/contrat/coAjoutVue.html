@@ -3,7 +3,7 @@
  <div class="form-group">
     <label for="idID" class="col-sm-2 control-label">Type de mandat</label>
     <div class="col-sm-5">
-      <select class="form-control" id="idType" ng-model="contrat.type" placeholder="sélectionnez le type">
+      <select class="form-control" id="idType" ng-model="contrat.type">
 		  <option value="">choisissez un type de contrat</option>
 		  <option value="exclusif">Exclusif</option>
 		  <option value="simple">Simple</option>
@@ -25,18 +25,12 @@
   </div>
   
   <div class="form-group">
-    <label for="idBIAV" class="col-sm-2 control-label">Bien immobilier à vendre</label>
+    <label for="idVisite" class="col-sm-2 control-label">Visite</label>
     <div class="col-sm-5">
-      <input type="number" class="form-control" id="idBIAV" ng-model="contrat.visite.bienImmobilierAVendre.id">
+      <input type="number" class="form-control" id="idVisite" ng-model="contrat.visite.id">
     </div>
   </div>
   
-  <div class="form-group">
-    <label for="idBIAL" class="col-sm-2 control-label">Bien immobilier à louer</label>
-    <div class="col-sm-5">
-      <input type="number" class="form-control" id="idBIAL" ng-model="contrat.visite.bienImmobilierALouer.id">
-    </div>
-  </div>
   
   
   <div class="form-group">

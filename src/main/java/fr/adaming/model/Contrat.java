@@ -3,6 +3,7 @@ package fr.adaming.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +15,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "contrats")
@@ -30,9 +33,6 @@ public class Contrat implements Serializable{
 
 	// associations uml en java
 
-	@ManyToOne
-	@JoinColumn(name="cl_id", referencedColumnName="id_cl")
-	private Client client;
 	
 	//lien avec la visite
 	@OneToOne
@@ -84,14 +84,8 @@ public class Contrat implements Serializable{
 		this.dateAcquisition = dateAcquisition;
 	}
 
-	public Client getClient() {
-		return client;
-	}
-
-	public void setClient(Client client) {
-		this.client = client;
-	}
 	
+	@JsonIgnoreProperties("contrat")
 	public Visite getVisite() {
 		return visite;
 	}
