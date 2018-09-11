@@ -1,0 +1,21 @@
+<h2 style="color : aquamarine; text-align: center">Formulaire de recherche de contrat par responsable</h2>
+<br/>
+<label>Numero du responsable</label>
+<input type="text" placeholder="Numero" ng-model="id">
+<br/>
+<input type="button" value="Rechercher" ng-click="rech(id)">
+<h3>{{msg}}</h3>
+<table class="table table-striped">
+	<tr>
+		<th>Type</th>
+		<th>Date d'acquisition</th>
+		<th>Visite</th>
+		<th>Liens</th>
+	</tr>
+	<tr ng-repeat="co in listeCoOut">
+		<td>{{co.type}}</td>
+		<td>{{co.dateAcquisition}}</td>
+		<td>{{co.visite.id}}</td>
+		<td><a ng-click="delLink(co.id)">Supprimer</a> | <a ng-click="updLink(co)">Modifier</a></td>
+	</tr>
+</table>

@@ -1,0 +1,35 @@
+<h2>Formulaire de modification d'un Bien immobilier en vente</h2>
+<br />
+<form class="form-horizontal">
+	<div class="form-group">
+		<label for="id" class="col-md-4 control-label">R&eacutef&eacuterence
+			du Bien</label>
+		<div class="col-md-4">
+			<input type="number" class="form-control" id="id"
+				ng-model="bvForm.id">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-4 control-label">Statut</label>
+		<div class="col-md-6">
+			<div class="radio">
+				<label> <input type="radio" name="statut" value="disponible"
+					ng-model="bvForm.statut"> Disponible
+				</label>
+			</div>
+			<div class="radio">
+				<label> <input type="radio" name="statut" value="achete"
+					ng-model="bvForm.statut"> Achet&eacute
+				</label>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-md-offset-2 col-md-10">
+			<input type="button" class="btn btn-default"
+				value="Changer la disponibilite" ng-click="modifierDispo()">
+		</div>
+	</div>
+</form>
+
+<h3>{{msg}}</h3>

@@ -1,10 +1,10 @@
-<h2>Formulaire de recherche d'un bien immobilier en vente</h2>
+<h2>Recherche d'un bien immobilier en vente par son adresse</h2>
 <br />
 <form class="form-horizontal">
 	<div class="form-group">
 		<label for="adresse" class="col-md-2 control-label">Adresse</label>
 		<div class="col-md-6">
-			<input type="text" class="form-control" adresse="adresse" ng-model="adresse">
+			<input type="text" class="form-control" id="adresse" ng-model="adresse">
 		</div>
 	</div>
 	<div class="form-group">
@@ -34,21 +34,21 @@
 			<th>Pays</th>
 
 		</tr>
-		<tr>
-			<td>{{bienvendre.typeBien}}</td>
-			<td>{{bienvendre.statut}}</td>
-			<td>{{bienvendre.revenuCadastre}}</td>
-			<td>{{bienvendre.description}}</td>
-			<td>{{bienvendre.dateSoumission | date: "dd/MM/yyyy"}}</td>
-			<td>{{bienvendre.dateDisposition | date: "dd/MM/yyyy"}}</td>
+		<tr ng-repeat="bv in bienvendre")>
+			<td>{{bv.typeBien}}</td>
+			<td>{{bv.statut}}</td>
+			<td>{{bv.revenuCadastre}}</td>
+			<td>{{bv.description}}</td>
+			<td>{{bv.dateSoumission | date: "dd/MM/yyyy"}}</td>
+			<td>{{bv.dateDisposition | date: "dd/MM/yyyy"}}</td>
 			<td><img ng-repeat="p in bienvendre.listeImages"
 				ng-src="data:image/JPEG;base64,{{p.image}}"
 				style="max-height: 50px; max-width: 50px"></td>
-			<td>{{bienvendre.prix}}</td>
-			<td>{{bienvendre.etat}}</td>
-			<td>{{bienvendre.adresse.numRue}}, {{bienvendre.adresse.rue}}</td>
-			<td>{{bienvendre.adresse.cp}}</td>
-			<td>{{bienvendre.adresse.localite}}</td>
-			<td>{{bienvendre.adresse.pays}}</td>
+			<td>{{bv.prix}}</td>
+			<td>{{bv.etat}}</td>
+			<td>{{bv.adresse.numRue}}, {{bv.adresse.rue}}</td>
+			<td>{{bv.adresse.cp}}</td>
+			<td>{{bv.adresse.localite}}</td>
+			<td>{{bv.adresse.pays}}</td>
 		</tr>
 	</table>

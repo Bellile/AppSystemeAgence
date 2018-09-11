@@ -67,6 +67,18 @@ monApp.factory("blProvider", function ($http){
 			
 	}
 	
+	//fonction pour changer dispo d'un bien à louer
+	function modifDispo(blIn, callBack){
+		$http({
+			method: "PUT",
+			url:"http://localhost:8080/Projet_AppSystemeAgence/wsBl/modifDispo",
+			data:angular.toJson(blIn),
+			headers:{'Content-Type':'application/json'}
+		}).then(function successCallback(response){
+			callBack(response.data);
+		}, function errorCallback(response){console.log("erreur : "+response.statusText);});
+	}
+	
 	//fonction pour supprimer un bl
 	function supprBL(id, callBack){
 		$http({
@@ -80,7 +92,7 @@ monApp.factory("blProvider", function ($http){
 			
 	}
 	
-	
+	//fonction de geolocalisation
 	function localiserAdresse(pays, numRue,rue, cp,localite, calback) {
 		$http(
 				{
@@ -108,7 +120,8 @@ monApp.factory("blProvider", function ($http){
 		add: ajoutBL,
 		update: modifBL,
 		del: supprBL,
-		geoAdresse : localiserAdresse
+		geoAdresse : localiserAdresse,
+		updateDispo : modifDispo
 	}
 	
 });

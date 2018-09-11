@@ -17,6 +17,6 @@ public interface IContratService {
 
 	public void deleteContrat(int id);
 	
-	public List<Contrat> getContratByResponsable(Responsable resp);
+	public List<Contrat> getContratByResponsable(int id);
 
 }

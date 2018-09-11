@@ -107,6 +107,23 @@ $rootScope.blGetOne=undefined;
 			}
 		})
 	}
+}).controller("updateBLDispoCtrl", function($scope, blProvider, $location){
+	$scope.blForm = {
+			id : undefined,
+			statut : "",
+		}
+
+		$scope.modifierDispo = function() {
+			blProvider.updateDispo($scope.blForm, function(donnees) {
+				if (typeof donnees == 'object') {
+					$scope.msg = "";
+					$location.path("listeLouer");
+				} else {
+					$scope.msg = "Le changement de disponibilité a échoué";
+				}
+			})
+	}	
+	
 }).controller("updateBLCtrl", function($scope, blProvider, $location) {
 
 	$scope.blForm = {

@@ -82,6 +82,23 @@ monApp.controller("getAllBVCtrl", function($scope, bvProvider) {
 			}
 		})
 	}
+}).controller("updateBVDispoCtrl", function($scope, bvProvider, $location){
+	$scope.bvForm = {
+			id : undefined,
+			statut : "",
+		}
+
+		$scope.modifierDispo = function() {
+			bvProvider.updateDispo($scope.bvForm, function(donnees) {
+				if (typeof donnees == 'object') {
+					$scope.msg = "";
+					$location.path("listeVendre");
+				} else {
+					$scope.msg = "Le changement de disponibilité a échoué";
+				}
+			})
+	}	
+	
 }).controller("updateBVCtrl", function($scope, bvProvider, $location) {
 
 	$scope.bvForm = {

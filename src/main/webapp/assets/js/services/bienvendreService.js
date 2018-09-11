@@ -67,6 +67,19 @@ monApp.factory("bvProvider", function ($http){
 			console.log("erreur : "+response.statusText);
 	}
 	
+	//fonction pour changer dispo d'un bien à louer
+	function modifDispo(bvIn, callBack){
+		$http({
+			method: "PUT",
+			url:"http://localhost:8080/Projet_AppSystemeAgence/wsBv/modifDispo",
+			data:angular.toJson(bvIn),
+			headers:{'Content-Type':'application/json'}
+		}).then(function successCallback(response){
+			callBack(response.data);
+		}, function errorCallback(response){
+			console.log("erreur : "+response.statusText);});
+	}
+	
 	//fonction pour supprimer un bv
 	function supprBV(id, callBack){
 		$http({
@@ -78,6 +91,7 @@ monApp.factory("bvProvider", function ($http){
 			console.log("erreur : "+response.statusText);
 	}
 	
+	//fonction pour geolocaliser
 	function localiserAdresse(pays, numRue,rue, cp,localite, calback) {
 		$http(
 				{
@@ -105,7 +119,8 @@ monApp.factory("bvProvider", function ($http){
 		add: ajoutBV,
 		update: modifBV,
 		del: supprBV,
-		geoAdresse : localiserAdresse
+		geoAdresse : localiserAdresse,
+		updateDispo : modifDispo
 	}
 	
 });

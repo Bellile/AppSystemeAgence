@@ -31,9 +31,9 @@ appClient.controller("findAllBLCtrl",
 				$scope.indice = false;
 				$scope.msg = "";
 		
-				$scope.rechercher = function(input) {
+				$scope.rechercher = function() {
 
-					blPCProvider.getID($scope.id, function(donnees) {
+					blPCProvider.getAdresse($scope.adresse, function(donnees) {
 
 						if (typeof donnees == 'object') {
 							$scope.indice = true;

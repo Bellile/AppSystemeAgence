@@ -7,11 +7,11 @@ appClient.controller("findAllBVCtrl", function($scope, bvPCProvider) {
 	});
 	
 }).controller("getAdresseBVPCCtrl", function($scope, bvPCProvider) {
-	$scope.adresse = undefined;
+	$scope.adresse = "";
 	$scope.indice = false;
 	$scope.msg = "";
 
-	$scope.rechercher = function(input) {
+	$scope.rechercher = function() {
 
 		bvPCProvider.getAdresse($scope.adresse, function(donnees) {
 
