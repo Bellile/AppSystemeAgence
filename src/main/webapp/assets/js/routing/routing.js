@@ -48,6 +48,11 @@ monApp.config(function($routeProvider) {
 		templateUrl : "views/bl/bLDispoVue.html",
 		controller : "updateBLDispoCtrl"
 	})
+	$routeProvider.when("/rechercheParRespLouer", {
+		templateUrl : "views/bl/bLRechercheParRespVue.html",
+		controller : "getRespBLCtrl"
+	})
+	
 
 	
 	$routeProvider.when("/listeVendre", {

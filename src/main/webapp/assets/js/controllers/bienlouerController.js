@@ -40,6 +40,30 @@ $rootScope.blGetOne=undefined;
 			}
 		})
 	}
+}).controller("getRespBLCtrl", function($scope, blProvider, $rootScope) {
+	$scope.id = undefined;
+	$scope.indice = false;
+	$scope.msg = "";
+
+	if($rootScope.blGetOne!=undefined){
+		$scope.bienlouer=$rootScope.blGetOne;
+		$scope.indice = true;
+	}
+	
+	$scope.rechercher = function(input) {
+
+		blProvider.getResp($scope.id, function(donnees) {
+
+			if (typeof donnees == 'object') {
+				$scope.indice = true;
+				$scope.msg = "";
+				$scope.bienlouer = donnees;
+			} else {
+				$scope.indice = false;
+				$scope.msg = "L'identifiant est incorrect";
+			}
+		})
+	}
 }).controller(
 		"addBLCtrl",
 		function($scope, blProvider, $location) {

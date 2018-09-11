@@ -107,12 +107,26 @@ monApp.controller("getAllCoCtrl", function ($rootScope, $scope, coProvider, $loc
 			});
 		}
 	})
-	.controller("getRespCoCtrl", function ($scope, coProvider) {
+	.controller("getRespCoCtrl", function ($scope, coProvider, blProvider) {
 		$scope.indice=false;
 		$scope.msg="";
 		$scope.rech = function (id) {
 			//Appel de la fonction rechParId de ContratSrevice
 			coProvider.getResp(id, function (donnee){
+				if (typeof donnee=='object'){
+					$scope.indice=true;
+					$scope.msg="";
+					//Stocker les données récupérées de service dans le scope. Ici function = callBack et info = response.data !
+					$scope.listeCoOut=donnee;
+				} else {
+					$scope.indice=false;
+					$scope.msg="Il n'y a pas de contrat associés au responsable"
+				}
+			});
+		}
+		$scope.rech2 = function (id) {
+			//Appel de la fonction rechParId de ContratSrevice
+			blProvider.getResp(id, function (donnee){
 				if (typeof donnee=='object'){
 					$scope.indice=true;
 					$scope.msg="";

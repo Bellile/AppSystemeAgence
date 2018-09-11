@@ -42,7 +42,7 @@ appClient.controller("myNgController", ["$scope", "$http", "uiCalendarConfig",'$
       var s = new Date(start).getTime() / 1000;
       var e = new Date(end).getTime() / 1000;
       var m = new Date(start).getMonth();
-      var events = [{title: 'Feed Me ' + m,start: s + (50000),end: s + (100000),allDay: false, className: ['customFeed']}];
+      var events = $scope.events;
       callback(events);
     };
 

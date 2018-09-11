@@ -25,6 +25,16 @@ monApp.factory("blProvider", function ($http){
 		});
 	}
 	
+	//fonction pour rechercher par Responsable
+	function searchByResp(id, callBack){
+		$http.get("http://localhost:8080/Projet_AppSystemeAgence/wsBl/rechercheResp", {params: {pId:id}})
+		.then(function successCallback(response){
+			callBack(response.data);
+		}, function errorCallback(response){
+			console.log("erreur : "+response.statusText);
+		});
+	}
+	
 	//fonction pour ajouter un bl
 	function ajoutBL(blIn, callBack){
 		
@@ -117,6 +127,7 @@ monApp.factory("blProvider", function ($http){
 	return {
 		getAll: recupListe,
 		getID: searchById,
+		getResp:searchByResp,
 		add: ajoutBL,
 		update: modifBL,
 		del: supprBL,

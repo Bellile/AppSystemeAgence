@@ -23,4 +23,6 @@ public interface IBienImmobilierALouerService {
 	 */
 	public BienImmobilierALouer updateDispo(BienImmobilierALouer bl);
 	
+	public List<BienImmobilierALouer> getByResp(int id);
+	
 }
