@@ -12,9 +12,7 @@ appClient.factory("bvPCProvider", function ($http){
 			console.log("erreur : "+response.statusText);
 		});
 	}
-	return {
-		getAll : recupListe
-	}
+
 	
 	//fonction pour rechercher par asrese
 	function searchByAdresse(adresse, callBack){
@@ -24,6 +22,11 @@ appClient.factory("bvPCProvider", function ($http){
 		}, function errorCallback(response){
 			console.log("erreur : "+response.statusText);
 		});
+	}
+	
+	return {
+		getAll : recupListe,
+		getAdresse : searchByAdresse
 	}
 	
 });
