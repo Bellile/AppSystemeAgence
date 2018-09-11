@@ -64,4 +64,9 @@ public class BienImmobilierALouerRestController {
 		return blService.updateDispo(bl);
 	}
 	
+	@RequestMapping(value="/rechercheResp",  method = RequestMethod.GET, produces = "application/json" )
+	public List<BienImmobilierALouer> getBLResp(@RequestParam("pId") int id){
+		return blService.getByResp(id);
+	}
+	
 }

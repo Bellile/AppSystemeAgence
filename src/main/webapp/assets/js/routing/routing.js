@@ -48,6 +48,7 @@ monApp.config(function($routeProvider) {
 		templateUrl : "views/bl/bLDispoVue.html",
 		controller : "updateBLDispoCtrl"
 	})
+	
 
 	
 	$routeProvider.when("/listeVendre", {

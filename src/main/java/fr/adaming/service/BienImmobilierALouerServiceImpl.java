@@ -76,4 +76,10 @@ public class BienImmobilierALouerServiceImpl implements IBienImmobilierALouerSer
 		return blDao.update(blOut);
 	}
 
+	@Override
+	public List<BienImmobilierALouer> getByResp(int id) {
+		return blDao.getByResp(id);
+		
+	}
+
 }

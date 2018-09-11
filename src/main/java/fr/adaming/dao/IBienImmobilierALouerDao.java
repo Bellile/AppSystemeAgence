@@ -10,4 +10,6 @@ public interface IBienImmobilierALouerDao extends IDaoGeneric<BienImmobilierALou
 	
 	public List<BienImmobilierALouer> getLocationByRegion(String adresse);
 	
+	public List<BienImmobilierALouer> getByResp(int id);
+	
 }
