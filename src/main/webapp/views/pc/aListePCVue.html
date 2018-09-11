@@ -1,23 +1,23 @@
 <h2 style="color : aquamarine; text-align: center">Liste des agences</h2>
-<table class="table" style="border: none; border-radius: 15px 15px 0px 0px; background: linear-gradient(to bottom,rgb(78, 122, 190, 0.8), rgb(240, 240, 255, 1)) no-repeat">
+<table class="table">
 
 Rechercher par nom : <input type="text" ng-model="recherche">
 Rechercher par ville : <input type="text" ng-model="findville">
 <br>
 <br>
 	<tr style="border-radius: 15px 15px 0px 0px; border: none; background-color: grey">
-		<th style="border: solid grey">Nom</th>
-		<th style="border: solid grey">Rue</th>
-		<th style="border: solid grey">Code Postale</th>
-		<th style="border: solid grey">Ville</th>
-		<th style="border: solid grey">Pays</th>		
+		<th>Nom</th>
+		<th>Rue</th>
+		<th>Code Postale</th>
+		<th>Ville</th>
+		<th>Pays</th>		
 	</tr>
 	<tr ng-repeat="a in liste | filter: {nom : recherche}" style="background-color: white">
-		<td style="border: solid grey">{{a.nom}}</td>
-		<td style="border: solid grey">{{a.adresse.numRue}}, {{a.adresse.rue}}</td>
-		<td style="border: solid grey">{{a.adresse.cp}}</td>
-		<td style="border: solid grey">{{a.adresse.localite}}</td>
-		<td style="border: solid grey">{{a.adresse.pays}}</td>
+		<td>{{a.nom}}</td>
+		<td>{{a.adresse.numRue}}, {{a.adresse.rue}}</td>
+		<td>{{a.adresse.cp}}</td>
+		<td>{{a.adresse.localite}}</td>
+		<td>{{a.adresse.pays}}</td>
 		
 	</tr>
 </table>

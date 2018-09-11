@@ -21,7 +21,7 @@
 	<h1>Informations du bien</h1>
 	<br />
 	<table class="table table-striped">
-		<tr>
+		<tr style="border-radius: 15px 15px 0px 0px; border: none; background-color: grey">
 			<th>Type de Bien</th>
 			<th>Statut</th>
 			<th>Revenu cadastral</th>
@@ -39,7 +39,7 @@
 			<th>Ville</th>
 			<th>Pays</th>
 		</tr>
-		<tr ng-repeat="bl in bienlouer">
+		<tr ng-repeat="bl in bienlouer" style="background-color: white">
 			<td>{{bl.typeBien}}</td>
 			<td>{{bl.statut}}</td>
 			<td>{{bl.revenuCadastre}}</td>
