@@ -6,7 +6,7 @@ appClient.controller("findAllBVCtrl", function($scope, bvPCProvider) {
 
 	});
 	
-}).controller("getAdresseBVCtrl", function($scope, bvPCProvider) {
+}).controller("getAdresseBVPCCtrl", function($scope, bvPCProvider) {
 	$scope.adresse = undefined;
 	$scope.indice = false;
 	$scope.msg = "";

@@ -46,7 +46,7 @@ appClient.config(function($routeProvider) {
 	
 		$routeProvider.when("/rechercheVendrePC", {
 		templateUrl : "views/pc/bVRecherchePCVue.html",
-		controller : "getAdresseBVCtrl"
+		controller : "getAdresseBVPCCtrl"
 	})
 	
 	
