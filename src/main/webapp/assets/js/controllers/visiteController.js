@@ -87,6 +87,7 @@ monApp.controller("getAllVCtrl", function($scope, visiteProvider) {
 				$scope.msg = "";
 				// rediriger vers accueil
 				$location.path("listeVisite");
+				
 			} else {
 				$scope.msg = "la suppression a echouée";
 			}

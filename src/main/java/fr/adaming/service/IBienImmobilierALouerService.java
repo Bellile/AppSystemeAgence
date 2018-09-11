@@ -15,4 +15,12 @@ public interface IBienImmobilierALouerService {
 	
 	public List<BienImmobilierALouer> getLocationByLoyer(double loyer);	
 	public List<BienImmobilierALouer> getLocationByRegion(String adresse);
+	
+	/**
+	 * Methode pour modifier la disponibilité d'un bien immo à louer
+	 * @param bl, un objet bien immobilier à louer
+	 * @return un objet bien immobilier à louer
+	 */
+	public BienImmobilierALouer updateDispo(BienImmobilierALouer bl);
+	
 }

@@ -64,4 +64,15 @@ public class BienImmobilierAVendreServiceImpl implements IBienImmobilierAVendreS
 		return bvDao.getVenteByRegion(adresse);
 	}
 
+	@Override
+	public BienImmobilierAVendre updateDispo(BienImmobilierAVendre bv) {
+		// recuperer un bien immo à partir de l'id
+		BienImmobilierAVendre bvIn=bvDao.getById(bv.getId());
+		
+		//attribuer au bien son nouveau statut
+		bvIn.setStatut(bv.getStatut());
+		
+		return bvDao.update(bvIn);
+	}
+
 }

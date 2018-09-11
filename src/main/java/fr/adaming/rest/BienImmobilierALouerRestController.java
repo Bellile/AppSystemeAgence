@@ -59,4 +59,9 @@ public class BienImmobilierALouerRestController {
 		return blService.getLocationByRegion(adresse);
 	}
 	
+	@RequestMapping(value="/modifDispo",  method=RequestMethod.PUT, produces = "application/json", consumes = "application/json")
+	public BienImmobilierALouer updateBLDispo(@RequestBody BienImmobilierALouer bl){
+		return blService.updateDispo(bl);
+	}
+	
 }

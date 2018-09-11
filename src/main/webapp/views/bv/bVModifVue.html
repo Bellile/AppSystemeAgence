@@ -1,3 +1,15 @@
+<script>
+	function griser(val) {
+		if (val =='terrain') {
+			document.getElementById('selectEtat').disabled = true; 
+		} else {
+			document.getElementById('selectEtat').disabled = false;
+		}
+	}
+</script>
+
+
+
 <h2>Formulaire de modification d'un Bien immobilier en vente</h2>
 <br />
 <form class="form-horizontal">
@@ -21,7 +33,7 @@
 		<div class="form-group">
 			<label class="col-md-4 control-label">Type de bien</label>
 			<div class="col-md-6">
-				<select class="form-control" ng-model="bvForm.typeBien">
+				<select class="form-control" ng-model="bvForm.typeBien" onchange="griser(this.value);">
 					<option value="">choisissez un type de bien</option>
 					<option value="maison">Maison</option>
 					<option value="appartement">Appartement</option>
@@ -110,7 +122,7 @@
 		<div class="form-group">
 			<label class="col-md-4 control-label">Etat</label>
 			<div class="col-md-6">
-				<select class="form-control" ng-model="bvForm.etat">
+				<select class="form-control" ng-model="bvForm.etat" id="selectEtat">
 					<option value="">choisissez un &eacutetat</option>
 					<option value="a restaurer">A restaurer</option>
 					<option value="correct">Correct</option>
