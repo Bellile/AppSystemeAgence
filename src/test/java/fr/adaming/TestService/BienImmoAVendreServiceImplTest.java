@@ -21,7 +21,7 @@ public class BienImmoAVendreServiceImplTest {
 	IBienImmobilierAVendreService bvService;
 	
 	@Test
-//	@Ignore
+	@Ignore
 	@Transactional
 	public void testUpdateDispo () {
 		BienImmobilierAVendre bvOut= bvService.getById(2);
@@ -32,7 +32,7 @@ public class BienImmoAVendreServiceImplTest {
 	}
 	
 	@Test
-//	@Ignore
+	@Ignore
 	@Transactional
 	public void testUpdateDispoOther () {
 		BienImmobilierAVendre bvOut= bvService.getById(2);
