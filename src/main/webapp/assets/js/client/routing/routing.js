@@ -11,6 +11,12 @@ appClient.config(function($routeProvider) {
 		controller : "findAllBLCtrl"
 	})
 	
+	$routeProvider.when("/detail", {
+		templateUrl : "views/pc/bLDetailPCVue.html",
+		controller : "getIdBLCtrl"
+	})
+	
+	
 		
 	$routeProvider.when("/listeVendrePC", {
 		templateUrl : "views/pc/bVListePCVue.html",

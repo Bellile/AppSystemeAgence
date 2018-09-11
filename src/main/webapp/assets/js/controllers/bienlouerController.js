@@ -13,7 +13,7 @@ $rootScope.blGetOne=undefined;
 		console.log("-------------------- " + $rootScope.blGetOne)
 		$rootScope.blGetOne=l;
 
-		$location.path("rechercheLouer");
+		$location.path("listeLouerPC");
 	}	
 
 }).controller("getIdBLCtrl", function($scope, blProvider, $rootScope) {
