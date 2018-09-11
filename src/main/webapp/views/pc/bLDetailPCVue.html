@@ -1,5 +1,5 @@
 
-<div style=" border-top: solid 3px aquamarine; outline-offset: 25px">
+<div>
 
 <h3 class="col-md-offset-1 col-md-7"><b>Type de bien: </b>{{bienlouer.typeBien}}</h3>
 <div class="col-md-6" style="max-height: 320px; max-width: 490px; min-height: 320px; min-width: 490px">
@@ -11,7 +11,7 @@
 		</ol>
 		<div class="carousel-inner">
 			<div ng-class="{item: true, active: ($index === 0)}"
-				ng-repeat="p in bienlouer.listeImages">
+				ng-repeat="p in bienlouer.listeImages" style="border-radius: 15px">
 
 				<img style="max-height: 320px; max-width: 490px; min-height: 320px; min-width: 490px" class="d-block w-100"
 					ng-src="data:image/JPEG;base64,{{p.image}}"
@@ -29,7 +29,7 @@
 	</div>
 </div>
 
-<div class="col-md-6" style="margin-top: 25px">
+<div class="col-md-6" style="padding-top: 25px; border-bottom: solid 3px; border-left: solid 3px; background-color: white; border-radius: 10px 35px">
 	<label class="col-md-4"><b>Statut: </b></label><p class="col-md-7">{{bienlouer.statut}}</p>
 	<label class="col-md-4"><b>Date de soumission: </b></label><p class="col-md-7">{{bienlouer.dateSoumission | date: "dd/MM/yyyy"}}</p>
 	<label class="col-md-4"><b>Date de disposition: </b></label><p class="col-md-7">{{bienlouer.dateDisposition | date: "dd/MM/yyyy"}}</p>
@@ -42,7 +42,7 @@
 	<p class="col-md-offset-4 col-md-7">{{bienlouer.adresse.cp}}, {{bienlouer.adresse.localite}}, {{bienlouer.adresse.pays}}</p>
 </div>
 
-<div class="col-md-11" style="margin-top: 25px; border-top: solid 3px aquamarine">
+<div class="col-md-11" style="margin-top: 25px; border-bottom: solid 3px;border-left: solid 3px; background-color: white; border-radius: 10px ">
 <br/>
 <label class="col-md-3"><b>Description: </b></label><p class="col-md-9">{{bienlouer.description}}</p>
 </div>
