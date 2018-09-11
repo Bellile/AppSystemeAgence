@@ -4,7 +4,7 @@ appClient.controller("findAllBLCtrl",
 
 			blPCProvider.getAll(function(donnees) {
 				$scope.liste = donnees;
-				console.log(liste)
+				
 			});
 
 			$rootScope.blGetOne = undefined;
