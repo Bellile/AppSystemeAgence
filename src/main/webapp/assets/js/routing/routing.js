@@ -44,6 +44,10 @@ monApp.config(function($routeProvider) {
 		templateUrl : "views/bl/bLSupprVue.html",
 		controller : "delBLCtrl"
 	})
+	$routeProvider.when("/modifDispoLouer", {
+		templateUrl : "views/bl/bLDispoVue.html",
+		controller : "updateBLDispoCtrl"
+	})
 
 	
 	$routeProvider.when("/listeVendre", {
@@ -65,6 +69,10 @@ monApp.config(function($routeProvider) {
 	$routeProvider.when("/supprVendre", {
 		templateUrl : "views/bv/bVSupprVue.html",
 		controller : "delBVCtrl"
+	})
+	$routeProvider.when("/modifDispoVendre", {
+		templateUrl : "views/bv/bVDispoVue.html",
+		controller : "updateBVDispoCtrl"
 	})
 
 	
