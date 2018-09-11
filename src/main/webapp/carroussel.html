@@ -10,14 +10,12 @@
 			<div class="card h-100">
 			
 			
-				<img ng-click="displayInfos(b)" class="card-img-top" ng-repeat="p in b.listeImages"
-					ng-src="data:image/JPEG;base64,{{p.image}}"
+				<img ng-click="displayInfos(b)" class="card-img-top"
+					ng-src="data:image/JPEG;base64,{{b.listeImages[0].image}}"
 					style="min-height: 200px; max-height: 200px; min-width: 200px; min-width: 200px" />
 				
 				
 				<div class="card-body" >
-				
-				<a ng-click="displayInfos(b)">Details</a>
 				
 					<h4 class="card-title">{{b.typeBien}}</h4>
 					<p class="card-text">{{b.statut}}</p>

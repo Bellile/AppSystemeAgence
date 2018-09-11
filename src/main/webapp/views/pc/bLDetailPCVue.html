@@ -1,4 +1,8 @@
-<div style="width: 500px; height: 500px" class="center-block">
+
+<div style=" border-top: solid 3px aquamarine; outline-offset: 25px">
+
+<h3 class="col-md-offset-1 col-md-7"><b>Type de bien: </b>{{bienlouer.typeBien}}</h3>
+<div class="col-md-6" style="max-height: 320px; max-width: 490px; min-height: 320px; min-width: 490px">
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
@@ -9,7 +13,7 @@
 			<div ng-class="{item: true, active: ($index === 0)}"
 				ng-repeat="p in bienlouer.listeImages">
 
-				<img class="d-block w-100"
+				<img style="max-height: 320px; max-width: 490px; min-height: 320px; min-width: 490px" class="d-block w-100"
 					ng-src="data:image/JPEG;base64,{{p.image}}"
 					alt="Slide number {{$index}}">
 			</div>
@@ -23,6 +27,24 @@
 			class="glyphicon glyphicon-chevron-right"></span>
 		</span>
 	</div>
+</div>
+
+<div class="col-md-6" style="margin-top: 25px">
+	<label class="col-md-4"><b>Statut: </b></label><p class="col-md-7">{{bienlouer.statut}}</p>
+	<label class="col-md-4"><b>Date de soumission: </b></label><p class="col-md-7">{{bienlouer.dateSoumission | date: "dd/MM/yyyy"}}</p>
+	<label class="col-md-4"><b>Date de disposition: </b></label><p class="col-md-7">{{bienlouer.dateDisposition | date: "dd/MM/yyyy"}}</p>
+	<label class="col-md-4"><b>Caution locative: </b></label><p class="col-md-7">{{bienlouer.caution}}</p>
+	<label class="col-md-4"><b>Loyer Mensuel: </b></label><p class="col-md-7">{{bienlouer.loyer}}</p>
+	<label class="col-md-4"><b>Charges mensuelles: </b></label><p class="col-md-7">{{bienlouer.charges}}</p>
+	<label class="col-md-4"><b>Type de bail: </b></label><p class="col-md-7">{{bienlouer.typeBail}}</p>
+	<label class="col-md-4"><b>Garniture: </b></label><p class="col-md-7">{{bienlouer.garniture}}</p>
+	<label class="col-md-4"><b>Adresse: </b></label><p class="col-md-7">{{bienlouer.adresse.numRue}}, {{bienlouer.adresse.rue}}</p>
+	<p class="col-md-offset-4 col-md-7">{{bienlouer.adresse.cp}}, {{bienlouer.adresse.localite}}, {{bienlouer.adresse.pays}}</p>
+</div>
+
+<div class="col-md-11" style="margin-top: 25px; border-top: solid 3px aquamarine">
+<br/>
+<label class="col-md-3"><b>Description: </b></label><p class="col-md-9">{{bienlouer.description}}</p>
 </div>
 </div>
 <h3>{{msg}}</h3>
