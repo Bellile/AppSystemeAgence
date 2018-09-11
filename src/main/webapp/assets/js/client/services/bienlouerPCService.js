@@ -12,14 +12,12 @@ appClient.factory("blPCProvider", function ($http){
 			console.log("erreur : "+response.statusText);
 		});
 	}
-	return {
-		getAll : recupListe
-	}
+	
 
 	
 	//fonction pour rechercher par adresse
 	function searchByAdresse(adresse, callBack){
-		$http.get("http://localhost:8080/Projet_AppSystemeAgence/wsBl/listeRegion", {params: {"pRegion": adresse}})
+		$http.get("http://localhost:8080/Projet_AppSystemeAgence/wsBl/listeRegion", {params: {pRegion: adresse}})
 		.then(function successCallback(response){
 			callBack(response.data);
 		}, function errorCallback(response){
@@ -27,6 +25,10 @@ appClient.factory("blPCProvider", function ($http){
 		});
 	}
 	
+	return {
+		getAll : recupListe,
+		getAdresse : searchByAdresse
+	}
 	
 	
 	

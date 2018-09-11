@@ -50,6 +50,10 @@ appClient.config(function($routeProvider) {
 	})
 	
 	
+	$routeProvider.when("/rechercheLouerPC", {
+		templateUrl : "views/pc/bLRecherchePCVue.html",
+		controller : "getAdresseBLCtrl"
+	})
 	
 	
 	
