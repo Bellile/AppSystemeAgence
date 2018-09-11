@@ -2,6 +2,7 @@ package fr.adaming.service;
 
 import java.util.List;
 
+import fr.adaming.model.BienImmobilierALouer;
 import fr.adaming.model.BienImmobilierAVendre;
 
 public interface IBienImmobilierAVendreService {
@@ -14,5 +15,12 @@ public interface IBienImmobilierAVendreService {
 	
 	public List<BienImmobilierAVendre> getVenteByPrix(double prix);
 	public List<BienImmobilierAVendre> getVenteByRegion(String adresse);
+	
+	/**
+	 * Methode pour modifier la disponibilité d'un bien immo à vendre
+	 * @param bv, un objet bien immobilier à vendre
+	 * @return un objet bien immobilier à vendre
+	 */
+	public BienImmobilierAVendre updateDispo(BienImmobilierAVendre bv);
 	
 }

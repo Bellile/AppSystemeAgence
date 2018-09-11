@@ -55,5 +55,10 @@ public class BienImmobilierAVendreRestController {
 		return bvService.getVenteByRegion(adresse);
 	}
 	
+	@RequestMapping(value="/modifDispo", method = RequestMethod.PUT, produces = "application/json", consumes = "application/json")
+	public BienImmobilierAVendre updateBVDispo(@RequestBody BienImmobilierAVendre bv){
+		return bvService.updateDispo(bv);
+	}
+	
 
 }

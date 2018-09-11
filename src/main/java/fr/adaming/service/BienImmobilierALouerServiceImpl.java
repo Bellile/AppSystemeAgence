@@ -65,4 +65,15 @@ public class BienImmobilierALouerServiceImpl implements IBienImmobilierALouerSer
 		return blDao.getLocationByRegion(adresse);
 	}
 
+	@Override
+	public BienImmobilierALouer updateDispo(BienImmobilierALouer bl) {
+		// recuperer l'objet bien immo à louer à partir de son ID
+		BienImmobilierALouer blOut=blDao.getById(bl.getId());
+		
+		//j'attribue au bien trouvé son nouveau statut
+		blOut.setStatut(bl.getStatut());
+		
+		return blDao.update(blOut);
+	}
+
 }
