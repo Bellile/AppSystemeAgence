@@ -43,4 +43,23 @@ appClient.config(function($routeProvider) {
 		controller : "mapBlCtrl"
 	})
 	
+	
+		$routeProvider.when("/rechercheLouerPC", {
+		templateUrl : "views/pc/bVRecherchePCVue.html",
+		controller : "getAdresseBVCtrl"
+	})
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 });
