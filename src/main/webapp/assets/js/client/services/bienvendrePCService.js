@@ -16,4 +16,14 @@ appClient.factory("bvPCProvider", function ($http){
 		getAll : recupListe
 	}
 	
+	//fonction pour rechercher par ID
+	function searchByAdresse(adresse, callBack){
+		$http.get("http://localhost:8080/Projet_AppSystemeAgence/wsBv/listeRegion", {params: {pRegion:adresse}})
+		.then(function successCallback(response){
+			callBack(response.data);
+		}, function errorCallback(response){
+			console.log("erreur : "+response.statusText);
+		});
+	}
+	
 });
