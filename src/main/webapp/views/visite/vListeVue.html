@@ -11,7 +11,7 @@ Rechercher les visites d'un client <input type="text" ng-model="recherche">
 		<th>Nom client</th>
 		<th>Nom responsable</th>
 	</tr>
-	<tr ng-repeat="v in listeVisite | filter: client.nom: recherche">
+	<tr ng-repeat="v in listeVisite | filter: {client:{nom:recherche}}">
 		<td>{{v.dateHeure | date: "dd/MM/yyyy HH:mm"}}</td>
 		<td>{{v.bienImmobilierALouer.id}}</td>
 		<td>{{v.bienImmobilierAVendre.id}}</td>
