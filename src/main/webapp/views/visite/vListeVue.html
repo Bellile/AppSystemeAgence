@@ -1,5 +1,9 @@
 <h2 style="color : aquamarine; text-align: center">Liste des visites</h2>
 <table class="table table-striped">
+
+Rechercher les visites d'un client <input type="text" ng-model="recherche">
+<br>
+<br>
 	<tr>
 		<th>Date et heure</th>
 		<th>Ref bien en location</th>
@@ -7,7 +11,7 @@
 		<th>Nom client</th>
 		<th>Nom responsable</th>
 	</tr>
-	<tr ng-repeat="v in listeVisite">
+	<tr ng-repeat="v in listeVisite | filter: {client.nom: recherche}">
 		<td>{{v.dateHeure | date: "dd/MM/yyyy HH:mm"}}</td>
 		<td>{{v.bienImmobilierALouer.id}}</td>
 		<td>{{v.bienImmobilierAVendre.id}}</td>
