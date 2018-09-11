@@ -4,14 +4,26 @@
 <div class="container">
 
 	<div class="row" >
-		<div class="col-lg-4 col-sm-6 portfolio-item" ng-repeat="b in liste" style="border: solid; border-width: 1px">
+	
+		<div class="col-lg-4 col-sm-6 portfolio-item" ng-repeat="b in liste" style="border: solid; border-width: 1px; padding-left: 10px">
+			
 			<div class="card h-100">
-				<img class="card-img-top" ng-repeat="p in b.listeImages"
+			
+			
+				<img ng-click="displayInfos(b)" class="card-img-top" ng-repeat="p in b.listeImages"
 					ng-src="data:image/JPEG;base64,{{p.image}}"
-					style="min-height: 100px; max-height: 100px; min-width: 100px; min-width: 100px" />
+					style="min-height: 200px; max-height: 200px; min-width: 200px; min-width: 200px" />
+				
+				
 				<div class="card-body" >
+				
+				<a ng-click="displayInfos(b)">Details</a>
+				
 					<h4 class="card-title">{{b.typeBien}}</h4>
 					<p class="card-text">{{b.statut}}</p>
+					<p class="card-text">{{b.dateSoumission | date: "dd/MM/yyyy"}}</p>
+					<p class="card-text">{{b.adresse.localite}}</p>
+					<p class="card-text">{{b.loyer}}</p>
 				</div>
 			</div>
 		</div>

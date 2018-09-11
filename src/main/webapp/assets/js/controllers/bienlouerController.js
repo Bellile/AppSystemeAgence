@@ -10,10 +10,11 @@ $rootScope.blGetOne=undefined;
 	
 	$scope.displayInfos=function(l){
 		
-		console.log("-------------------- ")
+		console.log("-------------------- " + $rootScope.blGetOne)
 		$rootScope.blGetOne=l;
+
 		$location.path("rechercheLouer");
-	}
+	}	
 
 }).controller("getIdBLCtrl", function($scope, blProvider, $rootScope) {
 	$scope.id = undefined;
@@ -22,6 +23,7 @@ $rootScope.blGetOne=undefined;
 
 	if($rootScope.blGetOne!=undefined){
 		$scope.bienlouer=$rootScope.blGetOne;
+		$scope.indice = true;
 	}
 	
 	$scope.rechercher = function(input) {
@@ -122,11 +124,15 @@ $rootScope.blGetOne=undefined;
 		charges : "",
 		typeBail : "",
 		garniture : "",
-		numRue : "",
-		rue : "",
-		cp : "",
-		localite : "",
-		pays : ""
+		adresse : {
+			numRue : "",
+			rue : "",
+			cp : "",
+			localite : "",
+			pays : ""
+		},
+		lat : "",
+		lng : ""
 	}
 
 	$scope.modifier = function() {
