@@ -4,25 +4,26 @@ appClient.controller("findAllBVCtrl", function($scope, bvPCProvider) {
 	bvPCProvider.getAll(function(donnees) {
 		$scope.liste = donnees;
 
-	}).controller("getAdresseBVCtrl", function($scope, bvPCProvider) {
-		$scope.id = undefined;
-		$scope.indice = false;
-		$scope.msg = "";
+	});
+	
+}).controller("getAdresseBVCtrl", function($scope, bvPCProvider) {
+	$scope.adresse = undefined;
+	$scope.indice = false;
+	$scope.msg = "";
 
-		$scope.rechercher = function(input) {
+	$scope.rechercher = function(input) {
 
-			bvPCProvider.getID($scope.id, function(donnees) {
+		bvPCProvider.getAdresse($scope.adresse, function(donnees) {
 
-				if (typeof donnees == 'object') {
-					$scope.indice = true;
-					$scope.msg = "";
-					$scope.bienvendre = donnees;
-				} else {
-					$scope.indice = false;
-					$scope.msg = "L'identifiant est incorrect";
-				}
-			})
-		}
-	})
+			if (typeof donnees == 'object') {
+				$scope.indice = true;
+				$scope.msg = "";
+				$scope.bienvendre = donnees;
+			} else {
+				$scope.indice = false;
+				$scope.msg = "L'identifiant est incorrect";
+			}
+		})
+	}
 
 });
