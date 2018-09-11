@@ -49,10 +49,8 @@ public class ContratRestController {
 	
 	@RequestMapping(value="/rechercheParResponsable", method=RequestMethod.GET, produces="application/json")
 	public List<Contrat> getCoByResp(@RequestParam("pId") int id) {
-		Responsable responsable = new Responsable();
-		responsable.setId(id);
 		
-		return contratService.getContratByResponsable(responsable);
+		return contratService.getContratByResponsable(id);
 	}
 
 }

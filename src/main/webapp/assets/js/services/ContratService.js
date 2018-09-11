@@ -65,7 +65,7 @@ monApp.factory("coProvider", function($http) {
 	
 	function rechParResponsable(id, callBack) {
 		//Récupération de la recherche à partir du serveur
-		$http.get("http://localhost:8080/Projet_AppSystemeAgence/wsCo/recherche", {params:{pId: id}})
+		$http.get("http://localhost:8080/Projet_AppSystemeAgence/wsCo/rechercheParResponsable", {params:{pId: id}})
 			.then(function successCallback(response) {
 			callBack(response.data);
 		  }, function errorCallback(response) {
@@ -79,6 +79,7 @@ monApp.factory("coProvider", function($http) {
 		getId:rechParId,
 		add:ajout,
 		update:modif,
-		del:suppr
+		del:suppr,
+		getResp:rechParResponsable
 	}
 })

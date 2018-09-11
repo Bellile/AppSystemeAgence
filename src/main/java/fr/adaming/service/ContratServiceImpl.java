@@ -44,8 +44,8 @@ public class ContratServiceImpl implements IContratService{
 	}
 
 	@Override
-	public List<Contrat> getContratByResponsable(Responsable resp) {
-		return contratDao.getContratByResponsable(resp);
+	public List<Contrat> getContratByResponsable(int id) {
+		return contratDao.getContratByResponsable(id);
 		
 	}
 

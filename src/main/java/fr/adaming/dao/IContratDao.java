@@ -7,6 +7,6 @@ import fr.adaming.model.Responsable;
 
 public interface IContratDao extends IDaoGeneric<Contrat>{
 
-	public List<Contrat> getContratByResponsable(Responsable resp);
+	public List<Contrat> getContratByResponsable(int id);
 	
 }

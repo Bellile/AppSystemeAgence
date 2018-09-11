@@ -18,19 +18,26 @@ public class ContratDaoImpl extends DaoGenericImpl<Contrat> implements IContratD
 	}
 
 	@Override
-	public List<Contrat> getContratByResponsable(Responsable resp) {
+	public List<Contrat> getContratByResponsable(int id) {
 		
 		//Création de la requête
-				String req = "FROM Contrat co WHERE co.visite.responsable.id = pId";
+				String req = "FROM Contrat co WHERE co.visite.responsable.id = :pId";
 				
 				//Récupération de la requête
 				Query query = em.createQuery(req);
 				
 				//Paramétrage de la requête
-				query.setParameter("pId", resp.getId());
+				query.setParameter("pId", id);
 				
+				//vérifications :
+				List<Contrat> liste = query.getResultList();
+				System.out.println("Vérification de la liste récupérée dans le DAO : ");
+				for (Contrat co : liste){
+					System.out.println(co.toString());
+				}
 				
 				return query.getResultList();
+				
 		
 	}
 	
