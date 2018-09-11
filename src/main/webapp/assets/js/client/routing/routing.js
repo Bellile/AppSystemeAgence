@@ -11,6 +11,11 @@ appClient.config(function($routeProvider) {
 		controller : "findAllBLCtrl"
 	})
 	
+	$routeProvider.when("/acc", {
+		templateUrl : "carroussel.html",
+		controller : "findAllBLCtrl"
+	})
+	
 	$routeProvider.when("/detail", {
 		templateUrl : "views/pc/bLDetailPCVue.html",
 		controller : "getIdBLCtrl"

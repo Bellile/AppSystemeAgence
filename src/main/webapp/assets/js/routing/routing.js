@@ -23,10 +23,7 @@ monApp.config(function($routeProvider) {
 	})
 
 	
-	$routeProvider.when("/acc", {
-		templateUrl : "carroussel.html",
-		controller : "getAllBLCtrl"
-	})
+
 	$routeProvider.when("/listeLouer", {
 		templateUrl : "views/bl/bLListeVue.html",
 		controller : "getAllBLCtrl"
