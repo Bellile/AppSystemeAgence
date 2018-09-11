@@ -63,6 +63,16 @@ monApp.factory("coProvider", function($http) {
 			});
 	}
 	
+	function rechParResponsable(id, callBack) {
+		//Récupération de la recherche à partir du serveur
+		$http.get("http://localhost:8080/Projet_AppSystemeAgence/wsCo/recherche", {params:{pId: id}})
+			.then(function successCallback(response) {
+			callBack(response.data);
+		  }, function errorCallback(response) {
+			console.log("Erreur : " + response.statusText);
+		  });
+	}
+	
 	//Le retour de ma fonction factory
 	return {
 		getAll:affListe,

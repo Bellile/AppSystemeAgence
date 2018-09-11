@@ -132,6 +132,10 @@ monApp.config(function($routeProvider) {
 		templateUrl : "views/contrat/coSupprVue.html",
 		controller : "delCoCtrl"
 	})
+	$routeProvider.when("/rechercheParRespContrat", {
+		templateUrl : "views/contrat/coRechercheParRespVue.html",
+		controller : "getRespCoCtrl"
+	})
 	
 	
 	$routeProvider.when("/listeProprietaire", {

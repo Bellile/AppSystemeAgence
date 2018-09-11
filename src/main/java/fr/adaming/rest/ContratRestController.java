@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.adaming.model.Contrat;
+import fr.adaming.model.Responsable;
 import fr.adaming.service.IContratService;
 
 @RestController
@@ -44,6 +45,14 @@ public class ContratRestController {
 	@RequestMapping(value="/suppr/{pId}", method=RequestMethod.DELETE)
 	public void deleteCo(@PathVariable("pId") int id) {
 		contratService.deleteContrat(id);
+	}
+	
+	@RequestMapping(value="/rechercheParResponsable", method=RequestMethod.GET, produces="application/json")
+	public List<Contrat> getCoByResp(@RequestParam("pId") int id) {
+		Responsable responsable = new Responsable();
+		responsable.setId(id);
+		
+		return contratService.getContratByResponsable(responsable);
 	}
 
 }

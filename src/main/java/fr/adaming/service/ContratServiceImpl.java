@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import fr.adaming.dao.IContratDao;
 import fr.adaming.model.Contrat;
+import fr.adaming.model.Responsable;
 
 @Service("coService")
 @Transactional
@@ -40,6 +41,11 @@ public class ContratServiceImpl implements IContratService{
 	@Override
 	public void deleteContrat(int id) {
 		contratDao.delete(id);
+	}
+
+	@Override
+	public List<Contrat> getContratByResponsable(Responsable resp) {
+		return contratDao.getContratByResponsable(resp);
 		
 	}
 

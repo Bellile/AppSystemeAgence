@@ -52,7 +52,7 @@ monApp.controller("getAllCoCtrl", function ($rootScope, $scope, coProvider, $loc
 		}
 	})
 	.controller("updateCoCtrl", function ($scope, coProvider, $location, $rootScope) {
-		if ($rootScope.coUpdate.id==undefined) {
+		if ($rootScope.coUpdate==undefined) {
 			$scope.coModif = {
 					id: undefined,
 					type: "",
@@ -103,6 +103,24 @@ monApp.controller("getAllCoCtrl", function ($rootScope, $scope, coProvider, $loc
 				} else {
 					$scope.indice=false;
 					$scope.msg="Le contrat n'existe pas"
+				}
+			});
+		}
+	})
+	.controller("getRespCoCtrl", function ($scope, coProvider) {
+		$scope.indice=false;
+		$scope.msg="";
+		$scope.rech = function (id) {
+			//Appel de la fonction rechParId de ContratSrevice
+			coProvider.getResp(id, function (donnee){
+				if (typeof donnee=='object'){
+					$scope.indice=true;
+					$scope.msg="";
+					//Stocker les données récupérées de service dans le scope. Ici function = callBack et info = response.data !
+					$scope.coOut=donnee;
+				} else {
+					$scope.indice=false;
+					$scope.msg="Il n'y a pas de contrat associés au responsable"
 				}
 			});
 		}
