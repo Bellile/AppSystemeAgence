@@ -69,32 +69,46 @@ background-size: cover;
 }
 @-webkit-keyframes example {
     0% {
-        left: 0px;
+        left: -10px;
         bottom: 25px;
         -moz-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-    35% {
-        left: 1230px;
+    17,5% {
+        left: -10px;
         bottom: 25px;
         -moz-animation-timing-function: ease;
-        -moz-transform: rotate(90deg);
-        transform: rotate(90deg);
+        -moz-transform: rotate(35deg);
+        transform: rotate(35deg);
+    }
+    35% {
+        left: -10px;
+        bottom: 25px;
+        -moz-animation-timing-function: ease;
+        -moz-transform: rotate(-155deg);
+        transform: rotate(-155deg);
     }
     50%{
-        left: 1250px;
-        bottom: -25px;
-        -moz-transform: rotate(180deg);
-        transform: rotate(180deg);
+        left: -10px;
+        bottom: 25px;
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    67,5% {
+        left: 0px;
+        bottom: 25px;
+        -moz-animation-timing-function: ease;
+        -moz-transform: rotate(-55deg);
+        transform: rotate(-55eg);
     }
     85% {
-        left: 25px;
-        bottom: -25px;
-        -moz-transform: rotate(360deg);
-        transform: rotate(360deg);
+        left: -10px;
+        bottom: 25px;
+        -moz-transform: rotate(60deg);
+        transform: rotate(60deg);
     }
     100% {
-        left: 0px;
+        left: -10px;
         bottom: 25px;
     }
 }
@@ -107,9 +121,9 @@ background-size: cover;
 <body ng-app="appClient">
 
 
-<nav class="navbar bg-primary navbar-fixed-top" style="height:65px">
+<nav class="navbar bg-success navbar-fixed-top" style="height:65px">
 	<div class="container-fluid">
-	<ul class="nav navbar-nav bg-info">
+	<ul class="nav navbar-nav bg-warning">
 		<li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown">Nos Agence<span class="caret"></span></a>
         	<ul class="dropdown-menu">
@@ -159,15 +173,17 @@ background-size: cover;
     </form>
     </ul>
     </div>
+    <div style="float: right;"><i id="space"><img src="assets/resources/image/Elephant-Logo.png" style="max-height: 200px; max-width: 200px"></i></div>
 </nav>
 <br/>
 <br/>
 <hr/>
 
+
 <div class="container">
 	<div ng-view=""></div>
 </div>
 
-<div><i id="space"><img src="assets/resources/image/Elephant-Logo.png" style="max-height: 200px; max-width: 200px"></i></div>
+
 </body>
 </html>
