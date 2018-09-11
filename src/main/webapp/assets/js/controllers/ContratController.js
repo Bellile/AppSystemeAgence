@@ -131,7 +131,7 @@ monApp.controller("getAllCoCtrl", function ($rootScope, $scope, coProvider, $loc
 					$scope.indice=true;
 					$scope.msg="";
 					//Stocker les données récupérées de service dans le scope. Ici function = callBack et info = response.data !
-					$scope.listeCoOut=donnee;
+					$scope.listeBLOut=donnee;
 				} else {
 					$scope.indice=false;
 					$scope.msg="Il n'y a pas de contrat associés au responsable"
