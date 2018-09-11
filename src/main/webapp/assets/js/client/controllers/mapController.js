@@ -25,7 +25,7 @@ appClient.controller("mapBlCtrl", function ($scope, mapProvider){
 			
 			var marker = new ol.Feature({
 				geometry: new ol.geom.Point(ol.proj.fromLonLat(coor)),
-				
+				description: value.description
 			});  
 	    	
 			var iconStyle = new ol.style.Style({
@@ -65,13 +65,13 @@ appClient.controller("mapBlCtrl", function ($scope, mapProvider){
 			
 			var marker = new ol.Feature({
 				geometry: new ol.geom.Point(ol.proj.fromLonLat(coor)),
-				
+				description: value.description
 			});  
 	    	
 			var iconStyle = new ol.style.Style({
 				  image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
 				    anchor: [0.5, 46],
-				    anchorXUnits: 'fraction',
+				    anchorXUnits: 'pixels',
 				    anchorYUnits: 'pixels',
 				    opacity: 0.75,
 				    src: 'assets/resources/image/marker_green.png'
@@ -92,6 +92,47 @@ appClient.controller("mapBlCtrl", function ($scope, mapProvider){
 		})
 	});
 
+
+	var popup = new ol.Overlay({
+      element: $scope.popup,
+      positioning: 'bottom-center',
+      stopEvent: false,
+      offset: [0, -50]
+    });
+    $scope.map.addOverlay(popup);
+	
+
+    // display popup on click
+    $scope.map.on('click', function(evt) {
+      var feature = $scope.map.forEachFeatureAtPixel(evt.pixel,
+        function(feature) {
+          return feature;
+        });
+      if (feature) {
+        var coordinates = feature.getGeometry().getCoordinates();
+        popup.setPosition(coordinates);
+        $($scope.popup).popover({
+          placement: 'top',
+          html: true,
+          content: feature.get('description')
+        });
+        $($scope.popup).popover('show');
+      } else {
+        $($scope.popup).popover('destroy');
+      }
+    });
+
+//    // change mouse cursor when over marker
+//    $scope.map.on('pointermove', function(e) {
+//      if (e.dragging) {
+//        $(element).popover('destroy');
+//        return;
+//      }
+//      var pixel = $scope.map.getEventPixel(e.originalEvent);
+//      var hit = $scope.map.hasFeatureAtPixel(pixel);
+//      $scope.map.getTarget().style.cursor = hit ? 'pointer' : '';
+//    });
+	
 //    //Add a selector control to the vectorLayer with popup functions
 //    var controls = {
 //      selector: new ol.Control.SelectFeature(vectorLayer, { onSelect: createPopup, onUnselect: destroyPopup })
@@ -117,26 +158,4 @@ appClient.controller("mapBlCtrl", function ($scope, mapProvider){
 //    
 //    map.addControl(controls['selector']);
 //    controls['selector'].activate();
-    
-//	//----------------------------------
-//	var map = new google.maps.Map(document.getElementById('map'), {
-//		zoom: 10,
-//	      center: new google.maps.LatLng(-33.92, 151.25),
-//	      mapTypeId: google.maps.MapTypeId.ROADMAP
-//	});
-//	
-//	var marker, i;
-//
-//    for (i = 0; i < tabMarker.length; i++) {  
-//      marker = new google.maps.Marker({
-//        position: new google.maps.LatLng(tabMarker[i][1], tabMarker[i][2]),
-//        map: map
-//      });
-//      
-//    }
-//    mapProvider.getCoord(address, function(donnee){
-//		console.log(donnee.geometry)
-//		localite = [label, donnee.geometry.location.lng(), donnee.geometry.location.lat()];
-//		
-//	})
 }) 
