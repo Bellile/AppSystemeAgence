@@ -30,6 +30,7 @@ monApp.controller("getAllBLCtrl", function($scope, blProvider) {
 			$scope.blForm = {
 				typeBien : "",
 				statut : "",
+				superficie: "",
 				revenuCadastre : "",
 				description : "",
 				dateSoumission : "",
@@ -97,6 +98,7 @@ monApp.controller("getAllBLCtrl", function($scope, blProvider) {
 		id : undefined,
 		typeBien : "",
 		statut : "",
+		superficie: "",
 		revenuCadastre : "",
 		description : "",
 		dateSoumission : "",

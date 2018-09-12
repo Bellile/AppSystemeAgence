@@ -28,6 +28,7 @@ monApp.controller("getAllBVCtrl", function($scope, bvProvider) {
 	$scope.bvForm = {
 			typeBien : "",
 			statut : "",
+			superficie: "",
 			revenuCadastre : "",
 			description : "",
 			dateSoumission: "",
@@ -105,6 +106,7 @@ monApp.controller("getAllBVCtrl", function($scope, bvProvider) {
 		id : undefined,
 		typeBien : "",
 		statut : "",
+		superficie: "",
 		revenuCadastre : "",
 		description : "",
 		dateSoumission: "",
