@@ -23,7 +23,7 @@ appClient.config(function($routeProvider) {
 	
 	$routeProvider.when("/detailBv", {
 		templateUrl : "views/pc/bvDetailPCVue.html",
-		controller : "getIdBVCtrl"
+		controller : "getIdBVPCCtrl"
 	})
 	
 	

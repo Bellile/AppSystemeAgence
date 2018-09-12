@@ -33,7 +33,7 @@
 	<label class="col-md-4"><b>Statut: </b></label><p class="col-md-7">{{bienvendre.statut}}</p>
 	<label class="col-md-4"><b>Date de soumission: </b></label><p class="col-md-7">{{bienvendre.dateSoumission | date: "dd/MM/yyyy"}}</p>
 	<label class="col-md-4"><b>Date de disposition: </b></label><p class="col-md-7">{{bienvendre.dateDisposition | date: "dd/MM/yyyy"}}</p>
-	<label class="col-md-4"><b>Prix: </b></label><p class="col-md-7">{{bienvendre.prix | currency : "€" : 2}}</p>
+	<label class="col-md-4"><b>Prix: </b></label><p class="col-md-7">{{bienvendre.prix | currency : "&#128 " : 2}}</p>
 	<label class="col-md-4"><b>Etat: </b></label><p class="col-md-7">{{bienvendre.etat}}</p>
 	<label class="col-md-4"><b>Adresse: </b></label><p class="col-md-7">{{bienvendre.adresse.numRue}}, {{bienvendre.adresse.rue}}</p>
 	<p class="col-md-offset-4 col-md-7">{{bienvendre.adresse.cp}}, {{bienvendre.adresse.localite}}, {{bienvendre.adresse.pays}}</p>
