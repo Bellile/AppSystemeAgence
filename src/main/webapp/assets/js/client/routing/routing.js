@@ -26,7 +26,15 @@ appClient.config(function($routeProvider) {
 		controller : "getIdBVPCCtrl"
 	})
 	
+	$routeProvider.when("/welcome", {
+		templateUrl : "views/pc/welcome.html",
+		controller : "getIdBVPCCtrl"
+	})
 	
+	$routeProvider.when("/qui", {
+		templateUrl : "views/pc/qui.html",
+		controller : "getIdBVPCCtrl"
+	})
 		
 	$routeProvider.when("/listeVendrePC", {
 		templateUrl : "views/pc/bVListePCVue.html",
@@ -67,7 +75,7 @@ appClient.config(function($routeProvider) {
 	})
 	
 	
-	$routeProvider.otherwise({redirectTo:"/accueilPC"});
+	$routeProvider.otherwise({redirectTo:"/welcome"});
 	
 	
 	
