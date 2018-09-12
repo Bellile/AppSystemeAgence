@@ -1,6 +1,7 @@
 <h2>Liste des classes standard</h2>
 <table class="table table-striped">
 	<tr>
+		<th>R&eacutef&eacuterence</th>
 		<th>Nom</th>
 		<th>Type de Bien</th>
 		<th>Mode d'offre</th>
@@ -8,6 +9,7 @@
 		<th>Superficie Minimale</th>
 	</tr>
 	<tr ng-repeat="cs in listeClasseStandard">
+		<td>{{cs.id}}</td>
 		<td>{{cs.nom}}</td>
 		<td>{{cs.typeBien}}</td>
 		<td>{{cs.modeOffre}}</td>
