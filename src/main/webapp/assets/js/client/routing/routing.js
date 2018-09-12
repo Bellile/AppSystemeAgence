@@ -61,6 +61,12 @@ appClient.config(function($routeProvider) {
 	})
 	
 	
+	$routeProvider.when("/ajoutClientPC", {
+		templateUrl : "views/pc/AjoutClientPCVue.html",
+		controller : "addClPCCtrl"
+	})
+	
+	
 	$routeProvider.otherwise({redirectTo:"/accueilPC"});
 	
 	
