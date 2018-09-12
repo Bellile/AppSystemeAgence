@@ -5,13 +5,13 @@ monApp.controller("getAllBLCtrl", function($scope, blProvider, $rootScope, $loca
 		$scope.liste = donnees;
 	});
 
-$rootScope.blGetOne=undefined;
+$rootScope.bvGetOne=undefined;
 
 	
 	$scope.displayInfos=function(l){
 		
-		console.log("-------------------- " + $rootScope.blGetOne)
-		$rootScope.blGetOne=l;
+		console.log("-------------------- " + $rootScope.bvGetOne)
+		$rootScope.bvGetOne=l;
 
 		$location.path("listeLouerPC");
 	}	
@@ -21,8 +21,8 @@ $rootScope.blGetOne=undefined;
 	$scope.indice = false;
 	$scope.msg = "";
 
-	if($rootScope.blGetOne!=undefined){
-		$scope.bienlouer=$rootScope.blGetOne;
+	if($rootScope.bvGetOne!=undefined){
+		$scope.bienvendre=$rootScope.bvGetOne;
 		$scope.indice = true;
 	}
 	
