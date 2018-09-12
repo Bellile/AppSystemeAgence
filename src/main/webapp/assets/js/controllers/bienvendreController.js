@@ -5,27 +5,11 @@ monApp.controller("getAllBVCtrl", function($scope, bvProvider) {
 		$scope.liste = donnees;
 	});
 
-$rootScope.blGetOne=undefined;
-
-	
-	$scope.displayInfos=function(l){
-		
-		console.log("-------------------- " + $rootScope.blGetOne)
-		$rootScope.blGetOne=l;
-
-		$location.path("listeVendrePC");
-	}	
-	
 }).controller("getIdBVCtrl", function($scope, bvProvider) {
 	$scope.id = undefined;
 	$scope.indice = false;
 	$scope.msg = "";
 
-	if($rootScope.blGetOne!=undefined){
-		$scope.bienlouer=$rootScope.blGetOne;
-		$scope.indice = true;
-	}
-	
 	$scope.rechercher = function(input) {
 
 		bvProvider.getID($scope.id, function(donnees) {

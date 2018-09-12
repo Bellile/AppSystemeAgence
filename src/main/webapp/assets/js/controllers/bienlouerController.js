@@ -1,31 +1,15 @@
 // creation des controllers du bien immo à louer
-monApp.controller("getAllBLCtrl", function($scope, blProvider, $rootScope, $location) {
+monApp.controller("getAllBLCtrl", function($scope, blProvider) {
 
 	blProvider.getAll(function(donnees) {
 		$scope.liste = donnees;
 	});
 
-$rootScope.bvGetOne=undefined;
-
-	
-	$scope.displayInfos=function(l){
-		
-		console.log("-------------------- " + $rootScope.bvGetOne)
-		$rootScope.bvGetOne=l;
-
-		$location.path("listeLouerPC");
-	}	
-
-}).controller("getIdBLCtrl", function($scope, blProvider, $rootScope) {
+}).controller("getIdBLCtrl", function($scope, blProvider) {
 	$scope.id = undefined;
 	$scope.indice = false;
 	$scope.msg = "";
 
-	if($rootScope.bvGetOne!=undefined){
-		$scope.bienvendre=$rootScope.bvGetOne;
-		$scope.indice = true;
-	}
-	
 	$scope.rechercher = function(input) {
 
 		blProvider.getID($scope.id, function(donnees) {
@@ -107,23 +91,6 @@ $rootScope.bvGetOne=undefined;
 			}
 		})
 	}
-}).controller("updateBLDispoCtrl", function($scope, blProvider, $location){
-	$scope.blForm = {
-			id : undefined,
-			statut : "",
-		}
-
-		$scope.modifierDispo = function() {
-			blProvider.updateDispo($scope.blForm, function(donnees) {
-				if (typeof donnees == 'object') {
-					$scope.msg = "";
-					$location.path("listeLouer");
-				} else {
-					$scope.msg = "Le changement de disponibilité a échoué";
-				}
-			})
-	}	
-	
 }).controller("updateBLCtrl", function($scope, blProvider, $location) {
 
 	$scope.blForm = {
@@ -141,15 +108,11 @@ $rootScope.bvGetOne=undefined;
 		charges : "",
 		typeBail : "",
 		garniture : "",
-		adresse : {
-			numRue : "",
-			rue : "",
-			cp : "",
-			localite : "",
-			pays : ""
-		},
-		lat : "",
-		lng : ""
+		numRue : "",
+		rue : "",
+		cp : "",
+		localite : "",
+		pays : ""
 	}
 
 	$scope.modifier = function() {
