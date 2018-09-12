@@ -70,7 +70,7 @@
 
 .angle-3{
 	border-color: #006400 transparent transparent; 
-	left: 250px;
+	left: 73px;
 	top: -67px;
 	float: right;
 	position: relative;
@@ -82,7 +82,7 @@
 
 .angle-4{
 	border-color:transparent transparent #006400; 
-	left: 350px;
+	left: 175px;
 	top: -117px;
 	float: right;
 	position: relative;
@@ -98,6 +98,6 @@
 
 h2 {
 	text-transform: uppercase;
-	font-family: 'Alice', serif;
-	margin-left: 250px;
+	font-family: 'Baloo Tammudu', cursive;
+	text-align: center;
 }
