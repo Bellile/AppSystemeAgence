@@ -8,7 +8,7 @@ rechercher par garniture : <input type="text" ng-model="findGarniture">
 <br>
 <br>
 
-	<tr>
+	<tr style="border-radius: 15px 15px 0px 0px; border: none; background-color: grey">
 		<th>Type de Bien</th>
 		<th>Statut</th>
 		<th>Revenu cadastral</th>
@@ -26,7 +26,7 @@ rechercher par garniture : <input type="text" ng-model="findGarniture">
 		<th>Ville</th>
 		<th>Pays</th>
 	</tr>
-	<tr ng-repeat="b in liste | filter:{typeBien : recherche, garniture : findGarniture}">
+	<tr ng-repeat="b in liste | filter:{typeBien : recherche, garniture : findGarniture}" style="background-color: white">
 		<td>{{b.typeBien}}</td>
 		<td>{{b.statut}}</td>
 		<td>{{b.revenuCadastre}}</td>
