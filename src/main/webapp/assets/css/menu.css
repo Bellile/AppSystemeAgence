@@ -1,11 +1,11 @@
 .wrapper{
-	width: 1000px;
+	width: 1250px;
 	margin: O auto;
 }
 
 .nav-area{
-	margin: -30px 300px;
-	width: 950px;
+	margin: -30px 60px;
+	width: 1200px;
 }
 
 #menu li{
@@ -19,8 +19,8 @@
 	display: block;
 	text-transform: uppercase;
 	padding: 5px;
-	margin: 2px 15px;
-	font-size: 18px;
+	margin: 2px 0px;
+	font-size: 14px;
 	color: #fff;
 	font-family: 'Alice', serif;
 	text-decoration: none;
@@ -70,8 +70,8 @@
 
 .angle-3{
 	border-color: #006400 transparent transparent; 
-	left: 45px;
-	top: -95px;
+	left: 250px;
+	top: -67px;
 	float: right;
 	position: relative;
 	width: 0;
@@ -82,8 +82,8 @@
 
 .angle-4{
 	border-color:transparent transparent #006400; 
-	left: 145px;
-	top: -144px;
+	left: 350px;
+	top: -117px;
 	float: right;
 	position: relative;
 	width: 0;
@@ -96,4 +96,8 @@
 	background-color: #008000;
 }
 
-
+h2 {
+	text-transform: uppercase;
+	font-family: 'Alice', serif;
+	margin-left: 250px;
+}
