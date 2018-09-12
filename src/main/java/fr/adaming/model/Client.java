@@ -26,7 +26,6 @@ public class Client extends Personne {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_cl")
 	private int id;
-	private boolean acquereur;
 	private String numCompostage;
 
 	// Associations UML en JAVA
@@ -45,18 +44,16 @@ public class Client extends Personne {
 		super();
 	}
 
-	public Client(String nom, String telPerso, String mail, boolean acquereur, String numCompostage, Adresse adresse) {
+	public Client(String nom, String telPerso, String mail, String numCompostage, Adresse adresse) {
 		super(nom, telPerso, mail);
-		this.acquereur = acquereur;
 		this.numCompostage = numCompostage;
 		this.adresse = adresse;
 	}
 
-	public Client(String nom, String telPerso, String mail, int id, boolean acquereur, String numCompostage,
+	public Client(String nom, String telPerso, String mail, int id, String numCompostage,
 			Adresse adresse) {
 		super(nom, telPerso, mail);
 		this.id = id;
-		this.acquereur = acquereur;
 		this.numCompostage = numCompostage;
 		this.adresse = adresse;
 	}
@@ -68,14 +65,6 @@ public class Client extends Personne {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public boolean isAcquereur() {
-		return acquereur;
-	}
-
-	public void setAcquereur(boolean acquereur) {
-		this.acquereur = acquereur;
 	}
 
 	public String getNumCompostage() {
@@ -110,7 +99,7 @@ public class Client extends Personne {
 	// ToString
 	@Override
 	public String toString() {
-		return "Client [id=" + id + ", acquereur=" + acquereur + ", numCompostage=" + numCompostage + "]";
+		return "Client [id=" + id + ", numCompostage=" + numCompostage + "]";
 	}
 
 }
