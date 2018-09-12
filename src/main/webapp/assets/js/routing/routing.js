@@ -212,8 +212,8 @@ monApp.config(function($routeProvider) {
 		controller : "delVCtrl"
 	})
 	$routeProvider.when("/calendrier", {
-		templateUrl : "views/pc/vListePCVue.html",
-		controller : "myNgController"
+		templateUrl : "views/visite/vListePCVue.html",
+		controller : "myNgController2"
 	})
 	
 	

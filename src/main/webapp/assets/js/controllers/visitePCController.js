@@ -1,5 +1,5 @@
 /** Pour l'instant le service est à l'intérieur du controller, je le séparerai plus tard */
-monApp.controller("myNgController", ["$scope", "$http", "uiCalendarConfig",'$compile', function ($scope, $http, uiCalendarConfig,$compile) {
+monApp.controller("myNgController2", ["$scope", "$http", "uiCalendarConfig",'$compile', function ($scope, $http, uiCalendarConfig,$compile) {
     
     var date = new Date();
     var d = date.getDate();
