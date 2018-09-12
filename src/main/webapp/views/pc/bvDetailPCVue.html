@@ -1,0 +1,47 @@
+
+<div>
+
+<h3 class="col-md-offset-1 col-md-7"><b>Type de bien: </b>{{bienvendre.typeBien}}</h3>
+<div class="col-md-6" style="max-height: 320px; max-width: 490px; min-height: 320px; min-width: 490px">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" ng-repeat="p in bienvendre.listeImages"
+				ng-class="{active: ($index === 0)}" data-slide-to="{{$index}}"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div ng-class="{item: true, active: ($index === 0)}"
+				ng-repeat="p in bienvendre.listeImages" style="border-radius: 15px">
+
+				<img style="max-height: 320px; max-width: 490px; min-height: 320px; min-width: 490px" class="d-block w-100"
+					ng-src="data:image/JPEG;base64,{{p.image}}"
+					alt="Slide number {{$index}}">
+			</div>
+		</div>
+
+		<span class="left carousel-control" data-target="#myCarousel"
+			data-slide="prev"> <span
+			class="glyphicon glyphicon-chevron-left"></span>
+		</span> <span class="right carousel-control" data-target="#myCarousel"
+			data-slide="next"> <span
+			class="glyphicon glyphicon-chevron-right"></span>
+		</span>
+	</div>
+</div>
+
+<div class="col-md-6" style="padding-top: 25px; border-bottom: solid 3px; border-left: solid 3px; background-color: white; border-radius: 10px 35px">
+	<label class="col-md-4"><b>Statut: </b></label><p class="col-md-7">{{bienvendre.statut}}</p>
+	<label class="col-md-4"><b>Date de soumission: </b></label><p class="col-md-7">{{bienvendre.dateSoumission | date: "dd/MM/yyyy"}}</p>
+	<label class="col-md-4"><b>Date de disposition: </b></label><p class="col-md-7">{{bienvendre.dateDisposition | date: "dd/MM/yyyy"}}</p>
+	<label class="col-md-4"><b>Prix: </b></label><p class="col-md-7">{{bienvendre.prix | currency : "€" : 2}}</p>
+	<label class="col-md-4"><b>Etat: </b></label><p class="col-md-7">{{bienvendre.etat}}</p>
+	<label class="col-md-4"><b>Adresse: </b></label><p class="col-md-7">{{bienvendre.adresse.numRue}}, {{bienvendre.adresse.rue}}</p>
+	<p class="col-md-offset-4 col-md-7">{{bienvendre.adresse.cp}}, {{bienvendre.adresse.localite}}, {{bienvendre.adresse.pays}}</p>
+</div>
+
+<div class="col-md-11" style="margin-top: 25px; border-bottom: solid 3px;border-left: solid 3px; background-color: white; border-radius: 10px ">
+<br/>
+<label class="col-md-3"><b>Description: </b></label><p class="col-md-9">{{bienvendre.description}}</p>
+</div>
+</div>
+<h3>{{msg}}</h3>

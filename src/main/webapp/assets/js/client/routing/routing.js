@@ -16,9 +16,14 @@ appClient.config(function($routeProvider) {
 		controller : "findAllBLCtrl"
 	})
 	
-	$routeProvider.when("/detail", {
+	$routeProvider.when("/detailBl", {
 		templateUrl : "views/pc/bLDetailPCVue.html",
 		controller : "getIdBLCtrl"
+	})
+	
+	$routeProvider.when("/detailBv", {
+		templateUrl : "views/pc/bvDetailPCVue.html",
+		controller : "getIdBVCtrl"
 	})
 	
 	
@@ -56,7 +61,7 @@ appClient.config(function($routeProvider) {
 	})
 	
 	
-	$routeProvider.otherwise({redirectTo:"/admin"});
+	$routeProvider.otherwise({redirectTo:"/accueilPC"});
 	
 	
 	
