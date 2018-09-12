@@ -9,7 +9,7 @@
 <link
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
 	rel="stylesheet">
-<link href="assets/css/menu.css" rel="stylesheet">
+
 <link href="https://fonts.googleapis.com/css?family=Domine" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Alice" rel="stylesheet">
 
@@ -71,12 +71,27 @@
 	src="assets/js/services/classeStandardService.js"></script>
 
 </head>
+
+<style type="text/css">
+
+body{
+background-image: linear-gradient(to right, #80aaff,white); 
+background-size: cover;
+
+}
+
+
+
+</style>
+
+
 <body ng-app="monApp">
 
+<center>
 	<nav class="navbar navbar-default"
-		style="width: 2000px; margin: 0; padding: 0;">
+		style="width: 1000px; margin: 20px; padding: 0; background-color:#80aaff; ">
 		<!-- 		<div class="container-fluid"> -->
-		<ul class="nav navbar-nav bg-info">
+		<ul class="nav navbar-nav bg-info" style="background-color: #80aaff">
 			<li class="dropdown"><a class="dropdown-toggle"
 				data-toggle="dropdown">Agence<span class="caret"></span></a>
 				<ul class="dropdown-menu">
@@ -160,24 +175,9 @@
 					<li><a href="#!supprVisite">Suppression</a></li>
 					<li><a href="#!modifVisite">Modification</a></li>
 					<li><a href="#!rechercheVisite">Recherche</a></li>
-				</ul></li>
-
-
-		</ul>
-		<ul class="nav navbar-nav navbar-right">
-			<form class="navbar-form">
-				<input class="form-control mr-sm-2" type="search"
-					placeholder="Search" aria-label="Search">
-				<button class="btn btn-info" type="submit">Search</button>
-			</form>
-		</ul>
-		<!-- 		</div> -->
+				</ul></li>		
 	</nav>
-	<br />
-	<br />
-	<hr />
-	<!-- 	<div class="container"> -->
-	<!-- 		<div ng-view=""></div> -->
-	<!-- 	</div> -->
+	</center>
+
 </body>
 </html>
