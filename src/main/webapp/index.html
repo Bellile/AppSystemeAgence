@@ -9,6 +9,9 @@
 <link
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
 	rel="stylesheet">
+<link href="assets/css/menu.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Domine" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Alice" rel="stylesheet">
 
 <!-- Ajout des librairie JS de bootstrap -->
 <script type="text/javascript" src="assets/resources/js/jquery-3.3.1.js"></script>
@@ -70,110 +73,136 @@
 </head>
 <body ng-app="monApp">
 
-	<nav class="navbar bg-primary navbar-fixed-top">
-		<div class="container-fluid">
-			<ul class="nav navbar-nav bg-info">
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown">Agence<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#!listeAgence">Liste</a></li>
-						<li><a href="#!ajoutAgence">Ajout</a></li>
-						<li><a href="#!supprAgence">Suppression</a></li>
-						<li><a href="#!modifAgence">Modification</a></li>
-						<li><a href="#!rechercheAgence">Recherche</a></li>
-					</ul></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown">Biens en location<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#!listeLouer">Liste</a></li>
-						<li><a href="#!ajoutLouer">Ajout</a></li>
-						<li><a href="#!supprLouer">Suppression</a></li>
-						<li><a href="#!modifLouer">Modification</a></li>
-						<li><a href="#!rechercheLouer">Recherche</a></li>
-						<li><a href="#!modifDispoLouer">Disponibilit&eacute</a></li>
-					</ul></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown">Biens en vente<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#!listeVendre">Liste</a></li>
-						<li><a href="#!ajoutVendre">Ajout</a></li>
-						<li><a href="#!supprVendre">Suppression</a></li>
-						<li><a href="#!modifVendre">Modification</a></li>
-						<li><a href="#!rechercheVendre">Recherche</a></li>
-						<li><a href="#!modifDispoVendre">Disponibilit&eacute</a></li>
-					</ul></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown">Classe Standard<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#!listeClasseStandard">Liste</a></li>
-						<li><a href="#!ajoutClasseStandard">Ajout</a></li>
-						<li><a href="#!supprClasseStandard">Suppression</a></li>
-						<li><a href="#!modifClasseStandard">Modification</a></li>
-						<li><a href="#!rechercheClasseStandard">Recherche</a></li>
-					</ul></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown">Client<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#!listeClient">Liste</a></li>
-						<li><a href="#!ajoutClient">Ajout</a></li>
-						<li><a href="#!supprClient">Suppression</a></li>
-						<li><a href="#!modifClient">Modification</a></li>
-						<li><a href="#!rechercheClient">Recherche</a></li>
-					</ul></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown">Contrat<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#!listeContrat">Liste</a></li>
-						<li><a href="#!ajoutContrat">Ajout</a></li>
-						<li><a href="#!supprContrat">Suppression</a></li>
-						<li><a href="#!modifContrat">Modification</a></li>
-						<li><a href="#!rechercheContrat">Recherche</a></li>
-						<li><a href="#!rechercheParRespContrat">Recherche</a></li>
-					</ul></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown">Proprietaire<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#!listeProprietaire">Liste</a></li>
-						<li><a href="#!ajoutProprietaire">Ajout</a></li>
-						<li><a href="#!supprProprietaire">Suppression</a></li>
-						<li><a href="#!modifProprietaire">Modification</a></li>
-						<li><a href="#!rechercheProprietaire">Recherche</a></li>
-					</ul></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown">Responsable<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#!listeResponsable">Liste</a></li>
-						<li><a href="#!ajoutResponsable">Ajout</a></li>
-						<li><a href="#!supprResponsable">Suppression</a></li>
-						<li><a href="#!modifResponsable">Modification</a></li>
-						<li><a href="#!rechercheResponsable">Recherche</a></li>
-					</ul></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown">Visite<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#!listeVisite">Liste</a></li>
-						<li><a href="#!ajoutVisite">Ajout</a></li>
-						<li><a href="#!supprVisite">Suppression</a></li>
-						<li><a href="#!modifVisite">Modification</a></li>
-						<li><a href="#!rechercheVisite">Recherche</a></li>
-					</ul></li>
-
-
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<form class="navbar-form">
-					<input class="form-control mr-sm-2" type="search"
-						placeholder="Search" aria-label="Search">
-					<button class="btn btn-info" type="submit">Search</button>
-				</form>
-			</ul>
+	<div class="wrapper">
+		<div class="nav-area">
+			<div class="angle-1"></div>
+			<div class="angle-2"></div>
+			<div class="menu-bg">
+				<ul id="menu">
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown">Agence<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#!listeAgence">Liste</a></li>
+							<li><a href="#!ajoutAgence">Ajout</a></li>
+							<li><a href="#!supprAgence">Suppression</a></li>
+							<li><a href="#!modifAgence">Modification</a></li>
+							<li><a href="#!rechercheAgence">Recherche</a></li>
+						</ul></li>
+					<li><a href="#!listeAgence">Location</a></li>
+					<li><a href="#!listeAgence">Achat</a></li>
+				</ul>
+			</div>
+			<div class="angle-3"></div>
+			<div class="angle-4"></div>
 		</div>
+	</div>
+
+
+	<nav class="navbar navbar-default"
+		style="width: 2000px; margin: 0; padding: 0;">
+		<!-- 		<div class="container-fluid"> -->
+		<ul class="nav navbar-nav bg-info">
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown">Agence<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#!listeAgence">Liste</a></li>
+					<li><a href="#!ajoutAgence">Ajout</a></li>
+					<li><a href="#!supprAgence">Suppression</a></li>
+					<li><a href="#!modifAgence">Modification</a></li>
+					<li><a href="#!rechercheAgence">Recherche</a></li>
+				</ul></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown">Biens en location<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#!listeLouer">Liste</a></li>
+					<li><a href="#!ajoutLouer">Ajout</a></li>
+					<li><a href="#!supprLouer">Suppression</a></li>
+					<li><a href="#!modifLouer">Modification</a></li>
+					<li><a href="#!rechercheLouer">Recherche</a></li>
+					<li><a href="#!modifDispoLouer">Disponibilit&eacute</a></li>
+				</ul></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown">Biens en vente<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#!listeVendre">Liste</a></li>
+					<li><a href="#!ajoutVendre">Ajout</a></li>
+					<li><a href="#!supprVendre">Suppression</a></li>
+					<li><a href="#!modifVendre">Modification</a></li>
+					<li><a href="#!rechercheVendre">Recherche</a></li>
+					<li><a href="#!modifDispoVendre">Disponibilit&eacute</a></li>
+				</ul></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown">Classe Standard<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#!listeClasseStandard">Liste</a></li>
+					<li><a href="#!ajoutClasseStandard">Ajout</a></li>
+					<li><a href="#!supprClasseStandard">Suppression</a></li>
+					<li><a href="#!modifClasseStandard">Modification</a></li>
+					<li><a href="#!rechercheClasseStandard">Recherche</a></li>
+				</ul></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown">Client<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#!listeClient">Liste</a></li>
+					<li><a href="#!ajoutClient">Ajout</a></li>
+					<li><a href="#!supprClient">Suppression</a></li>
+					<li><a href="#!modifClient">Modification</a></li>
+					<li><a href="#!rechercheClient">Recherche</a></li>
+				</ul></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown">Contrat<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#!listeContrat">Liste</a></li>
+					<li><a href="#!ajoutContrat">Ajout</a></li>
+					<li><a href="#!supprContrat">Suppression</a></li>
+					<li><a href="#!modifContrat">Modification</a></li>
+					<li><a href="#!rechercheContrat">Recherche</a></li>
+					<li><a href="#!rechercheParRespContrat">Recherche</a></li>
+				</ul></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown">Proprietaire<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#!listeProprietaire">Liste</a></li>
+					<li><a href="#!ajoutProprietaire">Ajout</a></li>
+					<li><a href="#!supprProprietaire">Suppression</a></li>
+					<li><a href="#!modifProprietaire">Modification</a></li>
+					<li><a href="#!rechercheProprietaire">Recherche</a></li>
+				</ul></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown">Responsable<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#!listeResponsable">Liste</a></li>
+					<li><a href="#!ajoutResponsable">Ajout</a></li>
+					<li><a href="#!supprResponsable">Suppression</a></li>
+					<li><a href="#!modifResponsable">Modification</a></li>
+					<li><a href="#!rechercheResponsable">Recherche</a></li>
+				</ul></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown">Visite<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#!listeVisite">Liste</a></li>
+					<li><a href="#!ajoutVisite">Ajout</a></li>
+					<li><a href="#!supprVisite">Suppression</a></li>
+					<li><a href="#!modifVisite">Modification</a></li>
+					<li><a href="#!rechercheVisite">Recherche</a></li>
+				</ul></li>
+
+
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<form class="navbar-form">
+				<input class="form-control mr-sm-2" type="search"
+					placeholder="Search" aria-label="Search">
+				<button class="btn btn-info" type="submit">Search</button>
+			</form>
+		</ul>
+		<!-- 		</div> -->
 	</nav>
 	<br />
 	<br />
 	<hr />
-	<div class="container">
-		<div ng-view=""></div>
-	</div>
+	<!-- 	<div class="container"> -->
+	<!-- 		<div ng-view=""></div> -->
+	<!-- 	</div> -->
 </body>
 </html>

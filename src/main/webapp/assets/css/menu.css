@@ -1,0 +1,99 @@
+.wrapper{
+	width: 1000px;
+	margin: O auto;
+}
+
+.nav-area{
+	margin: -30px 300px;
+	width: 950px;
+}
+
+#menu li{
+	list-style: none;
+	display: block;
+	float: left;
+	margin: 6px;
+}
+
+#menu li a{
+	display: block;
+	text-transform: uppercase;
+	padding: 5px;
+	margin: 2px 15px;
+	font-size: 18px;
+	color: #fff;
+	font-family: 'Alice', serif;
+	text-decoration: none;
+}
+
+#menu li a:hover{
+	background: #333;
+}
+
+.menu-bg{
+	background: #008000;
+	margin:3em 0;
+	z-index: 400;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 4px rgba(0,0,0,0.5);
+	position: relative;
+	height: 50px;
+}
+
+.angle-1{
+	border-color: #006400 transparent transparent; 
+	left: -50px;
+	top: 1px;
+	float: left;
+	position: relative;
+	width: 0;
+	height: 0;
+	border-width: 50px;
+	border-style: solid;
+}
+
+.angle-2{
+	border-color: transparent transparent #006400; 
+	left: -150px;
+	top: -46px;
+	float: left;
+	position: relative;
+	width: 0;
+	height: 0;
+	border-width: 50px;
+	border-style: solid;	
+}
+
+.angle-3{
+	border-color: #006400 transparent transparent; 
+	left: 45px;
+	top: -95px;
+	float: right;
+	position: relative;
+	width: 0;
+	height: 0;
+	border-width: 50px;
+	border-style: solid;
+}
+
+.angle-4{
+	border-color:transparent transparent #006400; 
+	left: 145px;
+	top: -144px;
+	float: right;
+	position: relative;
+	width: 0;
+	height: 0;
+	border-width: 50px;
+	border-style: solid;
+}
+
+.dropdown-menu{
+	background-color: #008000;
+}
+
+
