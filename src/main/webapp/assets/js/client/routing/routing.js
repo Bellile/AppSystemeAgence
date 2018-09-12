@@ -11,8 +11,8 @@ appClient.config(function($routeProvider) {
 		controller : "findAllBLCtrl"
 	})
 	
-	$routeProvider.when("/acc", {
-		templateUrl : "carroussel.html",
+	$routeProvider.when("/accueilPC", {
+		templateUrl : "views/pc/accueilVue.html",
 		controller : "findAllBLCtrl"
 	})
 	
@@ -56,7 +56,7 @@ appClient.config(function($routeProvider) {
 	})
 	
 	
-	
+	$routeProvider.otherwise({redirectTo:"/admin"});
 	
 	
 	
