@@ -1,4 +1,4 @@
-monApp.controller("addClPCCtrl", function($scope, clPCProvider, $location) {
+appClient.controller("addClPCCtrl", function($scope, clPCProvider, $location) {
 
 	$scope.clForm = {
 		nom : "",
