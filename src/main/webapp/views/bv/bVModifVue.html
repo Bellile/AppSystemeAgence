@@ -26,8 +26,15 @@
 			<label for="cs" class="col-md-4 control-label">Classe
 				standard li&eacutee</label>
 			<div class="col-md-6">
-				<input type="number" class="form-control" id="cs"
-					ng-model="bvForm.classeStandard.id">
+				<select class="form-control" ng-model="bvForm.classeStandard.id">
+					<option value="">choisissez une classe</option>
+					<option value="1">Terrain pour construction</option>
+					<option value="2">Maison d'habitation de moins de 3chambres pour achat</option>
+					<option value="3">Maison d'habitation de plus de 3chambres pour location</option>
+					<option value="4">Studio sympa en location</option>
+					<option value="5">Entrepot industriel pour achat</option>
+					<option value="6">Appartement de 2chambres en location</option>
+				</select>
 			</div>
 		</div>
 		<div class="form-group">
@@ -100,6 +107,13 @@
 			<div class="col-md-6">
 				<input type="number" class="form-control" id="proprio"
 					ng-model="bvForm.proprietaire.id">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="sup" class="col-md-4 control-label">Superficie</label>
+			<div class="col-md-6">
+				<input type="number" class="form-control" id="sup"
+					ng-model="bvForm.superficie">
 			</div>
 		</div>
 		<div class="form-group">
