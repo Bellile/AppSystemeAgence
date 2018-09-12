@@ -29,7 +29,7 @@ appClient.controller("myNgController", ["$scope", "$http", "uiCalendarConfig",'$
         	console.log("La date est : "+value.dateHeure);
         	// création des objets visite pouvant être affichés sur le calendrier
             $scope.events.push({
-                title: "Visite",
+                title: "Visite : "+value.id,
                 start: new Date(value.dateHeure),
                 end: new Date((value.dateHeure)+1800000), // on rajoute 30 min 
                 allDay : false
