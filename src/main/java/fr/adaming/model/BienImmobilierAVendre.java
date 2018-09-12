@@ -51,16 +51,16 @@ public class BienImmobilierAVendre extends BienImmobilier{
 	}
 
 	public BienImmobilierAVendre(String typeBien, String statut, double revenuCadastre, String description,
-			Date dateSoumission, Date dateDisposition, byte[] listeImage, double prix, String etat, Adresse adresse) {
-		super(typeBien, statut, revenuCadastre, description, dateSoumission, dateDisposition);
+			Date dateSoumission, Date dateDisposition, double superficie, byte[] listeImage, double prix, String etat, Adresse adresse) {
+		super(typeBien, statut, revenuCadastre, description, dateSoumission, dateDisposition, superficie);
 		this.prix = prix;
 		this.etat = etat;
 		this.adresse = adresse;
 	}
 	
 	public BienImmobilierAVendre(int id, String typeBien, String statut, double revenuCadastre, String description,
-			Date dateSoumission, Date dateDisposition, byte[] listeImage, double prix, String etat, Adresse adresse) {
-		super(id, typeBien, statut, revenuCadastre, description, dateSoumission, dateDisposition);
+			Date dateSoumission, Date dateDisposition, double superficie, byte[] listeImage, double prix, String etat, Adresse adresse) {
+		super(id, typeBien, statut, revenuCadastre, description, dateSoumission, dateDisposition, superficie);
 		this.prix = prix;
 		this.etat = etat;
 		this.adresse = adresse;

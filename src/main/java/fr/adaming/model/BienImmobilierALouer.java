@@ -56,9 +56,9 @@ public class BienImmobilierALouer extends BienImmobilier{
 	}
 
 	public BienImmobilierALouer(String typeBien, String statut, double revenuCadastre, String description,
-			Date dateSoumission, Date dateDisposition, byte[] listeImage, double caution, double loyer, double charges,
+			Date dateSoumission, Date dateDisposition, double superficie, byte[] listeImage, double caution, double loyer, double charges,
 			String typeBail, String garniture, Adresse adresse) {
-		super(typeBien, statut, revenuCadastre, description, dateSoumission, dateDisposition);
+		super(typeBien, statut, revenuCadastre, description, dateSoumission, dateDisposition, superficie);
 		this.caution = caution;
 		this.loyer = loyer;
 		this.charges = charges;
@@ -68,9 +68,9 @@ public class BienImmobilierALouer extends BienImmobilier{
 	}
 
 	public BienImmobilierALouer(int id, String typeBien, String statut, double revenuCadastre, String description,
-			Date dateSoumission, Date dateDisposition, byte[] listeImage, double caution, double loyer, double charges,
+			Date dateSoumission, Date dateDisposition, double superficie, byte[] listeImage, double caution, double loyer, double charges,
 			String typeBail, String garniture, Adresse adresse) {
-		super(id, typeBien, statut, revenuCadastre, description, dateSoumission, dateDisposition);
+		super(id, typeBien, statut, revenuCadastre, description, dateSoumission, dateDisposition, superficie);
 		this.caution = caution;
 		this.loyer = loyer;
 		this.charges = charges;

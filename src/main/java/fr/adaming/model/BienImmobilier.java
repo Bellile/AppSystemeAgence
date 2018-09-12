@@ -29,6 +29,7 @@ abstract class BienImmobilier implements Serializable{
 	protected Date dateSoumission;
 	@Temporal(TemporalType.DATE)
 	protected Date dateDisposition;
+	protected double superficie;
 	
 	protected double lat;
 	protected double lng;
@@ -38,7 +39,7 @@ abstract class BienImmobilier implements Serializable{
 	}
 
 	public BienImmobilier(String typeBien, String statut, double revenuCadastre, String description,
-			Date dateSoumission, Date dateDisposition) {
+			Date dateSoumission, Date dateDisposition, double superficie) {
 		super();
 		this.typeBien = typeBien;
 		this.statut = statut;
@@ -46,11 +47,12 @@ abstract class BienImmobilier implements Serializable{
 		this.description = description;
 		this.dateSoumission = dateSoumission;
 		this.dateDisposition = dateDisposition;
+		this.superficie = superficie;
 		
 	}
 
 	public BienImmobilier(int id, String typeBien, String statut, double revenuCadastre, String description,
-			Date dateSoumission, Date dateDisposition) {
+			Date dateSoumission, Date dateDisposition, double superficie) {
 		super();
 		this.id = id;
 		this.typeBien = typeBien;
@@ -59,6 +61,7 @@ abstract class BienImmobilier implements Serializable{
 		this.description = description;
 		this.dateSoumission = dateSoumission;
 		this.dateDisposition = dateDisposition;
+		this.superficie = superficie;
 		
 	}
 
@@ -146,10 +149,18 @@ abstract class BienImmobilier implements Serializable{
 		this.lng = lng;
 	}
 
+	public double getSuperficie() {
+		return superficie;
+	}
+
+	public void setSuperficie(double superficie) {
+		this.superficie = superficie;
+	}
+
 	@Override
 	public String toString() {
 		return "BienImmobilier [id=" + id + ", typeBien=" + typeBien + ", statut=" + statut + ", revenuCadastre="
-				+ revenuCadastre + ", dateSoumission=" + dateSoumission + ", dateDisposition=" + dateDisposition
+				+ revenuCadastre + ", dateSoumission=" + dateSoumission + ", dateDisposition=" + dateDisposition + ", dateDisposition=" + dateDisposition
 				+ ", listeImage=" + "]";
 	}
 
