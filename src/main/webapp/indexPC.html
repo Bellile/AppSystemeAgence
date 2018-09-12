@@ -23,7 +23,10 @@
 <!-- Les librairies de calendar -->
 <!-- CSS -->
 <link href="assets/resources/css/fullcalendar.css" rel="stylesheet" />
+<link href="assets/css/menu.css" rel="stylesheet" />
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Domine" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Alice" rel="stylesheet">
 <!-- JS -->
 <script type="text/javascript" src="assets/resources/js/moment.min.js"></script>
 <script type="text/javascript" src="assets/resources/js/calendar.js"></script>
@@ -125,64 +128,71 @@ td{
 <body ng-app="appClient">
 
 
-<nav class="navbar bg-success navbar-fixed-top" style="height:65px">
-	<div class="container-fluid">
-	<ul class="nav navbar-nav bg-warning">
-		<li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown">Nos Agence<span class="caret"></span></a>
-        	<ul class="dropdown-menu">
-          	<li><a href="#!listeAgencePC">Liste</a></li>          
-        	</ul>
-      	</li>
-      	<li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown">Biens en location<span class="caret"></span></a>
-        	<ul class="dropdown-menu">
-          	<li><a href="#!listeLouerPC">Liste</a></li>    
-          	<li><a href="#!rechercheLouerPC">Recherche</a></li>           	      
-        	</ul>
-      	</li>
-      	<li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown">Biens en vente<span class="caret"></span></a>
-        	<ul class="dropdown-menu">
-          	<li><a href="#!listeVendrePC">Liste</a></li>  
-          	<li><a href="#!rechercheVendrePC">Recherche</a></li>        	
-        	</ul>
-      	</li>
-      	<li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown">Classe Standard<span class="caret"></span></a>
-        	<ul class="dropdown-menu">
-          	<li><a href="#!listeClasseStandardPC">Liste</a></li>          	
-        	</ul>
-      	</li>
-      	<li><a href="#!mapPC">MAP</a></li> 
+<div class="wrapper">
+		<div class="nav-area">
+			<div class="angle-1"></div>
+			<div class="angle-2"></div>
+			<div class="menu-bg">
+				<ul id="menu">
+			<li class="dropdown">
+        	<a class="dropdown-toggle" data-toggle="dropdown">Nos Agence<span class="caret"></span></a>
+        		<ul class="dropdown-menu">
+          			<li><a href="#!listeAgencePC">Liste</a></li>          
+        		</ul>
+      		</li>
+      		<li class="dropdown">
+       	 	<a class="dropdown-toggle" data-toggle="dropdown">Biens en location<span class="caret"></span></a>
+        		<ul class="dropdown-menu">
+          			<li><a href="#!listeLouerPC">Liste</a></li>    
+          			<li><a href="#!rechercheLouerPC">Recherche</a></li>           	      
+        		</ul>
+      		</li>
+      		<li class="dropdown">
+        	<a class="dropdown-toggle" data-toggle="dropdown">Biens en vente<span class="caret"></span></a>
+        		<ul class="dropdown-menu">
+          			<li><a href="#!listeVendrePC">Liste</a></li>  
+          			<li><a href="#!rechercheVendrePC">Recherche</a></li>        	
+        		</ul>
+      		</li>
+      		<li class="dropdown">
+        	<a class="dropdown-toggle" data-toggle="dropdown">Classe Standard<span class="caret"></span></a>
+        		<ul class="dropdown-menu">
+          			<li><a href="#!listeClasseStandardPC">Liste</a></li>          	
+        		</ul>
+      		</li>
+      		<li><a href="#!mapPC">MAP</a></li> 
       	  
       	
-      	<li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown">Visite<span class="caret"></span></a>
-        	<ul class="dropdown-menu">
-          	<li><a href="#!listeVisitePC">Liste</a></li>
-          	<li><a href="#!ajoutVisite">Ajout</a></li>
-          	<li><a href="#!supprVisite">Suppression</a></li>
-          	<li><a href="#!modifVisite">Modification</a></li>
-          	<li><a href="#!rechercheVisite">Recherche</a></li>
-        	</ul>
-      	</li>
+      		<li class="dropdown">
+        	<a class="dropdown-toggle" data-toggle="dropdown">Visite<span class="caret"></span></a>
+        		<ul class="dropdown-menu">
+          		<li><a href="#!listeVisitePC">Liste</a></li>
+          		<li><a href="#!ajoutVisite">Ajout</a></li>
+          		<li><a href="#!supprVisite">Suppression</a></li>
+   	       		<li><a href="#!modifVisite">Modification</a></li>
+          		<li><a href="#!rechercheVisite">Recherche</a></li>
+        		</ul>
+      		</li>
 
       	
-	</ul>
-	<audio controls autoplay loop style="height: 15px; width: 56px; padding-top: 60px">
-		<source src="assets/resources/son/vivPri.mp3" type="audio/mpeg"/>
-	</audio>
-	<ul class="nav navbar-nav navbar-right">
-	<form class="navbar-form">
-      <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
-      <button class="btn btn-info" type="submit">Rechercher</button>
-    </form>
-    </ul>
-    </div>
+
+			<audio controls autoplay loop style="height: 15px; width: 56px; padding-top: 60px">
+				<source src="assets/resources/son/vivPri.mp3" type="audio/mpeg"/>
+			</audio>
+			<ul class="nav navbar-nav navbar-right">
+			<form class="navbar-form">
+      			<input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
+      			<button class="btn btn-info" type="submit">Rechercher</button>
+    		</form>
+   	 		</ul>
+    		</div>
     
-    <div style="float: right;"><i id="space"><img src="assets/resources/image/Elephant-Logo.png" style="max-height: 200px; max-width: 200px"></i></div>
-</nav>
+    		<div style="float: right;"><i id="space"><img src="assets/resources/image/Elephant-Logo.png" style="max-height: 200px; max-width: 200px"></i></div>
+			</ul>
+			</div>
+			<div class="angle-3"></div>
+			<div class="angle-4"></div>
+	</div>
 <br/>
 <br/>
 <hr/>
