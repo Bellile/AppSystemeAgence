@@ -63,8 +63,7 @@ public class BienImmoAVendreDaoImplTest {
 	@Transactional
 	@Rollback(true)
 	public void testAddSize () {
-		BienImmobilierAVendre bImmoLIn = new BienImmobilierAVendre(null, null, 0, "Case", null, null, null, 0, null, new Adresse());
-		bImmoVDao.add(bImmoLIn);
+		
 		assertEquals(2, bImmoVDao.getAll().size());
 	}
 	
@@ -82,8 +81,7 @@ public class BienImmoAVendreDaoImplTest {
 	@Transactional
 	@Rollback(true)
 	public void testUpdateName () {
-		BienImmobilierAVendre bImmoLIn = new BienImmobilierAVendre(1, null, null, 0, "Case", null, null, null, 0, null, new Adresse());
-		bImmoVDao.update(bImmoLIn);
+		
 		assertEquals("Case", bImmoVDao.getById(1).getDescription());
 	}
 	

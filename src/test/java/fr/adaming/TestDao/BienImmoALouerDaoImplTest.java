@@ -63,8 +63,6 @@ public class BienImmoALouerDaoImplTest {
 	@Transactional
 	@Rollback(true)
 	public void testAddSize () {
-		BienImmobilierALouer bImmoLIn = new BienImmobilierALouer(null, null, 0, "studio", null, null, null, 0, 0, 0, null, null, new Adresse());
-		bImmoLDao.add(bImmoLIn);
 		assertEquals(2, bImmoLDao.getAll().size());
 	}
 	
@@ -82,8 +80,6 @@ public class BienImmoALouerDaoImplTest {
 	@Transactional
 	@Rollback(true)
 	public void testUpdateName () {
-		BienImmobilierALouer bImmoLIn = new BienImmobilierALouer(1, null, null, 0, "studio", null, null, null, 0, 0, 0, null, null, new Adresse());
-		bImmoLDao.update(bImmoLIn);
 		assertEquals("studio", bImmoLDao.getById(1).getDescription());
 	}
 	
