@@ -1,6 +1,7 @@
-<h2 style="color : aquamarine; text-align: center">Liste des agences</h2>
+<h2>Liste des agences</h2>
 <table class="table table-striped">
 	<tr>
+		<th>R&eacutef&eacuterence</th>
 		<th>Nom</th>
 		<th>Rue</th>
 		<th>Code Postal</th>
@@ -9,6 +10,7 @@
 		<th>Liens</th>
 	</tr>
 	<tr ng-repeat="a in liste">
+		<td>{{a.id}}</td>
 		<td>{{a.nom}}</td>
 		<td>{{a.adresse.numRue}}, {{a.adresse.rue}}</td>
 		<td>{{a.adresse.cp}}</td>

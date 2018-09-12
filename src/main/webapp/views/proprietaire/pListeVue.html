@@ -1,12 +1,13 @@
-<h1>Liste des Propri&eacutetaires</h1>
+<h2>Liste des Propri&eacutetaires</h2>
 <table class="table table-striped">
 
-Rechercher les biens par propri&eacutetaires : <input type="text" ng-model="recherche">
+Rechercher les biens par propri&eacutetaire : <input type="text" ng-model="recherche">
 
 <br>
 <br>
 
 	<tr>
+		<th>R&eacutef&eacuterence</th>
 		<th>Nom</th>
 		<th>Email</th>
 		<th>Rue</th>
@@ -17,6 +18,7 @@ Rechercher les biens par propri&eacutetaires : <input type="text" ng-model="rech
 		<th>T&eacutel&eacutephone Professionnel</th>
 	</tr>
 	<tr ng-repeat="p in liste | filter:{nom : recherche}">
+		<td>{{p.id}}</td>
 		<td>{{p.nom}}</td>
 		<td>{{p.mail}}</td>
 		<td>{{p.adresse.numRue}}, {{p.adresse.rue}}</td>

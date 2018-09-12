@@ -1,6 +1,7 @@
-<h1>Liste des Biens immobilier en location</h1>
+<h2>Liste des Biens immobilier en location</h2>
 <table class="table table-striped">
 	<tr>
+		<th>R&eacutef&eacuterence</th>
 		<th>Type de Bien</th>
 		<th>Statut</th>
 		<th>Revenu cadastral</th>
@@ -19,6 +20,7 @@
 		<th>Pays</th>
 	</tr>
 	<tr ng-repeat="b in liste">
+		<td>{{b.id}}</td>
 		<td>{{b.typeBien}}</td>
 		<td>{{b.statut}}</td>
 		<td>{{b.revenuCadastre}}</td>
