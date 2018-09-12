@@ -8,8 +8,6 @@
 	}
 </script>
 
-
-
 <h2>Formulaire d'ajout d'un Bien immobilier en vente</h2>
 <br />
 <form class="form-horizontal" name="bvType">
@@ -19,15 +17,7 @@
 			<label for="cs" class="col-md-4 control-label">Classe
 				standard li&eacutee</label>
 			<div class="col-md-6">
-				<select class="form-control" ng-model="bvForm.classeStandard.id">
-					<option value="">choisissez une classe</option>
-					<option value="1">Terrain pour construction</option>
-					<option value="2">Maison de moins de 3 chambres pour achat</option>
-					<option value="3">Maison de plus de 3 chambres pour location</option>
-					<option value="4">Studio en location</option>
-					<option value="5">Entrepot industriel pour achat</option>
-					<option value="6">Appartement de 2 chambres en location</option>
-				</select>
+			<input type="number" class="form-control" id="cs" ng-model="bvForm.classeStandard.id">
 			</div>
 		</div>
 		<div class="form-group">
