@@ -55,22 +55,21 @@ public class BienImmobilierALouerDaoImpl extends DaoGenericImpl<BienImmobilierAL
 	public List<BienImmobilierALouer> getByResp(int id) {
 		
 		//Création de la requête
-				String req = "FROM BienImmobilierALouer bl WHERE bl.visite.responsable.id=:pId";
+		Query q = em.createNativeQuery("SELECT bl.* FROM biensimmobilieralouer as bl, visites as v, responsables as r WHERE bl.id_b = v.bl_id AND v.r_id = r.id_r AND r.id_r = ? ");
 				
-				//Récupération de la requête
-				Query query = em.createQuery(req);
+				
 				
 				//Paramétrage de la requête
 				
-				query.setParameter("pId", id);
+				q.setParameter(1, id);
 				
-				List<BienImmobilierALouer> liste = query.getResultList();
+				List<BienImmobilierALouer> liste = q.getResultList();
 				System.out.println("Test de la liste récup dans le DAO : ");
 				for(BienImmobilierALouer bL : liste){
 					System.out.println(bL.toString());
 				}
 				
-				return query.getResultList();
+				return q.getResultList();
 	}
 
 }

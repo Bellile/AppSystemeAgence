@@ -123,8 +123,6 @@ monApp.controller("getAllCoCtrl", function ($rootScope, $scope, coProvider, $loc
 					$scope.msg="Il n'y a pas de contrat associés au responsable"
 				}
 			});
-		}
-		$scope.rech2 = function (id) {
 			//Appel de la fonction rechParId de ContratSrevice
 			blProvider.getResp(id, function (donnee){
 				if (typeof donnee=='object'){
